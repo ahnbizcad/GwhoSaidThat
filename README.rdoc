@@ -1,0 +1,3 @@
+== README
+
+Blog of Jeehoo Ahn showing how to do useful things in Rails
