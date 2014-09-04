@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'turbolinks'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 gem 'autoprefixer-rails'
 gem 'uglifier', '>= 1.3.0'
@@ -21,21 +22,32 @@ group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 
-gem 'figaro', '~> 0.7.0'
-gem 'devise'
-gem 'ckeditor'
+gem 'figaro', '~> 0.7.0'#
+
+gem 'devise'#
+
+gem 'simple_form'
+
+gem 'filepicker-rails'
+
+gem 'ckeditor'#
+
 #gem 'kaminari'
 #gem 'compass'
+#gem 'nokogiri'
 
 group :development do 
   gem 'better_errors'
-  gem 'sprockets_better_errors'
   gem 'binding_of_caller'
+
   gem 'pry-rails'
   gem 'pry-byebug'
+
   gem 'awesome_print'
   gem 'quiet_assets'
+
   gem 'annotate'
+
   gem 'ruby_parser'
 end
 

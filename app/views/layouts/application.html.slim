@@ -1,9 +1,20 @@
 doctype html
 html
   head
-    title Gwhosaidthat
+    title Gwho Said That?
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = filepicker_js_include_tag
     = csrf_meta_tags
-  body
-    = yield
+  body  
+    = render 'layouts/header'
+    = render 'layouts/navbar'
+    #main
+      #notices
+        notice = notice
+      #alerts
+        alert = alert
+
+      = yield    
+    = render 'layouts/sidebar'
+    = render 'layouts/footer'

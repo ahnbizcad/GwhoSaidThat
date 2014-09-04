@@ -10,7 +10,7 @@ development:
   database: gwhosaidthat_development
   host: localhost
   username: postgres
-  password: ""
+  password: postgres
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -20,11 +20,11 @@ test:
   database: gwhosaidthat_test
   host: localhost
   username: postgres
-  password: ""
+  password: postgres
 
 production:
   <<: *default
   database: gwhosaidthat_production
   host: jeehooahn.herokuapp.com #jeehooahn.com is set as alias to the herokuapp url
   username: postgres
-  password: ""
+  password: postgres
