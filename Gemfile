@@ -13,10 +13,11 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'turbolinks'
-gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 gem 'autoprefixer-rails'
 gem 'uglifier', '>= 1.3.0'
+
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
@@ -51,11 +52,11 @@ group :development do
   gem 'ruby_parser'
 end
 
-group :production do 
+group :test do 
   
 end
 
-group :test do 
+group :production do 
   
 end
 
