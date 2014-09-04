@@ -29,7 +29,7 @@ gem 'devise'#
 
 gem 'simple_form'
 
-gem 'filepicker-rails'
+#gem 'filepicker-rails'
 
 gem 'ckeditor'#
 

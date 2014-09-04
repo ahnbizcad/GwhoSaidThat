@@ -22,7 +22,7 @@ module Gwhosaidthat
 
 #
 
-    config.filepicker_rails.api_key = ENV["secret_filepicker_key"] #secret
+    #config.filepicker_rails.api_key = ENV['secret_filepicker_key']
 
 
   end

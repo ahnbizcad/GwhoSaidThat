@@ -4,17 +4,18 @@ html
     title Gwho Said That?
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = filepicker_js_include_tag
     = csrf_meta_tags
-  body  
+    /= filepicker_js_include_tag
+  body 
     = render 'layouts/header'
     = render 'layouts/navbar'
-    #main
-      #notices
-        notice = notice
-      #alerts
-        alert = alert
+    
+    - if notice
+      .notice= notice
+    - if alert
+      .alert= alert
 
+    #main.container-fluid
       = yield    
     = render 'layouts/sidebar'
     = render 'layouts/footer'

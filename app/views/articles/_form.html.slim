@@ -6,7 +6,7 @@
         - @article.errors.full_messages.each do |message|
           li = message
 
-  = f.filepicker_field :image, button_text: "Pick image"
+  /= f.filepicker_field :image_url, button_text: "Pick image"
   = f.input :title
   = f.input :content
   .actions 
