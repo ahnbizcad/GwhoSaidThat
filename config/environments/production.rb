@@ -34,10 +34,6 @@ Rails.application.configure do
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
 
-  # Specifies the header that your server uses for sending files.
-  # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
-  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
-
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
@@ -84,8 +80,15 @@ Rails.application.configure do
 
   config.assets.precompile = ['*.js', '*.css']
 
-#
+  #
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_assets = true #This is bad and slow. Only a temporary solution.
+
+  #
+
+  # Specifies the header that your server uses for sending files.
+  config.action_dispatch.x_sendfile_header = nil #"X-Sendfile" # for apache
+  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
+
 end
