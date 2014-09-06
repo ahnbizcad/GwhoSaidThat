@@ -1,0 +1,10 @@
+/* line 2, c:/Sites/gwhosaidthat/app/assets/stylesheets/custom/custom.css.scss */
+#social-icons img {
+  width: 32px;
+  height: 32px;
+}
+
+/* line 8, c:/Sites/gwhosaidthat/app/assets/stylesheets/custom/custom.css.scss */
+#articles {
+  list-style: none;
+}
