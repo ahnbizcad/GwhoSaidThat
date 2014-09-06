@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'turbolinks'
+gem 'jquery-turbolinks', '~>2.0.2'
 
 gem 'autoprefixer-rails'
 gem 'uglifier', '>= 1.3.0'

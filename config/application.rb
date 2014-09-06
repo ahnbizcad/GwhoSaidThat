@@ -24,6 +24,10 @@ module Gwhosaidthat
 
     #config.filepicker_rails.api_key = ENV['secret_filepicker_key']
 
+#
+    #slim custom attribut shortcuts
+    #Slim::Engine.set_default_options :shortcut => {'@' => {:attr => 'role'}}#, '#' => {:attr => 'id'}, '.' => {:attr => 'class'}}
+
 
   end
 end

@@ -1,2 +1,16 @@
-#navbar
-  
+#navbar.affixable.navbar.navbar-default{ role="navigation" }
+  .container
+    .navbar-header
+      =link_to "G Who Said That", root_path
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li =link_to "Apps", apps_path
+        li =link_to "Blog", articles_path
+        li =link_to "Blog - Coding", articles_path
+        li =link_to "About", about_path
+        
+      ul.nav.navbar-nav.navbar-right
+
+        li =link_to "github", "https://github.com/ahnbizcad/"
+        li =link_to "Twitter", "https://twitter.com/JeehooAhn"
+        li =link_to "Linked In", "https://linkedin.com"
