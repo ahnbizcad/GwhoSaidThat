@@ -1,21 +1,24 @@
-h1 Listing apps
+.row
+  .col-xs-12
+    h1 Some of my Apps
 
-table
-  thead
-    tr
-      th Url
-      th
-      th
-      th
-
-  tbody
-    - @apps.each do |app|
-      tr
-        td = app.url
-        td = link_to 'Show', app
-        td = link_to 'Edit', edit_app_path(app)
-        td = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
+    = link_to 'New App', new_app_path
 
 br
 
-= link_to 'New App', new_app_path
+- unless @apps.blank?
+  .row
+    - @apps.each do |app|
+      .col-xs-12.col-sm-6
+        .thumbnail
+          = link_to app.url do
+            .caption
+              h3 = app.url
+            iframe app.url
+          .caption
+            = app.description
+          - if user_signed_in?
+            .caption
+              = link_to 'Edit', edit_app_path(app)
+              = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
+

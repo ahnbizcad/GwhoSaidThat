@@ -1,16 +1,33 @@
-#navbar.affixable.navbar.navbar-default{ role="navigation" }
+nav.affixable.navbar.navbar-default[ role="navigation" ]
   .container
-    .navbar-header
-      =link_to "G Who Said That", root_path
-    .collapse.navbar-collapse
-      ul.nav.navbar-nav
-        li =link_to "Apps", apps_path
-        li =link_to "Blog", articles_path
-        li =link_to "Blog - Coding", articles_path
-        li =link_to "About", about_path
-        
-      ul.nav.navbar-nav.navbar-right
+    .row
+      .col-xs-12
+        ul.nav.nav-tabs[ role="tablist" ]
+          li= link_to about_path do
+            | "g who
+          li.dropdown
+            = link_to "", class: "dropdown-toggle", data: { toggle: "dropdown" } do
+                  = "SAID"
+                  span.caret
+            ul.dropdown-menu[ rol="menu"]
+              li.dropdown 
+                = link_to "", class: "dropdown-toggle", data: { toggle: "dropdown" } do
+                  = "SAID"
+              li= link_to apps_path do
+                  = "MADE"
+                  span.badge= 3
+              li= link_to articles_path do
+                  = "TAUGHT"
+                  span.badge= 2+2
+              
+          li.disabled= link_to "" do
+            | that"
 
-        li =link_to "github", "https://github.com/ahnbizcad/"
-        li =link_to "Twitter", "https://twitter.com/JeehooAhn"
-        li =link_to "Linked In", "https://linkedin.com"
+          ul#social-icons.nav.nav-pills.navbar-right
+            li= link_to "https://github.com/ahnbizcad/" do
+              = image_tag "github.png"
+            li= link_to "https://linkedin.com" do
+              = image_tag "linkedin.png"
+            li= link_to "https://twitter.com/JeehooAhn" do
+              = image_tag "twitter.png"
+        

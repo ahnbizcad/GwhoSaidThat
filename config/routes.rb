@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
 
-  resources :apps
-
   root "articles#index"
 
-  resources :articles
-
-  get "apps", to: "pages#apps"
   get "about",    to: "pages#about"
   get "contact",  to: "pages#contact"
 
+  resources :apps
+  resources :articles 
 
+  devise_for :users, :skip => [:sessions, :registration]
+  devise_for :user, :path => '', :path_names => { :sign_in => "login", 
+                                                  :sign_out => "logout", 
+                                                  :sign_up => "register", 
+                                                  :account_update => "account-settings" }
+                                                  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

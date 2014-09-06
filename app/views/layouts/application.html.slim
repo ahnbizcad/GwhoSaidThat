@@ -7,15 +7,18 @@ html
     = csrf_meta_tags
     /= filepicker_js_include_tag
   body 
-    = render 'layouts/header'
-    = render 'layouts/navbar'
+    - if user_signed_in?
+      == render 'layouts/session'
+
+    == render 'layouts/header'
+    == render 'layouts/navbar'
     
     - if notice
-      .notice= notice
+      .notice.notice-dismissable= notice
     - if alert
-      .alert= alert
+      .alert.alert-dismissable[ role="alert" ]= alert
 
     #main.container
-      = yield    
-    = render 'layouts/sidebar'
-    = render 'layouts/footer'
+      == yield    
+    == render 'layouts/sidebar'
+    == render 'layouts/footer'

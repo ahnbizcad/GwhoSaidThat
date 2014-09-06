@@ -1,20 +1,20 @@
 h1 Listing articles
 
-table
-  thead
-    tr
-      th
-      th
-      th
-
-  tbody
-    - @articles.each do |article|
-      tr
-        td = filepicker_image_tag article.image
-        td = link_to 'Show', article
-        td = link_to 'Edit', edit_article_path(article)
-        td = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
+-if user_signed_in?
+  = link_to 'New Article', new_article_path
 
 br
 
-= link_to 'New Article', new_article_path
+- @articles.each do |article|
+  ul.media-list
+    = link_to article do
+      li.media
+        = image_tag article.image_url, class: "media-object pull-left"
+        .media-body
+          .media-heading= article.title
+          = article.content
+      - if user_signed_in?
+        .media-body
+          = link_to 'Edit', edit_article_path(article)
+          = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
+

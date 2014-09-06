@@ -2,10 +2,11 @@
 #
 # Table name: apps
 #
-#  id         :integer          not null, primary key
-#  created_at :datetime
-#  updated_at :datetime
-#  url        :string(255)
+#  id          :integer          not null, primary key
+#  created_at  :datetime
+#  updated_at  :datetime
+#  url         :string(255)
+#  description :text
 #
 
 require 'test_helper'

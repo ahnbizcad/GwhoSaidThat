@@ -24,9 +24,9 @@ group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 
-gem 'figaro', '~> 0.7.0'#
+gem 'figaro', '~> 0.7.0'
 
-gem 'devise'#
+gem 'devise'
 
 gem 'simple_form'
 
