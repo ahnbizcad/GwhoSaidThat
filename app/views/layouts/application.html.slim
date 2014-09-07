@@ -16,8 +16,9 @@ html
     - if alert
       .alert.alert-dismissable[ role="alert" data-dismiss="alert"]= alert
 
-    main.container
-      == yield    
+    main
+      .container-fluid
+        == yield
     == render 'layouts/sidebar'
     == render 'layouts/footer'
 

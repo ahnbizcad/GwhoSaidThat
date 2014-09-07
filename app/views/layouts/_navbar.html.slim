@@ -1,35 +1,8 @@
-nav#navbar.navbar.navbar-default.navbar-fixed-top.center[ role="navigation" ]
-  .container
+nav#navbar.navbar.navbar-default.navbar-fixed-top[ role="navigation" ]
+  .container-fluid
     .row
       .col-xs-12
-        ul.nav.nav-tabs[ role="tablist" ]
-          li= link_to about_path do
-            | "G-who
-          li.dropdown
-            = link_to "", class: "dropdown-toggle", data: { toggle: "dropdown" } do
-              / improve with array later.
-              - case params[:controller]
-              - when "apps"
-                = "MADE"
-              - when "articles"
-                = "TAUGHT"
-              - else
-                ="IS"
-              span.caret
-            ul.dropdown-menu[ rol="menu"]
-              li.dropdown 
-                = link_to articles_path do
-                  = "SAID"
-              li= link_to apps_path do
-                  = "MADE"
-                  span.badge= 4
-              li= link_to articles_path do
-                  = "TAUGHT"
-                  span.badge= 2+2
-              
-          li.disabled= link_to "" do
-            | that"
-
+        ul#clause.nav.nav-tabs[ role="tablist" ]
           ul#social-icons.nav.nav-pills.navbar-right
             li= link_to "https://github.com/ahnbizcad/" do
               = image_tag "github.png"
@@ -37,4 +10,33 @@ nav#navbar.navbar.navbar-default.navbar-fixed-top.center[ role="navigation" ]
               = image_tag "linkedin.png"
             li= link_to "https://twitter.com/JeehooAhn" do
               = image_tag "twitter.png"
-        
+
+          li= link_to about_path do
+            | "G-who
+          li.dropdown
+            = link_to "", class: "dropdown-toggle", data: { toggle: "dropdown" } do
+              / improve with array later.
+              - case params[:controller]
+              - when "apps"
+                = "MADE "
+              - when "articles"
+                = "TAUGHT "
+              - else
+                ="IS "
+              span.caret
+            ul.dropdown-menu[ rol="menu"]
+              li.dropdown 
+                = link_to articles_path do
+                  = "SAID "
+              li= link_to apps_path do
+                  = "MADE "
+                  span.badge= @app_count
+              li= link_to articles_path do
+                  = "TAUGHT "
+                  span.badge= @article_count
+              
+          li.disabled= link_to "" do
+            | that"
+
+          
+            

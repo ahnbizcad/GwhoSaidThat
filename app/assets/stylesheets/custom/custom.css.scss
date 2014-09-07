@@ -1,20 +1,30 @@
+body {
+  padding: 52px;
+}
+
 #navbar {
-  .nav {
-    li {
+  #clause {
+    text-align: center;
+
+     li {
       font-size: 1.6em;
       float: none;
       display: inline-block;
+      *display: inline;
+      *zoom:1;
       vertical-align: top;
     }
   }
+  
+  #social-icons {
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
 }
 
-#social-icons {
-  img {
-    width: 32px;
-    height: 32px;
-  }
-}
 
 main {
   min-height: 3000px;
