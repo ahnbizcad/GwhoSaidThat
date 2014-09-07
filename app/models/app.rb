@@ -10,4 +10,12 @@
 #
 
 class App < ActiveRecord::Base
+  def self.class_method
+    "hi"
+  end
+
+  def neat_url
+    URI(self.url).host
+  end
+
 end

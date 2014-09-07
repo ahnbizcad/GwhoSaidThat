@@ -13,8 +13,9 @@ br
         .thumbnail
           = link_to app.url do
             .caption
-              h3 = app.url
-            iframe app.url
+              h3 = app.neat_url
+            iframe[ src=app.url seamless]
+            App.class_method
           .caption
             = app.description
           - if user_signed_in?
