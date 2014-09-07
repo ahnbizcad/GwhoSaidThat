@@ -1,7 +1,10 @@
-nav {
-  ul {
+#navbar {
+  .nav {
     li {
       font-size: 1.6em;
+      float: none;
+      display: inline-block;
+      vertical-align: top;
     }
   }
 }
@@ -13,10 +16,16 @@ nav {
   }
 }
 
+main {
+  min-height: 3000px;
+}
 
-iframe {
-  width: 100%;
-  height: 100%;
+
+#app {
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 #articles {

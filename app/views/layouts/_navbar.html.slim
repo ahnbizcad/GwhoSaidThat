@@ -1,4 +1,4 @@
-nav#navbar.affixable.navbar.navbar-default[ role="navigation" ]
+nav#navbar.navbar.navbar-default.navbar-fixed-top.center[ role="navigation" ]
   .container
     .row
       .col-xs-12
@@ -7,15 +7,22 @@ nav#navbar.affixable.navbar.navbar-default[ role="navigation" ]
             | "G-who
           li.dropdown
             = link_to "", class: "dropdown-toggle", data: { toggle: "dropdown" } do
-                  = "SAID"
-                  span.caret
+              / improve with array later.
+              - case params[:controller]
+              - when "apps"
+                = "MADE"
+              - when "articles"
+                = "TAUGHT"
+              - else
+                ="IS"
+              span.caret
             ul.dropdown-menu[ rol="menu"]
               li.dropdown 
-                = link_to "", class: "dropdown-toggle", data: { toggle: "dropdown" } do
+                = link_to articles_path do
                   = "SAID"
               li= link_to apps_path do
                   = "MADE"
-                  span.badge= 3
+                  span.badge= 4
               li= link_to articles_path do
                   = "TAUGHT"
                   span.badge= 2+2
@@ -26,7 +33,7 @@ nav#navbar.affixable.navbar.navbar-default[ role="navigation" ]
           ul#social-icons.nav.nav-pills.navbar-right
             li= link_to "https://github.com/ahnbizcad/" do
               = image_tag "github.png"
-            li= link_to "https://linkedin.com" do
+            li= link_to "https://www.linkedin.com/in/jeehooahn" do
               = image_tag "linkedin.png"
             li= link_to "https://twitter.com/JeehooAhn" do
               = image_tag "twitter.png"

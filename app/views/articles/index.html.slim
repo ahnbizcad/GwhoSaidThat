@@ -7,14 +7,18 @@ br
 
 - @articles.each do |article|
   ul.media-list
-    = link_to article do
-      li.media
-        = image_tag article.image_url, class: "media-object pull-left"
-        .media-body
-          .media-heading= article.title
-          = article.content
-      - if user_signed_in?
-        .media-body
-          = link_to 'Edit', edit_article_path(article)
-          = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
+    li.media
+      = link_to article do
+        =image_tag article.image_url, class: "media-object pull-left"
+      .media-body
+        .media-heading
+          = link_to article do
+            h1= article.title
+        = truncate(article.content, length: 500)
+        = link_to article do
+          | (read more)
+    - if user_signed_in?
+      .media-body
+        = link_to 'Edit', edit_article_path(article)
+        = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
 

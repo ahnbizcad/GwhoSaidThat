@@ -1,7 +1,8 @@
 class AppsController < ApplicationController
   before_action :set_app, only: [:show, :edit, :update, :destroy]
 
-  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authorize_admin, except: [:show, :index]
 
   # GET /apps
   # GET /apps.json

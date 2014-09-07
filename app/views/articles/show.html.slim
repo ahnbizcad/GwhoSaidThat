@@ -1,7 +1,8 @@
 h1 
+  = @article.title
 
-= @article.title
-= @article.content
+article
+  = @article.content
 
 -if user_signed_in?
   = link_to 'Edit', edit_article_path(@article)

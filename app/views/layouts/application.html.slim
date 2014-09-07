@@ -6,19 +6,24 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     /= filepicker_js_include_tag
-  body 
-    - if user_signed_in?
-      == render 'layouts/session'
+  body
 
-    == render 'layouts/header'
+    /== render 'layouts/header'
     == render 'layouts/navbar'
     
     - if notice
       .notice.notice-dismissable= notice
     - if alert
-      .alert.alert-dismissable[ role="alert" ]= alert
+      .alert.alert-dismissable[ role="alert" data-dismiss="alert"]= alert
 
-    #main.container
+    main.container
       == yield    
     == render 'layouts/sidebar'
     == render 'layouts/footer'
+
+    - if Rails.env.development?
+      = params.inspect
+      = debug(params) 
+
+    - if user_signed_in?
+      == render 'layouts/session'
