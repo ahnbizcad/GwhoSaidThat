@@ -1,26 +1,47 @@
 body {
-  padding: 52px;
+  padding-top: 103px;
 }
 
 #navbar {
-  #clause {
-    text-align: center;
+  background-color: #BBB;
 
-     li {
+  ul {
+    white-space: nowrap;
+
+    li {
       font-size: 1.6em;
       float: none;
       display: inline-block;
       *display: inline;
       *zoom:1;
-      vertical-align: top;
     }
   }
-  
+
   #social-icons {
-    img {
-      width: 32px;
-      height: 32px;
+    text-align: center;
+
+    li {
+      z-index: 1;
+
+      /* li height should inherit text height.*/
+      /* image height shoudl fit to 100% of li height.*/
+      img {
+        width: 32px;
+        height: 32px;
+      }
     }
+  }
+
+  #clause {
+    text-align: center;
+    ul.dropdown-menu {
+      li{
+        float: none;
+        display: block;
+        *zoom:1;
+      }
+    }
+
   }
 
 }

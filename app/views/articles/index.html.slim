@@ -1,24 +1,24 @@
-h1 Listing articles
+h1 Blog Posts
 
 -if user_signed_in?
   = link_to 'New Article', new_article_path
 
 br
 
-- @articles.each do |article|
-  ul.media-list
-    li.media
+ul.media-list
+- @articles.each do |article|  
+  li.media
+    = link_to article, class: "pull-left" do
+      =image_tag article.image_url, class: "media-objec"
+    .media-body
       = link_to article do
-        =image_tag article.image_url, class: "media-object pull-left"
-      .media-body
-        .media-heading
-          = link_to article do
-            h1= article.title
-        = truncate(article.content, length: 500)
-        = link_to article do
-          | (read more)
-    - if user_signed_in?
-      .media-body
-        = link_to 'Edit', edit_article_path(article)
-        = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
+        h1.media-heading= article.title
+        h6= article.created_at.to_date
+      = truncate(article.content, length: 500)
+      = link_to article do
+        |  (read more)
+  - if user_signed_in?
+    .media-body
+      = link_to 'Edit', edit_article_path(article)
+      = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
 

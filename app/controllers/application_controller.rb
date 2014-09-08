@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_action :app_count
   before_action :article_count
+  #before_action :verbs
+  before_action :current_verb
   
   private
     def authorize_admin
@@ -17,6 +19,24 @@ class ApplicationController < ActionController::Base
 
     def article_count
       @article_count = Article.count
+    end
+
+    #def verbs
+    #  @verbs = %w(MADE, TAUGHT, THOUGHT, PLAYS) # Hash matching key to verb?
+    #end
+
+    def current_verb
+
+      case params[:controller]
+      when "apps"
+        @current_verb = "MADE "
+      when "articles"
+        @current_verb = "TAUGHT "
+      when "articles"
+        @current_verb = "WONDERED " # Change later to specify articles with a certain tag.
+      else
+        @current_verb = "IS "
+      end
     end
 
 end

@@ -7,7 +7,7 @@ gem 'pg', '0.17.1'
 gem 'slim-rails'
 
 gem 'sass-rails', '~> 4.0.3'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -31,6 +31,7 @@ gem 'devise'
 gem 'simple_form'
 
 #gem 'filepicker-rails'
+#gem 'carrierwave-rails'
 
 gem 'ckeditor'#
 

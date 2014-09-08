@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "articles#index"
+  root "apps#index"
 
   get "about",    to: "pages#about"
   get "contact",  to: "pages#contact"
