@@ -10,9 +10,8 @@
 #
 
 class App < ActiveRecord::Base
-  def self.class_method
-    "hi"
-  end
+
+  scope :by_newest, -> { order("created_at DESC") }
 
   def neat_url
     URI(self.url).host
