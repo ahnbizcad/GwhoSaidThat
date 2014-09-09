@@ -11,4 +11,12 @@
 #
 
 class Article < ActiveRecord::Base
+  before_validation :titleize_title
+
+  scope :by_newest, -> { order("created_at DESC") }
+
+  def titleize_title
+    self.title = self.title.titleize
+  end
+
 end

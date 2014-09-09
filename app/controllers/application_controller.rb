@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
       when "apps"
         @current_verb = "MADE "
       when "articles"
-        @current_verb = "TAUGHT "
+        @current_verb = "LEARNED "
       when "articles"
         @current_verb = "WONDERED " # Change later to specify articles with a certain tag.
       else
