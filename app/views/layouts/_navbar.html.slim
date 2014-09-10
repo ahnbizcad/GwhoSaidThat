@@ -26,11 +26,7 @@ nav#navbar.navbar.navbar-default.navbar-fixed-top[ role="navigation" ]
               li= link_to articles_path do
                 = "LEARNED "
                 span.label.label-primary= @article_count
-                / scoped, tagged subset
-              li= link_to articles_path do
-                = "WONDERED "
-                span.label.label-primary= @article_count
-                / scoped, tagged subset
+                / either tagged, or view templated with another controller
               
           li.disabled= link_to "" do
             | that?"

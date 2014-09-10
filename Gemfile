@@ -32,6 +32,7 @@ gem 'simple_form'
 
 #gem 'filepicker-rails'
 #gem 'carrierwave-rails'
+#gem 'mini_magick'
 
 gem 'ckeditor'#
 

@@ -9,7 +9,8 @@ ul.media-list
 - @articles.each do |article|  
   li.media
     = link_to article, class: "pull-left" do
-      =image_tag article.image_url, class: "media-objec"
+      - if article.image_url
+        =image_tag article.image_url, class: "media-object"
     .media-body
       = link_to article do
         h1.media-heading= article.title

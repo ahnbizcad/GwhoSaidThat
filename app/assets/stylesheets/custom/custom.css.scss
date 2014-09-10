@@ -19,7 +19,7 @@ body {
     white-space: nowrap;
 
     li {
-      font-size: 2em;
+      font-size: 1.6em;
       float: none;
       display: inline-block;
       *display: inline;
@@ -36,8 +36,8 @@ body {
       /* li height should inherit text height.*/
       /* image height shoudl fit to 100% of li height.*/
       img {
-        width: 42px;
-        height: 42px;
+        max-width: 32px;
+        max-height: 32px;
       }
     }
   }
