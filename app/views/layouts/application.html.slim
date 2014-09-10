@@ -11,18 +11,18 @@ html
 
     /== render 'layouts/header'
     == render 'layouts/navbar'
-    
-    - if notice
-      .notice.notice-dismissable= notice
-    - if alert
-      .alert.alert-dismissable[ role="alert" data-dismiss="alert"]= alert
 
     main
       .container-fluid
+        /- if notice
+        /  .notice.notice-dismissable= notice
+        - if alert
+          .alert.alert-dismissable[ role="alert" data-dismiss="alert"]= alert
         == yield
+
     == render 'layouts/sidebar'
     == render 'layouts/footer'
-
+    
     - if Rails.env.development?
       = params.inspect
       = debug(params) 

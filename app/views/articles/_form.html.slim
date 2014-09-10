@@ -8,6 +8,9 @@
 
   /= f.filepicker_field :image_url, button_text: "Pick image"
   = f.input :title
-  = f.input :content
-  .actions 
-    = f.submit 'Save', class: "btn-primary"
+  = f.cktext_area :content
+
+  br
+  
+  .form-actions 
+    = f.button :submit, class: "btn-primary"

@@ -1,4 +1,4 @@
-h1 Blog Posts
+h1 Blog
 
 -if user_signed_in?
   = link_to 'New Article', new_article_path
@@ -15,11 +15,11 @@ ul.media-list
       = link_to article do
         h1.media-heading= article.title
         h6= article.created_at.to_date
-      = truncate(article.content, length: 500)
+      = truncate(article.content, length: 500, escape: false)
       = link_to article do
-        |  (read more)
-  - if user_signed_in?
-    .media-body
-      = link_to 'Edit', edit_article_path(article)
-      = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
+        |  (read more) 
+      - if user_signed_in?
+        = link_to 'Edit', edit_article_path(article)
+        '  |
+        = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
 

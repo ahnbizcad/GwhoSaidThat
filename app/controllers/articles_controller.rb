@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   before_action :authorize_admin, except: [:show, :index]
 
   #inject_template_inheritance_path_prefixes "master_controller"
-  
+
   # GET /articles
   # GET /articles.json
   def index
