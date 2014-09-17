@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
     end
 
     def article_count
-      @article_count = Article.count
+      @article_count = Article.published.count
     end
 
     def verbs
