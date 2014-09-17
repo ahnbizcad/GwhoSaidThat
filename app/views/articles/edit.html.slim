@@ -2,8 +2,9 @@ h1 Editing article
 
 == render 'form'
 
--if user_signed_in?
-  = link_to 'Show', @article
-  '  |
-  = link_to 'Back', articles_path
+- if user_signed_in?
+  - if user_signed_in?
+    = link_to 'Show', @article
+    '  |
+    = link_to 'Back', articles_path
 

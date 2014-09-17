@@ -8,11 +8,13 @@
 #  image_url  :string(255)
 #  title      :string(255)
 #  content    :text
+#  published  :boolean          default(FALSE)
 #
 
 class Article < ActiveRecord::Base
   before_validation :titleize_title
 
+  scope :published, -> { where("published = true") }
   scope :by_newest, -> { order("created_at DESC") }
 
   def titleize_title

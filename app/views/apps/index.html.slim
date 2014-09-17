@@ -3,7 +3,8 @@
     h1 Check out some of my apps
 
     - if user_signed_in?
-      = link_to 'New App', new_app_path
+      -if current_user.admin?
+        = link_to 'New App', new_app_path
 
 br
 
@@ -18,7 +19,8 @@ br
         .caption
           = app.description
         - if user_signed_in?
-          = link_to 'Edit', edit_app_path(app)
-          '  |
-          = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
+          - if current_user.admin?
+            = link_to 'Edit', edit_app_path(app)
+            '  |
+            = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
 

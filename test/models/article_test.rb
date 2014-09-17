@@ -8,6 +8,7 @@
 #  image_url  :string(255)
 #  title      :string(255)
 #  content    :text
+#  published  :boolean          default(FALSE)
 #
 
 require 'test_helper'

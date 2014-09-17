@@ -9,7 +9,7 @@
   /= f.filepicker_field :image_url, button_text: "Pick image"
   = f.input :title
   = f.cktext_area :content
-
+  = f.input :published, as: :boolean, label: false, inline_label: true
   br
   
   .form-actions 

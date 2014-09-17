@@ -4,14 +4,17 @@ ruby '2.0.0'
 gem 'rails', '4.1.1'
 gem 'pg', '0.17.1'
 
+#gem 'html2haml' # Used for converting existing files
+#gem 'haml2slim' # Used for converting existing files
 gem 'slim-rails'
 
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
+gem 'jquery-rails'
+#gem 'angular-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks', '~>2.0.2'
 
@@ -28,7 +31,7 @@ gem 'figaro', '~> 0.7.0'
 
 gem 'devise'
 
-gem 'simple_form'
+gem 'simple_form', '~> 3.1.0.rc1'
 
 #gem 'filepicker-rails'
 #gem 'carrierwave-rails'

@@ -4,7 +4,8 @@ h1
 article
   = @article.content.html_safe
 
--if user_signed_in?
-  = link_to 'Edit', edit_article_path(@article)
-  '  |
-  = link_to 'Back', articles_path
+- if user_signed_in?
+  - if current_user.admin?
+    = link_to 'Edit', edit_article_path(@article)
+    '  |
+    = link_to 'Back', articles_path
