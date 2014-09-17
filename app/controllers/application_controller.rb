@@ -8,8 +8,9 @@ class ApplicationController < ActionController::Base
             articles: "LEARNED"
           }.stringify_keys#.freeze #see http://m.onkey.org/ruby-i-don-t-like-3-object-freeze
 
-  before_action :app_count
-  before_action :article_count
+  before_action :apps_count
+  before_action :published_articles_count
+  before_action :unpublished_articles_count
 
   before_action :set_current_verb
   
@@ -39,14 +40,6 @@ class ApplicationController < ActionController::Base
       redirect_to root_path, alert: 'Access Denied' unless current_user.admin?
     end
 
-    def app_count
-      @app_count = App.count
-    end
-
-    def article_count
-      @article_count = Article.published.count
-    end
-
     def verbs
       @verbs = VERBS
     end
@@ -54,5 +47,19 @@ class ApplicationController < ActionController::Base
     def set_current_verb
       @current_verb = VERBS.fetch(controller_name) { "IS" }
     end
+
+    def apps_count
+      @apps_count = App.count
+    end
+
+    def published_articles_count
+      @published_articles_count = Article.published.count
+    end
+
+    def unpublished_articles_count
+      @unpublished_articles_count = Article.unpublished.count
+    end
+
+
 
 end

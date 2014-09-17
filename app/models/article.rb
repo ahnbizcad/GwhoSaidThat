@@ -14,6 +14,7 @@
 class Article < ActiveRecord::Base
   before_validation :titleize_title
 
+  scope :unpublished, -> { where("published = False") }
   scope :published, -> { where("published = True") }
   scope :by_newest, -> { order("created_at DESC") }
 
