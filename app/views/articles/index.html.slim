@@ -19,7 +19,8 @@
               h1.media-heading= article.title
             = truncate(article.content, length: 1000, escape: false)
             = link_to article do
-              |  (read more) 
+              |  (read more)
+            '
             - if user_signed_in?
               = link_to 'Edit', edit_article_path(article)
               '  |
