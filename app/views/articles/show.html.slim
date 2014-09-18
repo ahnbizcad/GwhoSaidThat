@@ -1,8 +1,11 @@
 h1 
   = @article.title
-
+  
 article
   = @article.content.html_safe
+  
+  = @article.created_at.to_date
+  '
 
 - if user_signed_in?
   - if current_user.admin?
