@@ -9,6 +9,7 @@ h1
     
 article
   = @article.content.html_safe
+  /= markdown(@article.content)
 
   = @article.created_at.to_date
   '

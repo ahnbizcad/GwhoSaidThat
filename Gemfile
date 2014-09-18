@@ -37,11 +37,15 @@ gem 'simple_form', '~> 3.1.0.rc1'
 #gem 'carrierwave-rails'
 #gem 'mini_magick'
 
-gem 'ckeditor'#
+gem 'ckeditor'
+
+gem 'redcarpet'
+gem 'pygments.rb' #sytnax highlighting library with replacement for albino ruby syntax 
 
 #gem 'kaminari'
 #gem 'compass'
-#gem 'nokogiri'
+gem 'nokogiri'  #html, xml, sax, reader and css parser
+
 
 group :development do 
   gem 'better_errors'
