@@ -12,17 +12,18 @@
  */
 
 @import "custom/reset";
-
 /*@import "bootstrap-sprockets";*/
 @import "bootstrap";
+
 /* Blanket Styles */
 @import "custom/variables";
 @import "custom/custom";
 @import "custom/responsive";
+
 /* Plugin Styles */
 
+
 /*
- *
  *= require_tree .
  *= require_self
  */

@@ -4,5 +4,8 @@
   .form-inputs
     = f.input :url, label: "URL (with protocol)"
 
+  .form-inputs
+    = f.input :published, as: :boolean, label: false, inline_label: true
+
   .form-actions
     = f.button :submit, class: "btn-primary"

@@ -1,10 +1,9 @@
 h1 Editing article
 
 == render 'form'
-<br>
-- if user_signed_in?
-  - if user_signed_in?
-    = link_to 'Show', @article
-    '  |
-    = link_to 'Back', articles_path
+
+- if currently_admin?
+  = link_to 'Show', @article
+  '  |
+  = link_to 'Back', articles_path
 

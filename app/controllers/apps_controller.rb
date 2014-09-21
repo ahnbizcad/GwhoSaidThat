@@ -1,8 +1,8 @@
 class AppsController < ApplicationController
   before_action :set_app, only: [:show, :edit, :update, :destroy]
 
-  before_action :authenticate_user!, except: [:index]
-  before_action :authorize_admin, except: [:index]
+  before_action :authenticate_user!,  except: [:index]
+  before_action :authorize_admin,     except: [:index]
 
   # GET /apps
   # GET /apps.json
@@ -31,7 +31,7 @@ class AppsController < ApplicationController
 
     respond_to do |format|
       if @app.save
-        format.html { redirect_to @app, notice: 'App was successfully created.' }
+        format.html { redirect_to apps_path, notice: 'App was successfully created.' }
         format.json { render :show, status: :created, location: @app }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class AppsController < ApplicationController
   def update
     respond_to do |format|
       if @app.update(app_params)
-        format.html { redirect_to @app, notice: 'App was successfully updated.' }
+        format.html { redirect_to apps_path, notice: 'App was successfully updated.' }
         format.json { render :show, status: :ok, location: @app }
       else
         format.html { render :edit }
@@ -72,6 +72,6 @@ class AppsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def app_params
-      params.require(:app).permit(:url)
+      params.require(:app).permit(:url, :published)
     end
 end

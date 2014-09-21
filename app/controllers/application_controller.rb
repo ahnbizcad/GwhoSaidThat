@@ -5,15 +5,21 @@ class ApplicationController < ActionController::Base
 
   VERBS = { pages: "IS",
             apps: "MADE",
-            articles: "LEARNED"
+            articles: "LEARNED",
+            books: "READ",
           }.stringify_keys#.freeze #see http://m.onkey.org/ruby-i-don-t-like-3-object-freeze
 
-  before_action :apps_count
+  before_action :verbs
+  before_action :set_current_verb
+
+  before_action :published_apps_count
+  before_action :unpublished_apps_count
+  
   before_action :published_articles_count
   before_action :unpublished_articles_count
-
-  before_action :set_current_verb
   
+  before_action :published_books_count
+  before_action :unpublished_books_count
 
   ## Inject the passed in path_prefixes to the the partials lookup path just before 'application' so that templates can "inherit" partially from other portals/paths as well.
   ## See: stackoverflow.com/questions/…
@@ -34,7 +40,7 @@ class ApplicationController < ActionController::Base
   #end
   #end
 
-  private
+  protected
 
     def authorize_admin
       redirect_to root_path, alert: 'Access Denied' unless current_user.admin?
@@ -48,8 +54,25 @@ class ApplicationController < ActionController::Base
       @current_verb = VERBS.fetch(controller_name) { "IS" }
     end
 
-    def apps_count
-      @apps_count = App.count
+#    class << self
+#      VERBS.each do |models, verb|
+#
+#        define_method "unpublished_#{models}_count" do
+#          instance_variable_set("@unpublished_#{@models}_count", models.singularize.constantize.unpublished.count)
+#        end
+#
+#        define_method "published_#{models}_count" do
+#          instance_variable_set("@published_#{@models}_count", models.singularize.constantize.published.count)
+#        end
+#
+#      end
+#    end
+    def published_apps_count
+      @published_apps_count = App.published.count
+    end
+
+    def unpublished_apps_count
+      @unpublished_apps_count = App.unpublished.count
     end
 
     def published_articles_count
@@ -58,6 +81,14 @@ class ApplicationController < ActionController::Base
 
     def unpublished_articles_count
       @unpublished_articles_count = Article.unpublished.count
+    end
+
+    def published_books_count
+      @published_books_count = Book.published.count
+    end
+
+    def unpublished_books_count
+      @unpublished_books_count = Book.unpublished.count
     end
 
 

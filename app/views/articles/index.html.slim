@@ -2,10 +2,8 @@
   .col-xs-12
     h1 Blog
 
-    -if user_signed_in?
+    - if currently_admin?
       = link_to 'New Article', new_article_path
-
-    br
 
     ul#articles-list.media-list
     - @articles.each do |article|
@@ -21,7 +19,7 @@
             = link_to article do
               |  (read more)
             '
-            - if user_signed_in?
+            - if currently_admin?
               = link_to 'Edit', edit_article_path(article)
               '  |
               = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete

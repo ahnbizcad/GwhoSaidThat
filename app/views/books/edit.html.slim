@@ -1,0 +1,9 @@
+h1 Editing book
+
+== render 'form'
+
+- if currently_admin?
+  = link_to 'Show', @book
+  '|
+  = link_to 'Back', books_path
+

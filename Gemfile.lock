@@ -27,6 +27,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts_as_taggable_on (3.0.0.rc2)
+      rails (>= 3, < 5)
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -97,7 +99,6 @@ GEM
     orm_adapter (0.5.0)
     pg (0.17.1-x86-mingw32)
     polyglot (0.3.5)
-    posix-spawn (0.3.9)
     pry (0.10.1-x86-mingw32)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -108,9 +109,6 @@ GEM
       pry (~> 0.10)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
-    pygments.rb (0.6.0)
-      posix-spawn (~> 0.3.6)
-      yajl-ruby (~> 1.1.0)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -139,7 +137,6 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
-    redcarpet (3.1.2)
     ruby_parser (3.1.3)
       sexp_processor (~> 4.1)
     sass (3.2.19)
@@ -193,12 +190,12 @@ GEM
       rack (>= 1.0)
     win32console (1.3.2)
     win32console (1.3.2-x86-mingw32)
-    yajl-ruby (1.1.0-x86-mingw32)
 
 PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  acts_as_taggable_on
   annotate
   autoprefixer-rails
   awesome_print
@@ -216,11 +213,9 @@ DEPENDENCIES
   pg (= 0.17.1)
   pry-byebug
   pry-rails
-  pygments.rb
   quiet_assets
   rails (= 4.1.1)
   rails_12factor
-  redcarpet
   ruby_parser
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

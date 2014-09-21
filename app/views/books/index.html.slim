@@ -1,0 +1,23 @@
+h1 Listing books
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @books.each do |book|
+      tr
+        td = link_to book.title, book.url
+        td = book.author
+        td = book.review
+        - if currently_admin?
+          td = link_to 'Edit', edit_book_path(book)
+          td = link_to 'Destroy', book, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+- if currently_admin?
+  = link_to 'New Book', new_book_path

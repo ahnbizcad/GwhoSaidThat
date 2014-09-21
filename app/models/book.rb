@@ -1,26 +1,21 @@
 # == Schema Information
 #
-# Table name: articles
+# Table name: books
 #
 #  id         :integer          not null, primary key
+#  title      :string(255)
+#  author     :string(255)
+#  url        :string(255)
+#  review     :text
 #  created_at :datetime
 #  updated_at :datetime
-#  image_url  :string(255)
-#  title      :string(255)
-#  content    :text
 #  published  :boolean          default(FALSE)
 #
 
-class Article < ActiveRecord::Base
-  before_validation :titleize_title
-
-  default_scope { order("created_at DESC") }  
+class Book < ActiveRecord::Base
+  default_scope { order("created_at DESC") }
   scope :by_newest, -> { order("created_at DESC") }
   scope :unpublished, -> { where("published = False") }
   scope :published, -> { where("published = True") } 
-
-  def titleize_title
-    self.title = self.title.titleize
-  end
 
 end

@@ -27,6 +27,9 @@ group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 
+#gem 'compass'
+gem 'nokogiri'  #html, xml, sax, reader and css parser
+
 gem 'figaro', '~> 0.7.0'
 
 gem 'devise'
@@ -39,13 +42,12 @@ gem 'simple_form', '~> 3.1.0.rc1'
 
 gem 'ckeditor'
 
-gem 'redcarpet'
-gem 'pygments.rb' #sytnax highlighting library with replacement for albino ruby syntax 
+#gem 'redcarpet'
+#gem 'pygments.rb' #sytnax highlighting library with replacement for albino ruby syntax 
 
 #gem 'kaminari'
-#gem 'compass'
-gem 'nokogiri'  #html, xml, sax, reader and css parser
 
+gem 'acts_as_taggable_on'
 
 group :development do 
   gem 'better_errors'

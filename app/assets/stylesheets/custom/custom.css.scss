@@ -48,16 +48,31 @@ body {
     li.dropdown {
       > a {
         color: $verb-color;
+
       }
     }
 
     ul#verb.dropdown-menu {
-    
+      min-width: 190px;
+
       li {
         display: block;
 
+        a {
+          .verb {
+            float: left;
+          }
+          .label {
+            float: right;
+          }
+        }
+
         a:hover {
           color: $verb-color;
+
+          .label-default:hover {
+            background-color: #000000;
+          }
         }
 
       }

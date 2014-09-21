@@ -14,10 +14,13 @@ html
 
     main
       .container-fluid
-        /- if notice
-        /  .notice.notice-dismissable= notice
+        - if notice
+          .notice.notice-dismissable
+            = notice
         - if alert
-          .alert.alert-dismissable[ role="alert" data-dismiss="alert"]= alert
+          .alert.alert-dismissable[ role="alert" data-dismiss="alert"]
+            = alert
+            
         == yield
 
     == render 'layouts/sidebar'

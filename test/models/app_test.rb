@@ -7,6 +7,7 @@
 #  updated_at  :datetime
 #  url         :string(255)
 #  description :text
+#  published   :boolean          default(FALSE)
 #
 
 require 'test_helper'
