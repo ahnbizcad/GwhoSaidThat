@@ -28,6 +28,8 @@ module Gwhosaidthat
     #slim custom attribut shortcuts
     #Slim::Engine.set_default_options :shortcut => {'@' => {:attr => 'role'}}#, '#' => {:attr => 'id'}, '.' => {:attr => 'class'}}
 
+#
+
 
   end
 end

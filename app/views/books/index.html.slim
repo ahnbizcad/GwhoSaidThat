@@ -21,3 +21,84 @@ br
 
 - if currently_admin?
   = link_to 'New Book', new_book_path
+
+
+#bookshelf_slider
+
+  .panel_title
+    .selected_title_box
+      .selected_title
+        | Selected Title
+    .menu_top
+      ul
+        li.show_hide_titles.menutop_btn
+          = link_to "#" do
+            | Titles
+        li.show_hide_icons.menutop_btn
+          = link_to "#" do 
+            | Icons
+
+
+  .slide_animate
+    #products_box_1.products_box
+
+      = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2.png" } do
+        = image_tag "github.png", alt: "", width: "76", height: "108"
+
+      = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2_large.png" } do
+        = image_tag "twitter.png", alt: "", width: "71", height: "108"
+
+      = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2.png" } do
+        = image_tag "github.png", alt: "", width: "76", height: "108"
+
+      = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2_large.png" } do
+        = image_tag "twitter.png", alt: "", width: "71", height: "108"
+
+      = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2.png" } do
+        = image_tag "github.png", alt: "", width: "76", height: "108"
+
+      = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2_large.png" } do
+        = image_tag "twitter.png", alt: "", width: "71", height: "108"
+
+      = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2.png" } do
+        = image_tag "github.png", alt: "", width: "76", height: "108"
+
+      = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2_large.png" } do
+        = image_tag "twitter.png", alt: "", width: "71", height: "108"
+
+  .slide_animate
+    #products_box_2.products_box
+
+      = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2.png" } do
+        = image_tag "github.png", alt: "", width: "76", height: "108"
+
+      = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2_large.png" } do
+        = image_tag "twitter.png", alt: "", width: "71", height: "108"
+
+
+  .slide_animate
+    #products_box_3.products_box
+
+      = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2.png" } do
+        = image_tag "github.png", alt: "", width: "76", height: "108"
+
+      = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2_large.png" } do
+        = image_tag "twitter.png", alt: "", width: "71", height: "108"
+
+  .panel_bar
+    .buttons-container
+      #arrow_box
+        #arrow_menu
+      .button_items
+        #btn1.button_bar
+          = link_to "#" do
+            | Programming
+        #btn2.button_bar
+          = link_to "#" do
+            | Business
+        #btn3.button_bar
+          = link_to "#" do
+            | Science
+        #btn4.button_bar
+          = link_to "#" do
+            | Philosophy

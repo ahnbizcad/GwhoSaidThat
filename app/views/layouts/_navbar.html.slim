@@ -31,8 +31,9 @@ nav#navbar.navbar.navbar-default.navbar-fixed-top[ role="navigation" ]
                     '
                   .label.label-primary
                     = @published_apps_count
-                  .label.label-default[ data-toggle="tooltip" data-placement="right" title="Constructing" ]
-                    = @unpublished_apps_count
+                  - if currently_admin?
+                    .label.label-default[ data-toggle="tooltip" data-placement="right" title="Constructing" ]
+                      = @unpublished_apps_count
                   .clear-both
               li
                 = link_to articles_path do
@@ -41,8 +42,9 @@ nav#navbar.navbar.navbar-default.navbar-fixed-top[ role="navigation" ]
                     '
                   .label.label-primary
                     = @published_articles_count
-                  .label.label-default[ data-toggle="tooltip" data-placement="right" title="In the works" ]
-                    = @unpublished_articles_count
+                  - if currently_admin?
+                    .label.label-default[ data-toggle="tooltip" data-placement="right" title="In the works" ]
+                      = @unpublished_articles_count
                   .clear-both
               li
                 = link_to books_path do
@@ -51,8 +53,9 @@ nav#navbar.navbar.navbar-default.navbar-fixed-top[ role="navigation" ]
                     '
                   .label.label-primary
                     = @published_books_count
-                  .label.label-default[ data-toggle="tooltip" data-placement="right" title="Digesting knowledge" ]
-                    = @unpublished_books_count
+                  - if currently_admin?
+                    .label.label-default[ data-toggle="tooltip" data-placement="right" title="Digesting knowledge" ]
+                      = @unpublished_books_count
                   .clear-both
 
           li.disabled= link_to "" do

@@ -14,8 +14,14 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //
+//PLUGINS
 //= require bootstrap
 //= require ckeditor/init
+//
+//multipurpose bookshelf slider
+//= require js/jquery.bookshelfslider.min
+//= require js/jquery.easing.1.3
+//= require custom/bookshelf_slider
 //
 //= require_tree .
 //
