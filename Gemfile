@@ -41,6 +41,8 @@ gem 'simple_form', '~> 3.1.0.rc1'
 #gem 'mini_magick'
 
 gem 'ckeditor'
+gem 'coderay'
+#gem "RedCloth"
 
 #gem 'redcarpet'
 #gem 'pygments.rb' #sytnax highlighting library with replacement for albino ruby syntax 

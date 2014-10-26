@@ -15,7 +15,8 @@
           .media-body
             = link_to article do
               h1.media-heading= article.title
-            = truncate(article.content, length: 1000, escape: false)
+            - truncated_content = truncate(article.content, length: 1000, escape: false)
+            == CodeRay.scan(truncated_content, :ruby).div(:line_numbers => :table)
             = link_to article do
               |  (read more)
             '
@@ -24,3 +25,4 @@
               '  |
               = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
 
+      

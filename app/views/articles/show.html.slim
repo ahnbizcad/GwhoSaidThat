@@ -7,7 +7,9 @@ h1= @article.title
     = link_to 'Back', articles_path
 
 article
-  = @article.content.html_safe
+  /= @article.content.html_safe
+  == coderay(@article.content)
+  /== CodeRay.scan(@article.content, :ruby).div(:line_numbers => :table)
   /= markdown(@article.content)
 
   = @article.created_at.to_date
