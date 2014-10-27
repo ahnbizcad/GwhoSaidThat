@@ -1,3 +1,20 @@
+textarea {
+  max-width: 100%;
+  resize: vertical;
+
+  min-height: 50px;
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  padding: 5px;
+
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/*--------------------------
+
+--------------------------*/
+
 /* bootstrap adjust */
 .nav-tabs {
   border-bottom: 0px solid #FFFFFF;

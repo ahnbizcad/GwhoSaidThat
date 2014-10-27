@@ -11,18 +11,20 @@
         li.media[ class=("greyed" if !article.published? && currently_admin?)  ]
           = link_to article, class: "pull-left" do
             - if article.image_url
-              =image_tag article.image_url, class: "media-object"
+              = image_tag article.image_url, class: "media-object"
           .media-body
             = link_to article do
-              h1.media-heading= article.title
-            - truncated_content = truncate(article.content, length: 1000, escape: false)
-            == CodeRay.scan(truncated_content, :ruby).div(:line_numbers => :table)
-            = link_to article do
-              |  (read more)
-            '
+              h1.media-heading = article.title
+            h6.media-heading = article.created_at.to_date
             - if currently_admin?
               = link_to 'Edit', edit_article_path(article)
               '  |
               = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
+            - truncated_content = truncate(article.content, length: 1000, escape: false)
+            == Asciidoctor.render(truncated_content, safe: 'safe')
+            = link_to article do
+              |  (read more)
+            '
+
 
       

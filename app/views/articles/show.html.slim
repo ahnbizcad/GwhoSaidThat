@@ -1,17 +1,14 @@
-h1= @article.title
+.row
+  .col-xs-12
+    article
+      h1= @article.title
+      h6.media-heading = @article.created_at.to_date
+      - if user_signed_in?
+        - if current_user.admin?
+          = link_to 'Edit', edit_article_path(@article)
+          '  |
+          = link_to 'Back', articles_path
 
-- if user_signed_in?
-  - if current_user.admin?
-    = link_to 'Edit', edit_article_path(@article)
-    '  |
-    = link_to 'Back', articles_path
 
-article
-  /= @article.content.html_safe
-  == coderay(@article.content)
-  /== CodeRay.scan(@article.content, :ruby).div(:line_numbers => :table)
-  /= markdown(@article.content)
 
-  = @article.created_at.to_date
-  '
-
+      == Asciidoctor.convert(@article.content, safe: 'safe')
