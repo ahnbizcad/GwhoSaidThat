@@ -1,33 +1,18 @@
-.CodeRay pre {
-  margin: 0px;
-}
-div.CodeRay { }
-span.CodeRay { white-space: pre; border: 0px; padding: 2px }
-table.CodeRay { border-collapse: collapse; width: 100%; padding: 2px }
-table.CodeRay td {
-  padding: 1em 0.5em;
-  vertical-align: top;
-}
-.CodeRay .line-numbers, .CodeRay .no {
-  background-color: #ECECEC;
-  color: #AAA;
-  text-align: right;
-}
-.CodeRay .line-numbers a {
-  color: #AAA;
-}
-
-ol.CodeRay { 
-  font-size: 10pt 
-  li { white-space: pre }
-}
+$code-color: #DDD;
+$code-padding-v: 0.5em;
+$code-padding-h: 0.5em;
+$code-line-height: 1.25em;
+$pre-margin: 1em;
 
 .CodeRay {
-  background-color: #444;
+  margin: 0;
+  padding: 0em;
   border: 1px solid #CCC;
+  padding: $code-padding-v $code-padding-h $code-padding-v $code-padding-h;
+  line-height: $code-line-height;
+  color: $code-color;
+  background-color: #282828;
   font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
-  color: #EEE;
-  padding: 1em 0px 1em 1em;
 
   .line-numbers tt { font-weight: bold }
   .line-numbers .highlighted { color: red }
@@ -85,7 +70,7 @@ ol.CodeRay {
   .pseudo-class { color:#00C; font-weight:bold }
   .predefined-type { color:#074; font-weight:bold }
   .reserved, .keyword { color:#D11; font-weight:bold }
-  .key { color: #A7C; }
+  .key { color: #96E; }
   .key .delimiter { color: #606; }
   .key .char { color: #80f; }
   .value { color: #088; }
@@ -109,7 +94,7 @@ ol.CodeRay {
   .tag { color:#070 }
   .tag-special { color:#D70; font-weight:bold }
   .type { color:#339; font-weight:bold }
-  .variable { color:#036 }
+  .variable { color:#7CF }
   .insert { background: #afa; }
   .delete { background: #faa; }
   .change { color: #aaf; background: #007; }
@@ -118,4 +103,77 @@ ol.CodeRay {
   .delete .delete { color: #800; font-weight:bold }
   .change .change { color: #66f; }
   .head .head { color: #f4f; }
+}
+.CodeRay .line-numbers, .CodeRay .no {
+  background-color: floralwhite;
+  color: #AAA;
+  text-align: right;
+}
+.CodeRay .line-numbers a {
+  color: #AAA;
+}
+
+
+div.CodeRay { }
+span.CodeRay { white-space: pre; border: 0px; padding: 2px }
+ol.CodeRay { 
+  font-size: 10pt 
+  li { white-space: pre }
+}
+pre.Coderay {
+  display: block;
+  padding: 0.5em;
+  margin: 0 0 10px;
+  font-size: 14px;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #FFF;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 0px solid #cccccc;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+table.CodeRay { 
+  border-collapse: collapse;
+  width: #{100%} + #{$code-padding-h};
+  padding: 0px;
+  margin: (-$code-padding-v) (-$code-padding-h) (-$code-padding-v) (-$code-padding-h);
+
+  pre {
+
+  }
+  td {
+    padding: 0em 0em;
+    vertical-align: top;
+  }  
+  td {
+    > pre {
+      padding: $code-padding-v $code-padding-h;
+    }
+  }
+  td.line-numbers {
+    > pre {
+
+    }
+  }
+  td.code {
+    > pre {
+      margin: 0;
+      overflow: auto;
+      color: $code-color;
+      line-height: $code-line-height;
+    }
+  }
+}
+
+div.listingblock {
+  margin: 0 $pre-margin 1em;
+
+  .title {
+    background-color: #444;
+    padding: 0.25em 1em;
+    font-weight: bold;
+    color: whitesmoke;
+  }
 }

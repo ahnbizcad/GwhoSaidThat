@@ -29,7 +29,7 @@ textarea {
 
 body {
   font-size: 16px;
-  background-color: #E0F0FA;
+  background-color: $lightblue;
 }
 
 #navbar {
@@ -104,13 +104,14 @@ body {
 
 main {
   min-height: 900px;
+  padding: 1em 0;
 }
 
 
 li.greyed {
-  background-color: #AAAAAA;
+  outline: 3px solid yellow;
+  background-color: #888;
 }
-
 
 .app {
   iframe {
@@ -119,14 +120,19 @@ li.greyed {
   }
 }
 
+.article {
+    padding: 1em;
+    
+    background-color: whitesmoke;
+    box-shadow: 3px 3px 8px #444;
+  }
+
 #articles {
   list-style: none;
-  #article {
 
-  }
 }
 
 footer {
-  background-color: #003494;
+  background-color: $lightblue;
   color: #EEEEEE;
 }

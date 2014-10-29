@@ -13,13 +13,13 @@ class ApplicationController < ActionController::Base
   before_action :set_current_verb
 
   before_action :published_apps_count
-  before_action :unpublished_apps_count
+  before_action :unpublished_apps_count, if: :user_signed_in?
   
   before_action :published_articles_count
-  before_action :unpublished_articles_count
+  before_action :unpublished_articles_count, if: :user_signed_in?
   
   before_action :published_books_count
-  before_action :unpublished_books_count
+  before_action :unpublished_books_count, if: :user_signed_in?
 
   ## Inject the passed in path_prefixes to the the partials lookup path just before 'application' so that templates can "inherit" partially from other portals/paths as well.
   ## See: stackoverflow.com/questions/…

@@ -17,11 +17,13 @@
 
 /* Blanket Styles */
 @import "custom/variables";
+@import "custom/bootstrap_override";
 @import "custom/custom";
 @import "custom/responsive";
-@import "coderay_ruby_dark";
 
 /* Plugin Styles */
+@import "coderay_ruby_dark";
+
 /*multipurpose bookshelf slider*/
 @import "css/bookshelf_slider";
 @import "css/skin02";

@@ -16,7 +16,7 @@
 //
 //PLUGINS
 //= require bootstrap
-//= require ckeditor/init
+//     require ckeditor/init
 //
 //multipurpose bookshelf slider
 //= require js/jquery.bookshelfslider.min
