@@ -136,7 +136,6 @@ pre.Coderay {
 }
 table.CodeRay { 
   border-collapse: collapse;
-  width: calc(100% + #{$code-padding-h});
   padding: 0px;
   margin: (-$code-padding-v) (-$code-padding-h) (-$code-padding-v) (-$code-padding-h);
 
