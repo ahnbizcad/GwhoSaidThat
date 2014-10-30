@@ -8,6 +8,7 @@
 #  url         :string(255)
 #  description :text
 #  published   :boolean          default(FALSE)
+#  image_path  :string(255)
 #
 
 class App < ActiveRecord::Base

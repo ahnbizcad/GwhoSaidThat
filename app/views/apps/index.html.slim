@@ -10,16 +10,16 @@ br
 - unless @apps.blank?
   .row
     - @apps.each do |app|
-      .app.col-xs-12.col-sm-6
-        .panel.panel-info
-          .panel-heading
-            h3.text-center = link_to app.neat_url, app.url
-          .panel-body
+      .col-xs-12.col-sm-6
+        .app
+          .app-header.text-center
+            = link_to app.neat_url, app.url
+          .app-image
             = link_to app.url do
-              iframe[ src=app.url ]
-          .panel-footer
+              = image_tag "#{app.image_path}"
+          .app-footer
             = app.description
-          - if currently_admin?
-            = link_to 'Edit', edit_app_path(app)
-            '  |
-            = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
+            - if currently_admin?
+              = link_to 'Edit', edit_app_path(app)
+              '  |
+              = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
