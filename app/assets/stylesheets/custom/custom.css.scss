@@ -16,13 +16,16 @@ textarea {
 --------------------------*/
 
 /* bootstrap adjust */
-.nav-tabs {
-  border-bottom: 0px solid #FFFFFF;
-}
+
 .navbar-default {
   background-color: #F8F8F8;
 }
-
+.navbar-fixed-top {
+  box-shadow: -1px 2px 5px #888888;
+}
+.nav-tabs {
+  border-bottom: 0px solid #FFFFFF;
+}
 /**********/
 /**********/
 /**********/
