@@ -1,6 +1,6 @@
 .row
   .col-xs-12
-    article.media.article
+    article.media.article.card
       h1= @article.title
       h5.media-heading = @article.created_at.to_date
       - if user_signed_in?

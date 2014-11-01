@@ -1,3 +1,21 @@
+/*--------------------------
+bootstrap adjust 
+--------------------------*/
+
+.navbar-default {
+  background-color: #F8F8F8;
+}
+.navbar-fixed-top {
+  box-shadow: -1px 2px 6px #888888;
+}
+.nav-tabs {
+  border-bottom: 0px solid #FFFFFF;
+}
+
+/*--------------------------
+Reusable OO
+--------------------------*/
+
 textarea {
   max-width: 100%;
   resize: vertical;
@@ -11,24 +29,20 @@ textarea {
   word-wrap: break-word;
 }
 
+ul.no-bullet {
+  list-style: none;
+  padding-left: 0;
+  vertical-align: text-top;
+}
+
+.card {
+  border-radius: 3px;    
+  box-shadow: 3px 3px 8px #444;
+}
+
 /*--------------------------
-
+By Item
 --------------------------*/
-
-/* bootstrap adjust */
-
-.navbar-default {
-  background-color: #F8F8F8;
-}
-.navbar-fixed-top {
-  box-shadow: -1px 2px 6px #888888;
-}
-.nav-tabs {
-  border-bottom: 0px solid #FFFFFF;
-}
-/**********/
-/**********/
-/**********/
 
 body {
   font-size: 16px;
@@ -105,9 +119,11 @@ body {
 }
 
 
+
 main {
   min-height: 900px;
   padding: 1em 0;
+
 }
 
 
@@ -118,8 +134,7 @@ li.greyed {
 
 .app {
   background-color: whitesmoke;
-  box-shadow: 2px 2px 5px #444;
-  border-radius: 2px;
+
   padding: 0.5em;
   margin-bottom: 1.5em;
   .app-header {
@@ -140,18 +155,16 @@ li.greyed {
 }
 
 .article {
-    padding: 1em;
-    
-    background-color: whitesmoke;
-    box-shadow: 3px 3px 8px #444;
-  }
+  background-color: whitesmoke;
+  padding: 1em;
+  
+}
 
 #articles {
-  list-style: none;
 
 }
 
 footer {
-  background-color: $lightblue;
-  color: #EEEEEE;
+  background-color: whitesmoke;
+  color: #000;
 }

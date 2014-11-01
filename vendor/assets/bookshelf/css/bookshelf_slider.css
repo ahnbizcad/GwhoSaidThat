@@ -5,6 +5,10 @@
  *
 */
 
+#bookshelf_slider {
+	box-shadow: 4px 4px 8px #444;
+}
+
 .bookshelf_slider *, .bookshelf_slider *:before, .bookshelf_slider *:after {
 	-webkit-box-sizing: content-box !important;
 	-moz-box-sizing: content-box !important;

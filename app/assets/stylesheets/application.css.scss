@@ -23,10 +23,12 @@
 
 /* Plugin Styles */
 @import "coderay_ruby_dark";
+@import "bookshelf"; /* manifest */
 
-/*multipurpose bookshelf slider*/
+/*
 @import "css/bookshelf_slider";
-@import "css/skin02";
+import "css/skin02";
+*/
 
 /*
  *= require_tree .
