@@ -40,8 +40,8 @@ gem 'simple_form', '~> 3.1.0.rc1'
 #gem 'carrierwave-rails'
 #gem 'mini_magick'
 
-gem 'ckeditor'
-
+gem 'font-awesome-sass', '~> 4.2.0'
+#gem 'ckeditor'
 gem 'asciidoctor'
 gem 'coderay', '~> 1.1.0'
 
