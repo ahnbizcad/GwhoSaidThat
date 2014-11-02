@@ -1,0 +1,707 @@
+/*
+ * Bookshelf Slider jQuery Plugin - v1.6
+ * Author: Sergio Valle
+ * Date: Set 22, 2014
+ *
+*/
+/* line 8, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+#bookshelf_slider {
+  box-shadow: 4px 4px 8px #444;
+}
+
+/* line 12, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.bookshelf_slider *, .bookshelf_slider *:before, .bookshelf_slider *:after {
+  -moz-box-sizing: content-box !important;
+  box-sizing: content-box !important;
+}
+
+/* panel title */
+/* line 20, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.panel_title {
+  background: #93643a url(../assets/bookshelf_skin01_top_bg.jpg) repeat;
+  color: #e4b173;
+  width: 960px;
+  height: 54px;
+  text-align: center;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* line 24, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.selected_title_box {
+  text-align: left;
+  display: none;
+}
+
+/* line 25, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.selected_title {
+  color: #e4b173;
+  padding: 2px 8px;
+  background: #000;
+  border: #444 solid 1px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 20px;
+  line-height: 20px;
+  margin-top: 15px;
+  margin-left: 15px;
+  display: block;
+  float: left;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: #555 solid 1px;
+}
+
+/* menu top */
+/* line 34, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.menu_top {
+  float: right;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 12px;
+  margin: 15px 15px 0px auto;
+  letter-spacing: 1px;
+}
+
+/* line 35, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.menu_top ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 0px;
+  margin-left: 10px;
+}
+
+/* line 36, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.menu_top ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  float: left;
+  margin-right: 5px;
+  display: block;
+  padding: 4px 8px;
+  outline: none;
+  background: transparent url(../assets/menutopli_bg.png) repeat;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: #d39e6b solid 1px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* line 43, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.menu_top ul li a {
+  color: #f5c994 !important;
+  text-decoration: none;
+  display: block;
+  padding: 2px 2px;
+  outline: none;
+  text-shadow: 1px 1px 1px #000;
+}
+
+/* line 46, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.menu_top ul li a:hover {
+  color: #f5c994 !important;
+  text-decoration: none;
+  display: block;
+  padding: 2px 2px;
+  outline: none;
+  text-shadow: 1px 1px 1px #000;
+}
+
+/* panel slider */
+/* line 53, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.panel_slider {
+  position: relative;
+  border-bottom: 1px solid #333;
+  border-bottom-color: #aa7f55;
+  width: 960px;
+  height: 360px;
+  margin: auto;
+  padding-top: 0px;
+  overflow: hidden;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  background: #93643a url(../assets/bookshelf_skin01_bg.jpg) repeat;
+  background-position: 0 30px;
+}
+
+/* line 58, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.panel_slider a, visited {
+  color: #777;
+  text-decoration: none;
+}
+
+/* line 59, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.panel_slider a:hover {
+  color: #333;
+}
+
+/* line 60, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.panel_slider img {
+  border: none;
+}
+
+/* panel bar */
+/* line 66, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.panel_bar {
+  background: #93643a url(../assets/bookshelf_skin01_bottom_bg.jpg) repeat-x left bottom;
+  width: 960px;
+  height: 60px;
+  text-align: center;
+  margin: 0 auto;
+  overflow: hidden;
+  border-top: none;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* line 72, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.button_items {
+  margin-top: 10px;
+  position: relative;
+  height: 20px;
+}
+
+/* line 73, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.button_bar {
+  margin-left: 10px;
+  float: left;
+  cursor: pointer;
+  display: block;
+}
+
+/* line 74, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.button_bar a {
+  text-decoration: none;
+  color: #f5cc9a;
+  text-shadow: 1px 1px 1px #000;
+  outline: none;
+}
+
+/* line 75, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.button_bar a:hover {
+  text-decoration: none;
+  color: #f5cc9a;
+  text-shadow: 1px 1px 1px #000;
+  outline: none;
+}
+
+/* line 76, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.buttons_container {
+  margin: 0 auto;
+  position: relative;
+  height: 60px;
+}
+
+/* slides */
+/* line 80, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.slide_animate {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  left: 0px;
+  top: 0px;
+  float: left;
+  background: url(../assets/bookshelf_skin01_bg.jpg) repeat;
+  background-position: 0 30px;
+  display: block;
+}
+
+/* line 81, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.slide_animate img {
+  display: block;
+}
+
+/* products */
+/* line 85, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.products_box {
+  height: 20px;
+  margin-left: 20px;
+}
+
+/* line 86, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.product {
+  float: left;
+  margin-right: 30px;
+  margin-top: 36px;
+  height: 107px;
+  position: relative;
+  display: block;
+}
+
+/* line 87, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.product img {
+  display: block;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 89, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.product_title {
+  position: absolute;
+  z-index: 999;
+  padding: 3px 3px 5px 3px;
+  text-align: center;
+  color: #ffffff;
+  background: #c33b4e;
+  overflow: hidden;
+  max-height: 11px;
+  line-height: 14px;
+  min-width: 5px;
+  max-width: 80%;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  word-wrap: break-word;
+}
+
+/* line 93, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.product_title p {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  padding: 0 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* line 94, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.product_description {
+  display: none;
+}
+
+/* effects */
+/* line 98, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.fx_magazine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  height: 107px;
+}
+
+/* line 99, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.fx_book {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  height: 107px;
+}
+
+/* line 100, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.fx_cd {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  height: 107px;
+}
+
+/* line 101, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.fx_dvd {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  height: 107px;
+}
+
+/* line 102, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.fx_shadow {
+  position: absolute;
+  right: -15px;
+  top: 0;
+  display: block;
+  height: 107px;
+}
+
+/* overlay */
+/* line 106, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.icons_sprite {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: transparent url(../assets/icons_sprite.png) no-repeat;
+  background-position: 0 0;
+}
+
+/* arrow */
+/* line 114, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+#arrow_box {
+  text-align: left;
+}
+
+/* line 115, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+#arrow_menu {
+  position: relative;
+  left: 10px;
+  background: transparent url(../assets/arrow.png) no-repeat;
+  width: 20px;
+  height: 12px;
+  display: none;
+}
+
+/* line 117, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+#debug {
+  background-color: #eee;
+  border: #ddd dashed 1px;
+  min-height: 15px;
+  width: 944px;
+  margin: 40px auto;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 8px;
+}
+
+/* popup window */
+/* line 121, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+#mask_popup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9000;
+  background-color: #000;
+  display: none;
+}
+
+/* line 126, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+#popup_title {
+  position: absolute;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  top: 0px;
+  text-align: left;
+  background-color: #fff;
+  padding: 0 0 0 15px;
+  line-height: 32px;
+  border-bottom: #f4f4f4 solid 1px;
+  display: none;
+  -moz-box-sizing: content-box !important;
+  box-sizing: content-box !important;
+}
+
+/* line 134, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+#popup_info {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  display: block;
+  z-index: 9999;
+  background: #FFF;
+  padding: 15px;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-box-sizing: content-box !important;
+  box-sizing: content-box !important;
+}
+
+/*
+#popup_info #iframe_content body {
+	height:100%; max-height: 100%; background:#fff !important; overflow:auto; -webkit-overflow-scrolling: touch;
+}
+*/
+/* line 149, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+#preload_icon {
+  left: 40%;
+  top: 40%;
+  position: absolute;
+}
+
+/* line 150, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+#bs_close_button {
+  width: 30px;
+  height: 30px;
+  float: right;
+  cursor: pointer;
+  background: white url(../assets/btn_close.png) no-repeat;
+}
+
+/* arrows navigate */
+/* line 155, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+#more_minus_box {
+  z-index: 1;
+  position: absolute;
+  bottom: 50px;
+  right: 10px;
+  width: 24px;
+  height: 50px;
+  background: url(../assets/nav_bg.png) repeat;
+  padding: 2px;
+  opacity: 0;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* line 160, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+#icon_minus {
+  background: #000;
+  position: absolute;
+  top: 2px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent url(../assets/icon_minus.png) no-repeat;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* line 163, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+#icon_more {
+  background: #000;
+  position: absolute;
+  top: 28px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent url(../assets/icon_more.png) no-repeat;
+  cursor: pointer;
+  display: block;
+}
+
+/* line 167, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/bookshelf_slider.css */
+.img_thumb {
+  position: relative;
+  top: 0;
+}
+
+/* ------- panel title ------- */
+/* line 5, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.panel_title {
+  background: #c4ae8e url("assets/bookshelf_skin02_top_bg.jpg") repeat;
+  color: #e4b173;
+  width: 960px;
+  height: 54px;
+  text-align: center;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* line 9, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.selected_title {
+  color: #e4b173;
+  padding: 2px 8px;
+  background: #000;
+  border: #444 solid 1px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 20px;
+  line-height: 20px;
+  margin-top: 15px;
+  margin-left: 15px;
+  display: block;
+  float: left;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: #555 solid 1px;
+}
+
+/* menu top */
+/* line 17, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.menu_top {
+  float: right;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 12px;
+  margin: 15px 15px 0px auto;
+  letter-spacing: 1px;
+}
+
+/* line 18, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.menu_top ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 0px;
+  margin-left: 10px;
+}
+
+/* line 19, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.menu_top ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  float: left;
+  margin-right: 5px;
+  display: block;
+  padding: 4px 8px;
+  outline: none;
+  background: transparent url("assets/menutopli_bg2.png") repeat;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: #d39e6b solid 1px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* line 26, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.menu_top ul li a {
+  color: #000 !important;
+  text-decoration: none;
+  display: block;
+  padding: 2px 2px;
+  outline: none;
+  text-shadow: 1px 1px 1px #f8e1bb;
+}
+
+/* line 29, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.menu_top ul li a:hover {
+  color: #000 !important;
+  text-decoration: none;
+  display: block;
+  padding: 2px 2px;
+  outline: none;
+  text-shadow: 1px 1px 1px #f8e1bb;
+}
+
+/* ------- panel slider ------- */
+/* line 36, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.panel_slider {
+  position: relative;
+  border-bottom: 1px solid #333;
+  border-bottom-color: #aa7f55;
+  width: 960px;
+  height: 360px;
+  margin: auto;
+  padding-top: 0px;
+  overflow: hidden;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  background: #c4ae8e url("assets/bookshelf_skin02_bg.jpg") repeat;
+  background-position: 0 30px;
+}
+
+/* ------- panel bar ------- */
+/* line 45, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.panel_bar {
+  background: #c4ae8e url("assets/bookshelf_skin02_bottom_bg.jpg") repeat-x left bottom;
+  width: 960px;
+  height: 60px;
+  text-align: center;
+  margin: 0 auto;
+  overflow: hidden;
+  border-top: none;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* line 50, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.button_items {
+  margin-top: 10px;
+  position: relative;
+  height: 20px;
+}
+
+/* line 51, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.button_bar {
+  margin-left: 10px;
+  float: left;
+  cursor: pointer;
+  display: block;
+}
+
+/* line 52, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.button_bar a {
+  text-decoration: none;
+  outline: none;
+  color: #000;
+  text-shadow: 1px 1px 1px #e4cfb7;
+}
+
+/* line 53, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.button_bar a:hover {
+  text-decoration: none;
+  color: #f5cc9a;
+  text-shadow: 1px 1px 1px #000;
+  outline: none;
+}
+
+/* ------- slides ------- */
+/* line 57, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.slide_animate {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  left: 0px;
+  top: 0px;
+  float: left;
+  background: url("assets/bookshelf_skin02_bg.jpg") repeat;
+  background-position: 0 30px;
+  display: block;
+}
+
+/* line 58, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+.slide_animate img {
+  display: block;
+}
+
+/* ------- arrows navigate ------- */
+/* line 63, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+#more_minus_box {
+  z-index: 1;
+  position: absolute;
+  bottom: 50px;
+  right: 10px;
+  width: 24px;
+  height: 50px;
+  background: url("assets/nav_bg.png") repeat;
+  padding: 2px;
+  opacity: 0;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* line 68, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+#icon_minus {
+  background: #000;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent url("assets/icon_minus.png") no-repeat;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* line 71, c:/Sites/gwhosaidthat/app/assets/bookshelf/css/skin02.css.scss */
+#icon_more {
+  background: #000;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent url("assets/icon_more.png") no-repeat;
+  cursor: pointer;
+  display: block;
+}

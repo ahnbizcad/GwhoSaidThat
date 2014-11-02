@@ -83,7 +83,7 @@ Rails.application.configure do
   #
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = true #This is bad and slow. Only a temporary solution.
+  config.serve_static_assets = true # made true bye rails_12factor gem.
 
   #
 

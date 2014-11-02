@@ -30,7 +30,7 @@ module Gwhosaidthat
 
 #
 
-    config.assets.paths << Rails.root.join("vendor","assets","bookshelf")
+    #config.assets.paths << Rails.root.join("assets","bookshelf")
 
   end
 end
