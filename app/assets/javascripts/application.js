@@ -21,9 +21,7 @@
 //
 //= require bootstrap
 //
-//= require js/bookshelfsliderinitialize
-//= require js/bookshelfslider-min
-//= require js/easing-1-3
+//= require bookshelf
 //
 //
 //TREE SUBSTITUTE

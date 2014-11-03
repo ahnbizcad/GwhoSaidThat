@@ -42,6 +42,6 @@ Rails.application.configure do
 #
   
   # turn off sprockets's default included better_errors in development
-  config.assets.raise_runtime_errors
+  #config.assets.raise_runtime_errors = false
   
 end
