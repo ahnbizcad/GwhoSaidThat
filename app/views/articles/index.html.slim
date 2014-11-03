@@ -8,7 +8,7 @@
     ul#articles-list.media-list.no-bullet
     - @articles.each do |article|
       - if article.published? || currently_admin?
-        li.media.article.card[ class=("greyed" if !article.published? && currently_admin?)  ]
+        li.media.article.card[ class=("greyed" if !article.published? && currently_admin?) ]
           = link_to article, class: "pull-left" do
             - if article.image_url
               = image_tag article.image_url, class: "media-object"

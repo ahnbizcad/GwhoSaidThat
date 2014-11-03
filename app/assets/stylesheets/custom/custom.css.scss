@@ -29,11 +29,15 @@ textarea {
   word-wrap: break-word;
 }
 
-ul.no-bullet {
-  list-style: none;
+ul#articles-list.no-bullet {
+  list-style-type: none;
   padding-left: 0;
   vertical-align: text-top;
+  li {
+    background-image:none;
+  }
 }
+
 
 .card {
   border-radius: 2px;    
