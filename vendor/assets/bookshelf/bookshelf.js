@@ -1,3 +1,3 @@
-//= require js/bookshelfsliderinitialize
-//= require js/bookshelfslider-min
+//= require js/bookshelfslider
 //= require js/easing-1-3
+//= require js/bookshelfsliderinitialize

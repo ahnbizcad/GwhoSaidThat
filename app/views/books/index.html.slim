@@ -25,24 +25,20 @@ h1 Recommended Books
       .slide_animate
         #products_box_1.products_box
           - @books.each do |book|
-            = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2.png" } do
-              = image_tag "github.png", alt: "", width: "76", height: "108"
-
-
-            = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2_large.png" } do
-              = image_tag "twitter.png", alt: "", width: "71", height: "108"
+            = content_tag(:div, class: "product", title: "#{book.title}", data: { type: "book", popup: "true", url: asset_path("books/book_the_lean_startup_eric_ries.jpg") }) do
+              = image_tag "books/book_the_lean_startup_eric_ries.jpg", alt: ""
 
       .slide_animate
         #products_box_2.products_box
-
-          = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2.png" } do
-            = image_tag "github.png", alt: "", width: "76", height: "108"
+          - @books.each do |book|
+            = content_tag(:div, class: "product", title: "#{book.title}", data: { type: "book", popup: "true", url: "images/book2.png" }) do
+              = image_tag "github.png", alt: ""
 
       .slide_animate
         #products_box_3.products_box
-
-          = link_to "#", class: "product", title: "info", data: { type: "book", popup: "true", url: "images/book2.png" } do
-            = image_tag "github.png", alt: "", width: "76", height: "108"
+          - @books.each do |book|
+            = content_tag(:div, class: "product", title: "#{book.title}", data: { type: "book", popup: "true", url: "images/book2.png" }) do
+              = image_tag "github.png", alt: ""
 
   .panel_bar
     .buttons-container
@@ -62,6 +58,8 @@ h1 Recommended Books
           = link_to "#" do
             | Philosophy
 
+br
+
 - if currently_admin?
   table
     thead
@@ -73,7 +71,7 @@ h1 Recommended Books
     tbody
       - @books.each do |book|
         tr
-          td = link_to book.title, book.url
+          td = link_to book.title, book
           td = book.author
           td = book.review
           - if currently_admin?

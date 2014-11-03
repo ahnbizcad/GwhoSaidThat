@@ -20,7 +20,7 @@
 //PLUGINS
 //
 //= require bootstrap
-//
+//(manifest)
 //= require bookshelf
 //
 //

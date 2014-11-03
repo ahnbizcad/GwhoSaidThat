@@ -148,7 +148,7 @@
 			var data_type = $prod.attr('data-type');
 		
 			if (data_type == 'book') {
-				$prod.append("<img class='fx_book' id='b_" + i + "' + src='" + folderAssets + "/book_fx.png' />");
+				$prod.append("<img class='fx_book' id='b_" + i + "' + src='<%= asset_path("assets/book_fx.png") %>' />");
 				
 				if ( is_ie7 ) {
 					$(selector + ' #b_' + i).css({'height': img.height() + 4, 'top': $prod.height() - img.height() - 4 });
@@ -156,7 +156,7 @@
 					$(selector + ' #b_' + i).css({'height': img.height(), 'top': $prod.height() - img.height()});
 				}
 			} else if (data_type == 'magazine') {
-				$prod.append("<img class='fx_magazine' id='m_" + i + "' + src='" + folderAssets + "/magazine_fx.png' />");
+				$prod.append("<img class='fx_magazine' id='m_" + i + "' + src='<%= asset_path("assets/magazine_fx.png") %>' />");
 				
 				if ( is_ie7 ) {
 					$(selector + ' #m_' + i).css({'height': img.height() + 4, 'top': $prod.height() - img.height() - 4});
@@ -164,7 +164,7 @@
 					$(selector + ' #m_' + i).css({'height': img.height(), 'top': $prod.height() - img.height()});
 				}
 			} else if (data_type == 'cd') {
-				$prod.append("<img class='fx_cd' id='cd_" + i + "' + src='" + folderAssets + "/cd_fx.png' />");
+				$prod.append("<img class='fx_cd' id='cd_" + i + "' + src='<%= asset_path("assets/cd_fx.png") %>' />");
 				
 				if ( is_ie7 ) {
 					$(selector + ' #cd_' + i).css({'height': img.height() + 4, 'top': $prod.height() - img.height() - 4});
@@ -172,7 +172,7 @@
 					$(selector + ' #cd_' + i).css({'height': img.height(), 'top': $prod.height() - img.height()});
 				}
 			} else if (data_type == 'dvd') {
-				$prod.append("<img class='fx_cd' id='dvd_" + i + "' + src='" + folderAssets + "/dvd_fx.png' />");
+				$prod.append("<img class='fx_cd' id='dvd_" + i + "' + src='<%= asset_path("assets/dvd_fx.png") %>' />");
 				
 				if ( is_ie7 ) {
 					$(selector + ' #dvd_' + i).css({'height': img.height() + 4, 'top': $prod.height() - img.height() - 4});
@@ -182,7 +182,7 @@
 			}
 			
 			//add shadow
-			$prod.append("<img class='fx_shadow' id='shd_" + i + "' + src='" + folderAssets + "/shadow_fx.png' />");
+			$prod.append("<img class='fx_shadow' id='shd_" + i + "' + src='<%= asset_path("assets/shadow_fx.png") %>' />");
 			
 			//add icons
 			if ($bsc.show_icons) {
@@ -486,7 +486,7 @@
 			//add mask_popup
 			$('body').append('<div id="mask_popup"></div>');
 			$('body').append('<div id="popup_info"></div>');
-			$('#popup_info').append("<img id='preload_icon' src='" + folderAssets + "/preload.gif' />");
+			$('#popup_info').append("<img id='preload_icon' src='<%= asset_path("assets/preload.gif") %>' />");
 			
 			var $mask = $('#mask_popup');
 			var $popup = $('#popup_info');

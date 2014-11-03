@@ -36,8 +36,9 @@ ul.no-bullet {
 }
 
 .card {
-  border-radius: 3px;    
-  box-shadow: 3px 3px 8px #444;
+  border-radius: 2px;    
+  box-shadow: 2px 2px 8px #444;
+  margin-top: 1.5em;
 }
 
 /*--------------------------
@@ -120,7 +121,7 @@ body {
 
 main {
   min-height: 900px;
-  padding: 1em 0;
+  padding: 0 0 2em 0;
 }
 
 
@@ -131,9 +132,8 @@ li.greyed {
 
 .app {
   background-color: whitesmoke;
-
   padding: 0.5em;
-  margin-bottom: 1.5em;
+
   .app-header {
     padding: 0.5em;
     font-size: 1.5em;
