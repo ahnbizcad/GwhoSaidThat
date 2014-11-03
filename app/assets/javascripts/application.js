@@ -10,17 +10,23 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//JQUERY
+//
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
 //
 //PLUGINS
+//
 //= require bootstrap
-//= require js/bookshelfslider-min
-//= require js/easing-1-3
-//     require ckeditor/init
+//(manifest)
+//= require bookshelf
 //
 //
-//= require_tree .
+//TREE SUBSTITUTE
+//
+//
+//
+//TURBOLINKS
 //
 //= require turbolinks
