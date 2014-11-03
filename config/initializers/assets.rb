@@ -1,0 +1,1 @@
+Rails.application.config.assets.precompile += ['bookshelf.js', 'bookshelf.css']

@@ -26,7 +26,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = false #Keep this false. True makes production slow since it's preprocessing on the fly.
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -83,7 +83,8 @@ Rails.application.configure do
   #
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = true # made true bye rails_12factor gem.
+  #config.serve_static_assets = false
+    # made true bye rails_12factor gem.
 
   #
 

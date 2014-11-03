@@ -36,6 +36,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
 #
+
   config.assets.precompile = ['*.js', '*.css']
   
 end
