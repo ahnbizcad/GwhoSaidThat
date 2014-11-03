@@ -16,15 +16,21 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //
+//
 //PLUGINS
 //
 //= require bootstrap
-//(manifest)
-//= require bookshelf
+//
+//= require js/bookshelfsliderinitialize
+//= require js/bookshelfslider-min
+//= require js/easing-1-3
 //
 //
 //TREE SUBSTITUTE
-//
+//= require apps
+//= require articles
+//= require books
+//= require pages
 //
 //
 //TURBOLINKS

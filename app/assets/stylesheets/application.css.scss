@@ -36,8 +36,13 @@
 /* Plugin-Specific Styles */
 /*                        */
 @import "coderay_ruby_dark";
-@import "bookshelf"; /*manifest*/
+@import "css/bookshelf_slider";
+@import "css/skin02";
 
 /*                   */
 /*  TREE SUBSTITUTE  */
 /*                   */
+@import "apps";
+@import "articles";
+@import "books";
+@import "pages";

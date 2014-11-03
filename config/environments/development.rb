@@ -38,5 +38,10 @@ Rails.application.configure do
 #
 
   config.assets.precompile = ['*.js', '*.css']
+
+#
+  
+  # turn off sprockets's default included better_errors in development
+  config.assets.raise_runtime_errors
   
 end
