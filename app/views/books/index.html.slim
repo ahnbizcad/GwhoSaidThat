@@ -22,21 +22,28 @@ h1 Recommended Books
 
   .panel_slider
     .panel_items
+
       .slide_animate
         #products_box_1.products_box
-          - @books.each do |book|
+          - @programming_books.each do |book|
             = content_tag(:div, class: "product", title: "#{book.title}", data: { type: "book", popup: "true", url: asset_path("books/book_the_lean_startup_eric_ries.jpg") }) do
               = image_tag "books/book_the_lean_startup_eric_ries.jpg", alt: ""
 
       .slide_animate
         #products_box_2.products_box
-          - @books.each do |book|
+          - @business_books.each do |book|
             = content_tag(:div, class: "product", title: "#{book.title}", data: { type: "book", popup: "true", url: "images/book2.png" }) do
               = image_tag "github.png", alt: ""
 
       .slide_animate
         #products_box_3.products_box
-          - @books.each do |book|
+          - @science_books.each do |book|
+            = content_tag(:div, class: "product", title: "#{book.title}", data: { type: "book", popup: "true", url: "images/book2.png" }) do
+              = image_tag "github.png", alt: ""
+
+      .slide_animate
+        #products_box_4.products_box
+          - @philosophy_books.each do |book|
             = content_tag(:div, class: "product", title: "#{book.title}", data: { type: "book", popup: "true", url: "images/book2.png" }) do
               = image_tag "github.png", alt: ""
 
@@ -60,6 +67,9 @@ h1 Recommended Books
 
 br
 
+#book_review
+  /currently selected book.description
+
 - if currently_admin?
   table
     thead
@@ -73,6 +83,7 @@ br
         tr
           td = link_to book.title, book
           td = book.author
+          td = book.category
           td = book.review
           - if currently_admin?
             td = link_to 'Edit', edit_book_path(book)

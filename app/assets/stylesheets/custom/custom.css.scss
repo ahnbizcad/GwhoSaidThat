@@ -3,10 +3,10 @@ bootstrap adjust
 --------------------------*/
 
 .navbar-default {
-  background-color: #F8F8F8;
+  background-color: whitesmoke;
 }
 .navbar-fixed-top {
-  box-shadow: -1px 2px 6px #888888;
+  box-shadow: 0px 2px 6px #666;
 }
 .nav-tabs {
   border-bottom: 0px solid #FFFFFF;
@@ -40,8 +40,9 @@ ul#articles-list.no-bullet {
 
 
 .card {
+  box-shadow: 2px 2px 6px #666;
   border-radius: 2px;    
-  box-shadow: 2px 2px 8px #444;
+  border: 2px solid $lightblue;
   margin-top: 1.5em;
 }
 
@@ -121,11 +122,9 @@ body {
   }
 }
 
-
-
 main {
   min-height: 900px;
-  padding: 0 0 2em 0;
+  padding: 1em 0 2em 0;
 }
 
 
@@ -161,11 +160,10 @@ li.greyed {
   
 }
 
-#articles {
-
-}
-
 footer {
   background-color: whitesmoke;
   color: #000;
+  box-shadow: 0px 0px 6px #666;
+
+  min-height: 100px;
 }

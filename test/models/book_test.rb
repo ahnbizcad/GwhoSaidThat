@@ -10,6 +10,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  published  :boolean          default(FALSE)
+#  category   :string(255)
 #
 
 require 'test_helper'

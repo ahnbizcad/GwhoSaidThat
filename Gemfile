@@ -36,6 +36,7 @@ gem 'devise'
 
 gem 'simple_form', '~> 3.1.0.rc1'
 
+gem 'fastimage'
 #gem 'filepicker-rails'
 #gem 'carrierwave-rails'
 #gem 'mini_magick'
