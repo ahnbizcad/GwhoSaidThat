@@ -5,7 +5,9 @@
  *
 */
 
-(function($){
+$(document).ready(function(){
+
+//(function($){
 
 	$.bookshelfSlider = function(selector, settings) {
 		
@@ -24,7 +26,7 @@
 		var $button_bar = $(selector + " .button_bar");
 		var $buttons_container = $(selector + " .buttons_container"); //buttons_align
 
-		if (navigator.userAgent.match(/msie/i) && navigator.userAgent.match(/7/)) { var is_ie7 = true; }
+	 	if (navigator.userAgent.match(/msie/i) && navigator.userAgent.match(/7/)) { var is_ie7 = true; }
 		if (navigator.userAgent.match(/msie/i) && navigator.userAgent.match(/8/)) { var is_ie8 = true; }
 		
 		// ----------------------------------------------
@@ -805,4 +807,6 @@
 		'folder': '' //add path to bookshelf plugin in your site
 	};
 
-})(jQuery);
+//})(jQuery);
+
+});
