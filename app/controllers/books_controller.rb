@@ -9,10 +9,11 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
-    @programming_books = Book.by_category("programming")
-    @business_books    = Book.by_category("business")
-    @science_books     = Book.by_category("science")
-    @philosophy_books  = Book.by_category("philosophy")
+    @programming_books = Book.by_category("programming").published
+    @business_books    = Book.by_category("business").published
+    @science_books     = Book.by_category("science").published
+    @philosophy_books  = Book.by_category("philosophy").published
+    @to_read_books     = Book.by_category("to read").published
     
     @fi1 = FastImage.size("facebook.png")
     @fi2 = FastImage.size("assets/icons_sprite.png")
@@ -81,6 +82,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author, :category, :url, :review, :published)
+      params.require(:book).permit(:category, :title, :author, :url, :image_path, :review, :published)
     end
 end

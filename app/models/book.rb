@@ -11,13 +11,21 @@
 #  updated_at :datetime
 #  published  :boolean          default(FALSE)
 #  category   :string(255)
+#  image_path :string(255)
 #
 
 class Book < ActiveRecord::Base
+
+
   default_scope { order("created_at DESC") }
   scope :by_newest,   -> { order("created_at DESC") }
   scope :unpublished, -> { where("published = False") }
   scope :published,   -> { where("published = True") } 
+
+# Callback definitions.
+
+
+# Scope definitions.
 
   def self.by_category(category)
     where(category: category)

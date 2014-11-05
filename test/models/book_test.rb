@@ -11,6 +11,7 @@
 #  updated_at :datetime
 #  published  :boolean          default(FALSE)
 #  category   :string(255)
+#  image_path :string(255)
 #
 
 require 'test_helper'

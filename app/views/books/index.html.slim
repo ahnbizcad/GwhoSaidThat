@@ -26,26 +26,52 @@ h1 Recommended Books
       .slide_animate
         #products_box_1.products_box
           - @programming_books.each do |book|
-            = content_tag(:div, class: "product", title: "#{book.title}", data: { type: "book", popup: "true", url: asset_path("books/book_the_lean_startup_eric_ries.jpg") }) do
-              = image_tag "books/book_the_lean_startup_eric_ries.jpg", alt: "", width: 50, height: 100
+            /- fi = FastImage.size(asset_url("book/#{book.image_path}"))
+            /- fi_width = fi[0]
+            /- fi_height = fi[1]
+            = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
+              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}"
+            /, width: fi_width, height: fi_height
 
       .slide_animate
         #products_box_2.products_box
           - @business_books.each do |book|
-            = content_tag(:div, class: "product", title: "#{book.title}", data: { type: "book", popup: "true", url: "images/book2.png" }) do
-              = image_tag "github.png", alt: ""
+            /- fi = FastImage.size(asset_url("book/#{book.image_path}"))
+            /- fi_width = fi[0]
+            /- fi_height = fi[1]
+            = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
+              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}"
+            /, width: fi_width, height: fi_height
 
       .slide_animate
         #products_box_3.products_box
           - @science_books.each do |book|
-            = content_tag(:div, class: "product", title: "#{book.title}", data: { type: "book", popup: "true", url: "images/book2.png" }) do
-              = image_tag "github.png", alt: ""
+            /- fi = FastImage.size(asset_url("book/#{book.image_path}"))
+            /- fi_width = fi[0]
+            /- fi_height = fi[1]
+            = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
+              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}"
+            /, width: fi_width, height: fi_height
 
       .slide_animate
         #products_box_4.products_box
           - @philosophy_books.each do |book|
-            = content_tag(:div, class: "product", title: "#{book.title}", data: { type: "book", popup: "true", url: "images/book2.png" }) do
-              = image_tag "github.png", alt: ""
+            /- fi = FastImage.size(asset_url("book/#{book.image_path}"))
+            /- fi_width = fi[0]
+            /- fi_height = fi[1]
+            = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
+              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}"
+            /, width: fi_width, height: fi_height
+
+
+            /= content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "true", type: "book", url: "http://localhost:3000/assets/content//iframe_content.html" }) do
+            /  = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}"
+            
+      .slide_animate
+        #products_box_5.products_box
+          - @to_read_books.each do |book|
+            = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
+              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}"
 
   .panel_bar
     .buttons-container
@@ -64,6 +90,9 @@ h1 Recommended Books
         #btn4.button_bar
           = link_to "#" do
             | Philosophy
+        #btn5.button_bar
+          = link_to "#" do
+            | To Read
 
 br
 
@@ -81,22 +110,11 @@ br
     tbody
       - @books.each do |book|
         tr
+          td = book.category
           td = link_to book.title, book
           td = book.author
-          td = book.category
+          td = book.published
           td = book.review
           - if currently_admin?
             td = link_to 'Edit', edit_book_path(book)
             td = link_to 'Destroy', book, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-= asset_url("assets/icons_sprite.png")
-= image_tag "assets/icons_sprite.png"
-
-= @fi1
-= @fi2
-= @fi3
-
-/= FastImage.size("assets/icons_sprite.png")
-/= FastImage.size("http://localhost:3000/assets/assets/icons_sprite.png")
-
-/= asset_url("book/book_the_lean_startup_eric_ries.jpg")
