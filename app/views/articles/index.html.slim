@@ -5,6 +5,8 @@
     - if currently_admin?
       = link_to 'New Article', new_article_path
 
+.row
+  .col-xs-12
     ul#articles-list.media-list.no-bullet
     - @articles.each do |article|
       - if article.published? || currently_admin?
