@@ -39,15 +39,16 @@ ul.no-bullet {
 }
 
 .card {
-  box-shadow: 2px 2px 6px #666;
-  border-radius: 2px;    
-  border: 2px solid $lightblue;
+  box-shadow: 2px 2px 4px 3px #666, 0px 0px 0.5em 0px #26F inset;
+  border-radius: 0px;
   margin-top: 1.5em;
-}
 
-li.greyed {
-  outline: 3px solid yellow;
-  background-color: #888;
+  padding: 1em;
+  word-wrap: break-word;
+  background-color: whitesmoke;
+}
+li.unpublished {
+  box-shadow: 2px 2px 16px 3px red;
 }
 
 /*--------------------------
@@ -132,9 +133,7 @@ main {
 }
 
 .app {
-  background-color: whitesmoke;
-  padding: 0.5em;
-  word-wrap: break-word;
+
 
   .app-header {
     padding: 0.5em;
@@ -154,9 +153,7 @@ main {
 }
 
 .article {
-  background-color: whitesmoke;
-  padding: 1em;
-  
+
 }
 
 .book {
