@@ -1,3 +1,11 @@
 footer
-  .container-fluid
-    | ©Copyright Jeehoo Ahn
+  
+  nav#footer-navbar.navbar.navbar-default
+    | Contact Me
+    ul.nav      
+      li= link_to "https://github.com/ahnbizcad/" do
+        = image_tag "github.png"
+      li= link_to "https://www.linkedin.com/in/jeehooahn" do
+        = image_tag "linkedin.png"
+      li= link_to "https://twitter.com/JeehooAhn" do
+        = image_tag "twitter.png"

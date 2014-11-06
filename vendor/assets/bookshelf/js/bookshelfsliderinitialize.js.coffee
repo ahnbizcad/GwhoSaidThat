@@ -1,7 +1,7 @@
 jQuery(document).ready ->
   $.bookshelfSlider('#bookshelf_slider', {
     'item_width': '100%',
-    'item_height': 450,
+    'item_height': 300,
     'products_box_margin_left': 30,
     'product_title_textcolor': '#ffffff',
     'product_title_bgcolor': '#0850A1',
