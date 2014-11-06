@@ -3,11 +3,22 @@ h1 Recommended Books
 - if currently_admin?
   = link_to 'New Book', new_book_path
 
-- @programming_books.each do |book|
-  = asset_url("books/#{book.image_path}")
-  br
-  = FastImage.size(asset_url("books/#{book.image_path}"))
-  br
+
+= asset_url("twitter.png")
+br
+/  = FastImage.size(asset_url("books/#{book.image_path}"))
+/  br
+= FastImage.size(asset_url("twitter.png"))
+br
+= FastImage.size("http://localhost:3000/assets/twitter.png")
+br
+= FastImage.size("https://gwhosaidthat.herokuapp.com/assets/twitter-79166a643260eb377a46d002850bd359.png")[0]
+br
+
+/  = FastImage.size("https://gwhosaidthat.herokuapp.com/assets/books/practical_object_oriented_design_in_ruby_an_agile_primer_sandi_metz-3b11ca05628fbbbfe65b0e9030df5396.jpg")
+/  br
+/  = FastImage.size("http://stephensykes.com/images/ss.com_x.gif")
+/  br
   br
 
 #bookshelf_slider.bookshelf_slider
