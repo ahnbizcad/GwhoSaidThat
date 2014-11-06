@@ -3,17 +3,7 @@ h1 Recommended Books
 - if currently_admin?
   = link_to 'New Book', new_book_path
 
-  /= asset_url("twitter.png")
-  /br
-  /  = FastImage.size(asset_url("books/#{book.image_path}"))
-  /  br
-  = FastImage.size(asset_url("twitter.png"))
-  br
-  = FastImage.size("http://localhost:3000/assets/twitter.png")
-  br
-  = FastImage.size("https://gwhosaidthat.herokuapp.com/assets/twitter-79166a643260eb377a46d002850bd359.png")
-  br
-  /br
+
 
 #bookshelf_slider.bookshelf_slider
 
@@ -36,12 +26,10 @@ h1 Recommended Books
       .slide_animate
         #products_box_1.products_box
           - @programming_books.each do |book|
-            /= FastImage.size(asset_url("book/#{book.image_path}"))
-            /- fi_width = fi[0]
-            /- fi_height = fi[1]
+
             = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
-              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120
-              /, width: fi_width, height: fi_height
+              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120, width: 80
+
 
       .slide_animate
         #products_box_2.products_box
@@ -50,7 +38,7 @@ h1 Recommended Books
             /- fi_width = fi[0]
             /- fi_height = fi[1]
             = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
-              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120
+              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120, width: 80
             /, width: fi_width, height: fi_height
 
       .slide_animate
@@ -60,7 +48,7 @@ h1 Recommended Books
             /- fi_width = fi[0]
             /- fi_height = fi[1]
             = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
-              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120
+              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120, width: 80
             /, width: fi_width, height: fi_height
 
       .slide_animate
@@ -70,7 +58,7 @@ h1 Recommended Books
             /- fi_width = fi[0]
             /- fi_height = fi[1]
             = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
-              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120
+              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120, width: 80
             /, width: fi_width, height: fi_height
 
 
@@ -81,7 +69,7 @@ h1 Recommended Books
         #products_box_5.products_box
           - @to_read_books.each do |book|
             = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
-              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120
+              = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120, width: 80
 
   .panel_bar
     .buttons-container
