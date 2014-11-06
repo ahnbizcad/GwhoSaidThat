@@ -2,6 +2,11 @@ h1 Recommended Books
 
 - if currently_admin?
   = link_to 'New Book', new_book_path
+
+- @programming_books.each do |book|
+  = asset_url("books/#{book.image_path}")
+  br
+  = FastImage.size(asset_url("books/#{book.image_path}"))
   br
   br
 
@@ -26,12 +31,12 @@ h1 Recommended Books
       .slide_animate
         #products_box_1.products_box
           - @programming_books.each do |book|
-            /- fi = FastImage.size(asset_url("book/#{book.image_path}"))
+            /= FastImage.size(asset_url("book/#{book.image_path}"))
             /- fi_width = fi[0]
             /- fi_height = fi[1]
             = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
               = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}"
-            /, width: fi_width, height: fi_height
+              /, width: fi_width, height: fi_height
 
       .slide_animate
         #products_box_2.products_box
