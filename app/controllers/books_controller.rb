@@ -3,7 +3,9 @@ class BooksController < ApplicationController
   
   before_action :authenticate_user!,  except: [:index]
   before_action :authorize_admin,     except: [:index]
-  require 'fastimage'
+  
+
+
 
   # GET /books
   # GET /books.json
@@ -15,9 +17,6 @@ class BooksController < ApplicationController
     @philosophy_books  = Book.by_category("philosophy").published
     @to_read_books     = Book.by_category("to read").published
     
-    @fi1 = FastImage.size("facebook.png")
-    @fi2 = FastImage.size("assets/icons_sprite.png")
-    @fi3 = FastImage.size("images/dvd.jpg")
   end
 
   # GET /books/1

@@ -1,30 +1,33 @@
 .row
   .col-xs-12
-    h1 Programming Blog
+    h1.media-heading Programming Blog
 
     - if currently_admin?
       = link_to 'New Article', new_article_path
 
-.row
-  .col-xs-12
-    ul.media-list.list-unstyled
-      - @articles.each do |article|
-        - if article.published? || currently_admin?
-          li.media.article.card[ class=("unpublished" if !article.published? && currently_admin?) ]
-            = link_to article, class: "pull-left" do
-              - if article.image_url
-                = image_tag article.image_url, class: "media-object"
-            .media-body
+- unless @articles.blank?
+  .row
+    - @articles.each do |article|
+      - if article.published? || currently_admin?
+        .col-xs-12
+          
+          article.article.card[ class=("unpublished" if !article.published?) ]
+            - if article.image_url
               = link_to article do
-                h1.media-heading = article.title
-              h6.media-heading = article.created_at.to_date
-              - if currently_admin?
-                = link_to 'Edit', edit_article_path(article)
-                '  |
-                = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
-              - truncated_content = truncate(article.content, length: 500, escape: false)
-              == Asciidoctor.render(truncated_content, safe: 'safe')
-              = link_to article do
-                |  (read more)
-              '
-      
+                = image_tag article.image_url
+            
+            = link_to article do
+              h1.media-heading = article.title
+            
+            h5.media-heading = article.created_at.to_date
+            
+            - if currently_admin?
+              = link_to 'Edit', edit_article_path(article)
+              '  |
+              = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
+            
+            - truncated_content = truncate(article.content, length:1000, escape: false)
+            == Asciidoctor.render(truncated_content, safe: 'safe')
+            = link_to article do
+              |  (read more)
+    

@@ -1,6 +1,6 @@
 .row
   .col-xs-12
-    h1 Check out some of my apps
+    h1.media-heading Check Out Some of My Apps
 
     -if currently_admin?
       = link_to 'New App', new_app_path
@@ -8,16 +8,18 @@
 - unless @apps.blank?
   .row
     - @apps.each do |app|
-      .col-xs-12.col-sm-6
-        .app.card
-          .app-header.text-center
-            = link_to app.neat_url, app.url
-          .app-image
-            = link_to app.url do
-              = image_tag "#{app.image_path}"
-          .app-footer
-            = app.description
-            - if currently_admin?
-              = link_to 'Edit', edit_app_path(app)
-              '  |
-              = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
+      - if app.published? || currently_admin?
+        .col-xs-12.col-sm-6
+
+          .app.card
+            .app-header.text-center
+              = link_to app.neat_url, app.url
+            .app-image
+              = link_to app.url do
+                = image_tag "#{app.image_path}"
+            .app-footer
+              = app.description
+              - if currently_admin?
+                = link_to 'Edit', edit_app_path(app)
+                '  |
+                = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
