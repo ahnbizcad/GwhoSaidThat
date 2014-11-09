@@ -11,11 +11,11 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
-    @programming_books = Book.by_category("programming").published
-    @business_books    = Book.by_category("business").published
-    @science_books     = Book.by_category("science").published
-    @philosophy_books  = Book.by_category("philosophy").published
-    @to_read_books     = Book.by_category("to read").published
+    @programming_books = Book.by_category("programming")
+    @business_books    = Book.by_category("business")
+    @science_books     = Book.by_category("science")
+    @philosophy_books  = Book.by_category("philosophy")
+    @to_read_books     = Book.by_category("to read")
     
     #@uri = Addressable::URI.parse("https://github.com/ahnbizcad/")
 

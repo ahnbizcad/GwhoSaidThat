@@ -11,7 +11,7 @@
       - if app.published? || currently_admin?
         .col-xs-12.col-sm-6
 
-          .app.card
+          .app.card[ class=("unpublished" if !app.published?) ]
             .app-header.text-center
               = link_to app.neat_url, app.url
             .app-image

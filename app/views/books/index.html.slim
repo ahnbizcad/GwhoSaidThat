@@ -32,50 +32,41 @@
           .slide_animate
             #products_box_1.products_box
               - @programming_books.each do |book|
-
-                = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
-                  = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120, width: 80
-
+                - if book.published || currently_admin?
+                  /- fi = FastImage.size(asset_url("book/#{book.image_path}"))
+                  /- fi_width = fi[0]
+                  /- fi_height = fi[1]
+                  = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
+                    = image_tag "books/#{book.image_path}", class: ["book", ("unpublished" if !book.published?)], alt: "#{book.title}", height: 120, width: 80
+                  /, width: fi_width, height: fi_height
 
           .slide_animate
             #products_box_2.products_box
               - @business_books.each do |book|
-                /- fi = FastImage.size(asset_url("book/#{book.image_path}"))
-                /- fi_width = fi[0]
-                /- fi_height = fi[1]
-                = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
-                  = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120, width: 80
-                /, width: fi_width, height: fi_height
+                - if book.published || currently_admin?
+                  = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
+                    = image_tag "books/#{book.image_path}", class: ["book", ("unpublished" if !book.published?)], alt: "#{book.title}", height: 120, width: 80
 
           .slide_animate
             #products_box_3.products_box
               - @science_books.each do |book|
-                /- fi = FastImage.size(asset_url("book/#{book.image_path}"))
-                /- fi_width = fi[0]
-                /- fi_height = fi[1]
-                = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
-                  = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120, width: 80
-                /, width: fi_width, height: fi_height
+                - if book.published || currently_admin?
+                  = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
+                    = image_tag "books/#{book.image_path}", class: ["book", ("unpublished" if !book.published?)], alt: "#{book.title}", height: 120, width: 80
 
           .slide_animate
             #products_box_4.products_box
               - @philosophy_books.each do |book|
-                /- fi = FastImage.size(asset_url("book/#{book.image_path}"))
-                /- fi_width = fi[0]
-                /- fi_height = fi[1]
-                = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
-                  = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120, width: 80
-                /, width: fi_width, height: fi_height
+                - if book.published || currently_admin?
+                  = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
+                    = image_tag "books/#{book.image_path}", class: ["book", ("unpublished" if !book.published?)], alt: "#{book.title}", height: 120, width: 80
 
-
-                /= content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "true", type: "book", url: "http://localhost:3000/assets/content//iframe_content.html" }) do
-                /  = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}"
-                
           .slide_animate
             #products_box_5.products_box
               - @to_read_books.each do |book|
-                = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
-                  = image_tag "books/#{book.image_path}", class: "book", alt: "#{book.title}", height: 120, width: 80
+                - if book.published || currently_admin?
+                  = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
+                    = image_tag "books/#{book.image_path}", class: ["book", ("unpublished" if !book.published?)], alt: "#{book.title}", height: 120, width: 80
 
       .panel_bar
         .buttons-container
