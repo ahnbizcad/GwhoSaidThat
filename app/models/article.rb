@@ -12,15 +12,10 @@
 #
 
 class Article < ActiveRecord::Base
-  before_validation :titleize_title
 
   default_scope { order("created_at DESC") }  
   scope :by_newest, -> { order("created_at DESC") }
   scope :unpublished, -> { where("published = False") }
   scope :published, -> { where("published = True") } 
-
-  def titleize_title
-    self.title = self.title.titleize
-  end
 
 end
