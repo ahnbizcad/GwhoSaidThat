@@ -17,8 +17,8 @@ class BooksController < ApplicationController
     @philosophy_books  = Book.by_category("philosophy").published
     @to_read_books     = Book.by_category("to read").published
     
-    @uri = Addressable::URI.parse("https://github.com/ahnbizcad/")
-    
+    #@uri = Addressable::URI.parse("https://github.com/ahnbizcad/")
+
   end
 
   # GET /books/1
