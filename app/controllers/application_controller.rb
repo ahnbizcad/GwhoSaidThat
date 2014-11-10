@@ -42,6 +42,15 @@ class ApplicationController < ActionController::Base
 
   protected
 
+    def currently_admin?
+      if user_signed_in?
+        current_user.admin? ? true : false
+      else
+        false
+      end
+    end
+    helper_method :currently_admin?
+
     def authorize_admin
       redirect_to root_path, alert: 'Access Denied' unless current_user.admin?
     end
@@ -90,6 +99,5 @@ class ApplicationController < ActionController::Base
     def unpublished_books_count
       @unpublished_books_count = Book.unpublished.count
     end
-
 
 end

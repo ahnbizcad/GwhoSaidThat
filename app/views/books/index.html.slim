@@ -1,7 +1,6 @@
 /- require 'image_size'
 /= ImageSize.path("http://localhost:3000/assets/github.png").size
 
-/= @uri
 .row
   .col-xs-12
     h1.media-heading Books I Recommend
@@ -98,18 +97,22 @@
       table
         thead
           tr
-            th
-            th
-            th
+            th Edit
+            th Destroy
+            th Published?
+            th Category
+            th Title
+            th Author            
+            th Description/Review/Notes
 
         tbody
           - @books.each do |book|
             tr
+              td = link_to 'Edit', edit_book_path(book)
+              td = link_to 'Destroy', book, data: {:confirm => 'Are you sure?'}, :method => :delete
+              td = book.published
               td = book.category
               td = link_to book.title, book
-              td = book.author
-              td = book.published
+              td = book.author              
               td = book.review
-              - if currently_admin?
-                td = link_to 'Edit', edit_book_path(book)
-                td = link_to 'Destroy', book, data: {:confirm => 'Are you sure?'}, :method => :delete
+              

@@ -9,7 +9,7 @@
   .row
     - @apps.each do |app|
       - if app.published? || currently_admin?
-        .col-xs-12.col-sm-6
+        .col-xs-6.col-sm-4
 
           .app.card[ class=("unpublished" if !app.published?) ]
             .app-header.text-center

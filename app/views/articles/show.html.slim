@@ -1,7 +1,7 @@
 .row
   .col-xs-12
 
-    article.article.card
+    article.article.card[ class=("unpublished" if !@article.published?) ]
       h1.media-heading = @article.title
       h5.media-heading = @article.created_at.to_date
       - if user_signed_in?
