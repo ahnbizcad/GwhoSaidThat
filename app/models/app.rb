@@ -12,13 +12,15 @@
 #
 
 class App < ActiveRecord::Base
-  default_scope { order("created_at DESC") }
-  scope :by_newest, -> { order("created_at DESC") }
+
+  scope :by_newest,   -> { order("created_at DESC") }
   scope :unpublished, -> { where("published = False") }
-  scope :published, -> { where("published = True") } 
+  scope :published,   -> { where("published = True") } 
+
 
   def neat_url
-    URI(self.url).host
+    encoded_url = URI.encode(self.url)
+    URI.parse(encoded_url).host
   end
 
 end

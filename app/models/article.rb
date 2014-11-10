@@ -13,9 +13,8 @@
 
 class Article < ActiveRecord::Base
 
-  default_scope { order("created_at DESC") }  
-  scope :by_newest, -> { order("created_at DESC") }
+  scope :by_newest,   -> { order("created_at DESC") }
   scope :unpublished, -> { where("published = False") }
-  scope :published, -> { where("published = True") } 
+  scope :published,   -> { where("published = True") } 
 
 end
