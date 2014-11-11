@@ -18,7 +18,7 @@
               = link_to app.url do
                 = image_tag "#{app.image_path}"
             .app-footer
-              = app.description
+              = app.description.html_safe
               - if currently_admin?
                 = link_to 'Edit', edit_app_path(app)
                 '  |
