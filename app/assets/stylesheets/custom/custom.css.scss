@@ -129,6 +129,11 @@ main {
 
 .apps {
   display: flex;
+  flex-flow: row wrap;
+
+  .app-container {
+    
+  }
 }
 
 .app {
