@@ -127,6 +127,10 @@ main {
   padding: 1em 0 2em 0;
 }
 
+.apps {
+  display: flex;
+}
+
 .app {
   padding: 1em;
   word-wrap: break-word;
