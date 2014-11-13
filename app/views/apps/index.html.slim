@@ -1,15 +1,15 @@
 .row
   .col-xs-12
-    h1.media-heading Check Out Some of My Apps
+    h1.media-heading Portfolio
 
     -if currently_admin?
       = link_to 'New App', new_app_path
 
 - unless @apps.blank?
   .row.apps
-    - @apps.each_with_index do |app, index|
+    - @apps.each do |app|
       - if app.published? || currently_admin?
-        .col-xs-6.col-sm-4.app-container
+        .col-xs-12.col-sm-6.app-container
 
           .app.card[ class=("unpublished" if !app.published?) ]
             .app-header.text-center
@@ -23,5 +23,3 @@
                 = link_to 'Edit', edit_app_path(app)
                 '  |
                 = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-        /.clearfixable
