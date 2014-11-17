@@ -67,37 +67,37 @@ class ApplicationController < ActionController::Base
 #      VERBS.each do |models, verb|
 #
 #        define_method "unpublished_#{models}_count" do
-#          instance_variable_set("@unpublished_#{@models}_count", models.singularize.constantize.unpublished.count)
+#          instance_variable_set("@unpublished_#{@models}_count", models.singularize.constantize.unpublished.size)
 #        end
 #
 #        define_method "published_#{models}_count" do
-#          instance_variable_set("@published_#{@models}_count", models.singularize.constantize.published.count)
+#          instance_variable_set("@published_#{@models}_count", models.singularize.constantize.published.size)
 #        end
 #
 #      end
 #    end
     def published_apps_count
-      @published_apps_count = App.published.count
+      @published_apps_count = App.published.size
     end
 
     def unpublished_apps_count
-      @unpublished_apps_count = App.unpublished.count
+      @unpublished_apps_count = App.unpublished.size
     end
 
     def published_articles_count
-      @published_articles_count = Article.published.count
+      @published_articles_count = Article.published.size
     end
 
     def unpublished_articles_count
-      @unpublished_articles_count = Article.unpublished.count
+      @unpublished_articles_count = Article.unpublished.size
     end
 
     def published_books_count
-      @published_books_count = Book.published.count
+      @published_books_count = Book.published.size
     end
 
     def unpublished_books_count
-      @unpublished_books_count = Book.unpublished.count
+      @unpublished_books_count = Book.unpublished.size
     end
 
 end

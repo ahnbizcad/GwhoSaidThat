@@ -40,7 +40,7 @@ ul.no-bullet {
 
 .card {
   box-shadow: 2px 2px 4px 3px #666, 0px 0px 0.5em 0px #26F inset;
-  margin-top: 1em;
+  margin-top: 1.5em;
 
 }
 .unpublished {
@@ -124,12 +124,12 @@ body {
 
 main {
   min-height: 900px;
-  padding: 1em 0 2em 0;
+  padding: 1em 0 1em 0;
 }
 
 .apps {
-  display: flex;
-  flex-flow: row wrap;
+  //display: flex;
+  //flex-flow: row wrap;
 
   .app-container {
 
