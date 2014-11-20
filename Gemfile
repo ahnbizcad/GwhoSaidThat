@@ -47,12 +47,6 @@ gem 'font-awesome-sass', '~> 4.2.0'
 gem 'asciidoctor'
 gem 'coderay', '~> 1.1.0'
 
-#gem 'RedCloth'
-#gem 'redcloth'
-
-#gem 'redcarpet'
-#gem 'pygments.rb' #sytnax highlighting library with replacement for albino ruby syntax 
-
 #gem 'kaminari'
 
 gem 'acts_as_taggable_on'
