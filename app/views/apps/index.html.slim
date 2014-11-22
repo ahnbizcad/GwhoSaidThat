@@ -9,7 +9,7 @@
   .row.apps
     - @apps.each do |app|
       - if app.published? || currently_admin?
-        .col-xs-12.col-sm-4.app-container
+        .col-xs-12.col-sm-6.app-container.clearfix
 
           .app.card[ class=("unpublished" if !app.published?) ]
             .app-header.text-center
@@ -23,5 +23,3 @@
                 = link_to 'Edit', edit_app_path(app)
                 '  |
                 = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-        .clearfix.visible-sm
