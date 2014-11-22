@@ -16,7 +16,7 @@
               = link_to app.neat_url, app.url
             .app-image
               = link_to app.url do
-                = image_tag "app/#{app.image_path}"
+                = image_tag "apps/#{app.image_path}"
             .app-footer
               = app.description.html_safe
               - if currently_admin?
