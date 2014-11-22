@@ -16,10 +16,12 @@
               = link_to app.neat_url, app.url
             .app-image
               = link_to app.url do
-                = image_tag "#{app.image_path}"
+                = image_tag "app/#{app.image_path}"
             .app-footer
               = app.description.html_safe
               - if currently_admin?
                 = link_to 'Edit', edit_app_path(app)
                 '  |
                 = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+        .clearfix.visible-sm

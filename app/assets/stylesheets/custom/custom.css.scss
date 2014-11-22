@@ -39,7 +39,8 @@ ul.no-bullet {
 }
 
 .card {
-  box-shadow: 2px 2px 4px 3px #666, 0px 0px 0.5em 0px #26F inset;
+  box-shadow: 2px 2px 4px 3px #666, 
+              0px 0px 0.5em 0px #26F inset;
   margin: 0.75em 0;
 
 }
@@ -128,8 +129,6 @@ main {
 }
 
 .apps {
-  //display: flex;
-  //flex-flow: row wrap;
 
   .app-container {
 

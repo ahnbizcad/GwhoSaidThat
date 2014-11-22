@@ -22,6 +22,7 @@ xs is default. Smaller sizes cascade to larger sizes. Flow structure.
   }
 
 
+
 /*----------------------------------------
 sm devices (tablets, 748px and up)
 ----------------------------------------*/
@@ -37,6 +38,14 @@ sm devices (tablets, 748px and up)
       right: 0;
     }
   }
+
+  .apps {
+
+    .app-container:nth-child(3n) {
+      
+    }
+  }
+
 
 }
 
