@@ -39,7 +39,9 @@ sm devices (tablets, 748px and up)
     }
   }
 
-  
+  .app-container:nth-child(3n+1) {
+    clear: both;
+  }
 
 }
 
