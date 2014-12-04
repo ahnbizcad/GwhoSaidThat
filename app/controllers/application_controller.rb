@@ -42,6 +42,13 @@ class ApplicationController < ActionController::Base
 
   protected
 
+    # Devise strong parameters
+    #def configure_permitted_parameters
+    #  devise_parameter_sanitizer.for(:sign_in)        { |u| u.permit(:email, :password) }
+    #  devise_parameter_sanitizer.for(:sign_up)        { |u| u.permit(:email, :password, :password_confirmation) }
+    #  devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:email, :password, :password_confirmation, :current_password) }
+    #end
+
     def currently_admin?
       if user_signed_in?
         current_user.admin? ? true : false
@@ -76,6 +83,7 @@ class ApplicationController < ActionController::Base
 #
 #      end
 #    end
+
     def published_apps_count
       @published_apps_count = App.published.size
     end

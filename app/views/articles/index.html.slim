@@ -27,7 +27,7 @@
               = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
             
             - truncated_content = truncate(article.content, length:1000, escape: false)
-            == Asciidoctor.render(truncated_content, safe: 'safe')
+            == Asciidoctor.convert(truncated_content, safe: 'safe')
             = link_to article do
               |  (read more)
     

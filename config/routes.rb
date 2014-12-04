@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :books
 
-  root "apps#index"
+  root "pages#about"
 
   get "about",    to: "pages#about"
   get "contact",  to: "pages#contact"

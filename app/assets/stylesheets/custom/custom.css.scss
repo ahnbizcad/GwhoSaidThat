@@ -1,18 +1,4 @@
 /*--------------------------
-bootstrap adjust 
---------------------------*/
-
-.navbar-default {
-  background-color: whitesmoke;
-}
-.navbar-fixed-top {
-  box-shadow: 0px 2px 6px #666;
-}
-.nav-tabs {
-  border-bottom: 0px solid #FFFFFF;
-}
-
-/*--------------------------
 Reusable OO
 --------------------------*/
 
@@ -47,6 +33,17 @@ ul.no-bullet {
 .unpublished {
   box-shadow: 2px 2px 16px 3px red;
 }
+
+.bg-blue {
+  background-color: #5091F2;
+}
+.bg-yellow {
+  background-color: #F6FC86;
+}
+.bg-cream {
+  background-color: cornsilk;
+}
+
 
 /*--------------------------
 By Item

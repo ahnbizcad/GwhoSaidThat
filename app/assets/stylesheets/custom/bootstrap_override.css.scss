@@ -1,3 +1,7 @@
+/*--------------------------
+bootstrap override
+--------------------------*/
+
 pre {
   display: block;
   outline:0;
@@ -14,3 +18,37 @@ pre {
   border-radius:0;
 }
 
+.navbar-default {
+  background-color: whitesmoke;
+}
+.navbar-fixed-top {
+  box-shadow: 0px 2px 6px #666;
+}
+.nav-tabs {
+  border-bottom: 0px solid #FFFFFF;
+}
+
+
+/*--------------------------
+bootstrap additional
+--------------------------*/
+
+.jumbotron-centered {
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+
+  > div {
+    flex: 1 1 auto;
+
+    > div {
+      display: table;
+      margin: 0 auto;
+
+    }
+  }
+}
+
+.jumbotron-height {
+  min-height: 600px;
+}
