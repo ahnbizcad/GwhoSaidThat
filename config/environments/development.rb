@@ -37,7 +37,7 @@ Rails.application.configure do
 
 #
 
-  config.assets.precompile = ['*.js', '*.css']
+  config.assets.precompile = ['*.js', '*.css', '*.scss']
 
 #
   

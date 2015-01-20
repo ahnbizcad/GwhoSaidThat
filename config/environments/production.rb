@@ -78,7 +78,7 @@ Rails.application.configure do
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   config.assets.precompile += %w( search.js )
-  #config.assets.precompile = ['*.js', '*.css'] #Doesn't work!
+  #config.assets.precompile = ['*.js', '*.css', '*.scss'] #Doesn't work!
 
   #
 

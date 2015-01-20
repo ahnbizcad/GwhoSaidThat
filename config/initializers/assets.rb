@@ -1,6 +1,6 @@
 # Manifest files
 # Not technically manifests
-#Rails.application.config.assets.precompile += ['bookshelf.js', 'bookshelf.css']
+#Rails.application.config.assets.precompile += ['bookshelf.js', 'bookshelf.scss']
 
 
 # Images
