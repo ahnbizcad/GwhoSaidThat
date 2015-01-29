@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :books
+  root "pages#home"
 
-  root "pages#about"
-
-  get "about",    to: "pages#about"
-  get "contact",  to: "pages#contact"
+  get "resume",  to: "pages#resume"
 
   resources :apps
   resources :articles 
+  resources :books
 
   devise_for :users,  :path => '', 
                       :path_names => { :sign_in => "login", 

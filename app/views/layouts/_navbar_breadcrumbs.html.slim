@@ -1,0 +1,23 @@
+.affixable-wrapper
+  nav#navbar.navbar.navbar-default.affixable[ role="navigation" ]
+
+    ul#social-icons.nav.navbar-right
+      li= link_to "https://github.com/ahnbizcad/" do
+        = image_tag "github.png"
+      li= link_to "https://www.linkedin.com/in/jeehooahn" do
+        = image_tag "linkedin.png"
+
+    .bs-js-navbar-scrollspy
+      ul.nav.navbar-nav
+        li= link_to "#cover" do 
+          | Cover
+        li= link_to "#works" do 
+          | Works
+        li= link_to "#bookshelf" do 
+          | Bookshelf
+        li= link_to "#blog" do 
+          | Blog
+        li= link_to "#about" do
+          | About
+        li= link_to "#connect" do
+          | Connect

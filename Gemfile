@@ -8,7 +8,7 @@ gem 'pg', '0.17.1'
 #gem 'haml2slim' # Used for converting existing files
 gem 'slim-rails'
 
-gem 'sass-rails', github: 'rails/sass-rails'
+gem 'sass-rails', '~> 4.0.2'
 gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'coffee-rails'
@@ -18,7 +18,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks', '~>2.0.2'
 
-gem 'autoprefixer-rails'
+#gem 'autoprefixer-rails'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'

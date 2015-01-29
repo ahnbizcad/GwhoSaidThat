@@ -28,14 +28,27 @@ ul.no-bullet {
   box-shadow: 2px 2px 4px 3px #666, 
               0px 0px 0.5em 0px #26F inset;
   margin: 0.75em 0;
-
 }
+
+.featured-shadow {
+  box-shadow: 2px 2px 8px 6px grey;
+}
+
 .unpublished {
   box-shadow: 2px 2px 16px 3px red;
 }
 
+
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+
+// clean up
 .bg-blue {
-  background-color: #5091F2;
+  background-color: $mediumblue;
 }
 .bg-yellow {
   background-color: #F6FC86;
@@ -51,16 +64,26 @@ By Item
 
 body {
   font-size: 16px;
-  background-color: $lightblue;
+  background-color:white;
+
 }
 
+
+main {
+  min-height: 900px;
+  padding: 0;
+}
+
+
 #navbar {
+  background-color: rgba(255,255,255,1);
+  margin: 0;
 
   ul {
     white-space: nowrap;
-
+    
     li {
-      font-size: 1.4em;
+      font-size: 1em;
       float: none;
       display: inline-block;
       *display: inline;
@@ -120,49 +143,17 @@ body {
   }
 }
 
-main {
-  min-height: 900px;
-  padding: 0.75em 0;
+
+.section {
+
 }
 
-.apps {
 
-  .app-container {
-
-  }
+.spacer {
+  //height: 4em;
+  //background-color: silver;
 }
 
-.app {
-  padding: 1em;
-  word-wrap: break-word;
-  background-color: whitesmoke;
-
-  .app-header {
-    padding: 0.5em;
-    font-size: 1.2em;
-    a {
-      text-decoration:none;
-    }
-  }
-  .app-image {
-    img {
-      width: 100%;
-    }
-  }
-  .app-footer {
-    padding: 0.5em;
-  }
-}
-
-.article {
-  padding: 1em;
-  word-wrap: break-word;
-  background-color: whitesmoke;
-}
-
-.book {
-  max-height: 120px;
-}
 
 footer {
   background-color: whitesmoke;
@@ -170,23 +161,25 @@ footer {
   box-shadow: 0px 0px 6px #666;
 
   min-height: 80px;
+  
+}
 
-  > #footer-navbar {
-    text-align: center;
 
-    font-size: 1.5em;
-    color: $navyblue;
+#footer-navbar {
+  text-align: center;
 
-    > ul {
-      white-space: nowrap;
+  font-size: 1.5em;
+  color: $navyblue;
 
-      > li {
-        font-size: 1.4em;
-        float: none;
-        display: inline-block;
-        *display: inline;
-        *zoom: 1;
-      }
+  > ul {
+    white-space: nowrap;
+
+    > li {
+      font-size: 1.4em;
+      float: none;
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
     }
   }
 }

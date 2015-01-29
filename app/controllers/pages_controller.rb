@@ -1,15 +1,21 @@
 class PagesController < ApplicationController
 
-  def apps
-    
+  def home
+    @apps     = App.all
+    @articles = Article.all
+    @books    = Book.all
+
+    # Refactor to use ajax lazy load from the plugin javascript.
+    @programming_books = Book.by_category("programming")
+    @business_books    = Book.by_category("business")
+    @science_books     = Book.by_category("science")
+    @philosophy_books  = Book.by_category("philosophy")
+    @to_read_books     = Book.by_category("to read")
+
   end
 
-  def about
-    
-  end
+  def resume
 
-  def contact
-    
   end
   
 end

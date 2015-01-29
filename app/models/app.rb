@@ -9,6 +9,7 @@
 #  description :text
 #  published   :boolean          default(FALSE)
 #  image_path  :string(255)
+#  name        :string(255)
 #
 
 class App < ActiveRecord::Base
@@ -17,6 +18,7 @@ class App < ActiveRecord::Base
   scope :unpublished, -> { where("published = False") }
   scope :published,   -> { where("published = True") } 
 
+  validates :name, format: { with: // }
 
   def neat_url
     encoded_url = URI.encode(self.url)

@@ -25,12 +25,13 @@
 //
 //
 //TREE SUBSTITUTE
+//= require custom/test
+//
+//= require pages
 //= require apps
 //= require articles
 //= require books
-//= require pages
 //
 //
 //TURBOLINKS
-//
 //= require turbolinks

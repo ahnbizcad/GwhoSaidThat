@@ -1,25 +1,26 @@
-.row
-  .col-xs-12
-    h1.media-heading Portfolio
+.container-fluid
+  .row
+    .col-xs-12
+      h1.media-heading Portfolio
 
-    -if currently_admin?
-      = link_to 'New App', new_app_path
+      -if currently_admin?
+        = link_to 'New App', new_app_path
 
-- unless @apps.blank?
-  .row.apps
-    - @apps.each do |app|
-      - if app.published? || currently_admin?
-        .col-xs-12.col-sm-4.app-container.clearfix
+  - unless @apps.blank?
+    .row.apps
+      - @apps.each do |app|
+        - if app.published? || currently_admin?
+          .col-xs-12.col-sm-4.app-container.clearfix
 
-          .app.card[ class=("unpublished" if !app.published?) ]
-            .app-header.text-center
-              = link_to app.neat_url, app.url
-            .app-image
-              = link_to app.url do
-                = image_tag "apps/#{app.image_path}"
-            .app-footer
-              = app.description.html_safe
-              - if currently_admin?
-                = link_to 'Edit', edit_app_path(app)
-                '  |
-                = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
+            .app.card[ class=("unpublished" if !app.published?) ]
+              .app-header.text-center
+                = link_to app.neat_url, app.url
+              .app-image
+                = link_to app.url do
+                  = image_tag "apps/#{app.image_path}"
+              .app-footer
+                = app.description.html_safe
+                - if currently_admin?
+                  = link_to 'Edit', edit_app_path(app)
+                  '  |
+                  = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete

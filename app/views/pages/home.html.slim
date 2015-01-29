@@ -1,0 +1,22 @@
+== render partial: "pages/cover"
+
+/== render partial: "layouts/navbar"
+== render partial: "layouts/navbar_breadcrumbs"
+
+== render partial: "apps/apps", locals: { apps: @app }
+
+== render partial: "books/books", locals: { books: @books, 
+                                            programming_books: @programming_books,
+                                            business_books:    @business_books,
+                                            science_books:     @science_books,  
+                                            philosophy_books:  @philosophy_books,
+                                            to_read_books:     @to_read_books }
+
+== render partial: "articles/articles", locals: { articles: @articles }
+
+== render partial: "pages/about"
+
+== render partial: "pages/connect"
+
+
+

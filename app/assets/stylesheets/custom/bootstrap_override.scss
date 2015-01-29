@@ -52,3 +52,15 @@ bootstrap additional
 .jumbotron-height {
   min-height: 500px;
 }
+
+h1 {
+  margin: 0;
+}
+
+.modal {
+  z-index: 9999;
+}
+
+.modal-dialog {  
+  margin: 75px auto 0;
+}

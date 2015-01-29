@@ -7,21 +7,21 @@ html
     = csrf_meta_tags
     /= filepicker_js_include_tag
     meta name="viewport" content="initial-scale=1.0" 
-  body
+
+  body[ data-spy="scroll" data-target="#navbar" data-offset="50"]
 
     /== render 'layouts/header'
-    == render 'layouts/navbar'
 
     main
-      .container-fluid
-        - if notice
-          .notice.notice-dismissable
-            = notice
-        - if alert
-          .alert.alert-dismissable[ role="alert" data-dismiss="alert"]
-            = alert
-            
-        == yield
+
+      - if notice
+        .notice.notice-dismissable
+          = notice
+      - if alert
+        .alert.alert-dismissable[ role="alert" data-dismiss="alert"]
+          = alert
+          
+      == yield
 
     /== render 'layouts/sidebar'
     == render 'layouts/footer'

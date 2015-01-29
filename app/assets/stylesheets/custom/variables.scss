@@ -20,17 +20,28 @@ Mixins - Positioning
 ----------*/
 
 
+.clear-both {
+  clear: both;
+}
+
 /*----------
-Mixins - Colors, Styling
+Mixins - Colors
 ----------*/
+
+$blueucla: rgb(0,139,236);
+$yellowucla: rgb(239,214,53);
 
 $verb-color: #008CFF;
 
 $lightblue: #C0E0FA;
-$mediumblue: #1B78F2;
+$mediumblue: #2EAFFF;
 $navyblue: #236;
 $purpleblue: #66F;
 
-.clear-both {
-  clear: both;
+
+span.blue {
+  color: $blueucla;
+}
+span.yellow {
+  color: $yellowucla;
 }
