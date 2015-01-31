@@ -1,3 +1,4 @@
 == README
 
-Blog of Jeehoo Ahn showing how to do useful things in Rails
+Portfolio and programming blog of Jeehoo Ahn.
+http://gwhosaidthat.herokuapp.com

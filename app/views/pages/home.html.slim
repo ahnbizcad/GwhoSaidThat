@@ -5,6 +5,8 @@
 
 == render partial: "apps/apps", locals: { apps: @app }
 
+== render partial: "articles/articles", locals: { articles: @articles }
+
 == render partial: "books/books", locals: { books: @books, 
                                             programming_books: @programming_books,
                                             business_books:    @business_books,
@@ -12,7 +14,7 @@
                                             philosophy_books:  @philosophy_books,
                                             to_read_books:     @to_read_books }
 
-== render partial: "articles/articles", locals: { articles: @articles }
+/== render partial: "pages/skills"
 
 == render partial: "pages/about"
 
