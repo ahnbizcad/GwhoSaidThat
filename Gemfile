@@ -30,7 +30,7 @@ end
 #gem 'compass'
 gem 'nokogiri'  #html, xml, sax, reader and css parser
 
-gem 'figaro', '~> 0.7.0'
+gem 'figaro', '~> 1.1.0'
 
 gem 'devise'
 

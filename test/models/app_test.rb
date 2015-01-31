@@ -9,7 +9,7 @@
 #  description :text
 #  published   :boolean          default(FALSE)
 #  image_path  :string(255)
-#  name        :string(255)
+#  name        :string(255)      default(""), not null
 #
 
 require 'test_helper'
