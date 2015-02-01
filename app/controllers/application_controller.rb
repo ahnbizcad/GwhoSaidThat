@@ -3,23 +3,23 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  VERBS = { pages: "IS",
-            apps: "MADE",
-            articles: "LEARNED",
-            books: "READ",
-          }.stringify_keys#.freeze #see http://m.onkey.org/ruby-i-don-t-like-3-object-freeze
-
-  before_action :verbs
-  before_action :set_current_verb
-
-  before_action :published_apps_count
-  before_action :unpublished_apps_count, if: :user_signed_in?
-  
-  before_action :published_articles_count
-  before_action :unpublished_articles_count, if: :user_signed_in?
-  
-  before_action :published_books_count
-  before_action :unpublished_books_count, if: :user_signed_in?
+#  VERBS = { pages: "IS",
+#            apps: "MADE",
+#            articles: "LEARNED",
+#            books: "READ",
+#          }.stringify_keys#.freeze #see http://m.onkey.org/ruby-i-don-t-like-3-object-freeze
+#
+#  before_action :verbs
+#  before_action :set_current_verb
+#
+#  before_action :published_apps_count
+#  before_action :unpublished_apps_count, if: :user_signed_in?
+#  
+#  before_action :published_articles_count
+#  before_action :unpublished_articles_count, if: :user_signed_in?
+#  
+#  before_action :published_books_count
+#  before_action :unpublished_books_count, if: :user_signed_in?
 
   ## Inject the passed in path_prefixes to the the partials lookup path just before 'application' so that templates can "inherit" partially from other portals/paths as well.
   ## See: stackoverflow.com/questions/…
@@ -39,7 +39,11 @@ class ApplicationController < ActionController::Base
   #@_prefixes_with_partials = prefixes
   #end
   #end
-
+  
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
+    
   protected
 
     # Devise strong parameters
@@ -107,5 +111,5 @@ class ApplicationController < ActionController::Base
     def unpublished_books_count
       @unpublished_books_count = Book.unpublished.size
     end
-
+  
 end

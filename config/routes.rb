@@ -11,7 +11,9 @@ Rails.application.routes.draw do
                                         :sign_out => "logout", 
                                         :sign_up => "register", 
                                         :account_update => "account-settings" }
-                                                  
+        
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

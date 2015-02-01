@@ -8,16 +8,14 @@
 
 $(document).ready ->
 
-  # Keep cover page 1 window's height, including navbar 
+  # Maintain cover image height of one screen.
+  #
   $(window).resize ->
     space = $('#cover').height( $(window).height() - $('.affixable-wrapper > .affixable').height() )
   
 
-  # Affix 
-  ###
-  coverOffsetFn = ->
-    $('.affixable-wrapper > .affixable').offset().top
-  ###
+  # Affix
+  #
   $('#cover').height( $(window).height() - $('.affixable-wrapper > .affixable').height() )
   
   $('.affixable-wrapper').height( $('.affixable-wrapper > .affixable').height() )
@@ -25,11 +23,13 @@ $(document).ready ->
     offset: $('.affixable-wrapper > .affixable').offset().top
 
 
+  # Smooth Scrolling for anchor links,.
+  #
   # Offset scrollspy target positioning
   navOffset = $('.affixable-wrapper > .affixable').height()
-
-  $('.navbar li a').click (event) ->
+  #
+  $(".bs-js-navbar-scrollspy li a[href^='#']").on 'click', (event) ->
+    target = this.hash
     event.preventDefault()
-    $($(this).attr('href'))[0].scrollIntoView()
-    scrollBy(0, -navOffset)
-
+    $('html, body').animate { scrollTop: $(this.hash).offset().top - navOffset }, 300, ->
+      window.history.pushState(null,null,target)
