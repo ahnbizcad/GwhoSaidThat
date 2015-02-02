@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  respond_to :html, :js, :json
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   before_action :authenticate_user!,  except: [:show, :index]
@@ -16,7 +17,12 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     redirect_to articles_path if !@article.published? && !currently_admin?
-    
+    #respond_to do |format|
+    #  format.html
+    #  format.js
+    #  format.json
+    #end
+    respond_with @article
   end
 
   # GET /articles/new

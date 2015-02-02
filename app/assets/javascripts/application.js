@@ -27,6 +27,7 @@
 //TREE SUBSTITUTE
 //= require custom/test
 //
+//= require affix
 //= require pages
 //= require apps
 //= require articles

@@ -13,9 +13,5 @@ class PagesController < ApplicationController
     @to_read_books     = Book.by_category("to read")
 
   end
-
-  def resume
-
-  end
   
 end

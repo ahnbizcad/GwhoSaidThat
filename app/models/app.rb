@@ -13,7 +13,8 @@
 #
 
 class App < ActiveRecord::Base
-
+  require 'uri'
+  
   scope :by_newest,   -> { order("created_at DESC") }
   scope :unpublished, -> { where("published = False") }
   scope :published,   -> { where("published = True") } 

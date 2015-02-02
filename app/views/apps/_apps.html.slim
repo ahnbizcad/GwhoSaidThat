@@ -1,5 +1,8 @@
 #works.section
-  = link_to 'New App', new_app_path if currently_admin? 
+  
+  - if currently_admin?
+    .admin
+      = link_to 'Manage Apps', apps_path
 
   - unless @apps.blank?
     - @apps.each do |app|

@@ -1,34 +1,23 @@
 #blog.section.container-fluid.bg-blue
   /.row
   /  .col-xs-12
-  /    h1.media-heading.text-center Coding Blog
+  /    h1.media-heading.text-center Coding Blog      
 
-      - if currently_admin?
-        = link_to 'New Article', new_article_path
+  - if currently_admin?
+    .admin
+      = link_to 'Manage Articles', articles_path
 
   - unless @articles.blank?
     .row
-      - @articles.each do |article|
-        - if article.published? || currently_admin?
-          .col-xs-12
-            
-            article.article.card[ class=("unpublished" if !article.published?) ]
-              - if article.image_url
-                = link_to article do
-                  = image_tag article.image_url
-              
-              = link_to article do
-                h1.media-heading = article.title
-              
-              h5.media-heading = article.created_at.to_date
-              
-              - if currently_admin?
-                = link_to 'Edit', edit_article_path(article)
-                '  |
-                = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
-              
-              - truncated_content = truncate(article.content, length:1000, escape: false)
-              == Asciidoctor.convert(truncated_content, safe: 'safe')
-              = link_to article do
-                |  (read more)
+      .col-xs-12.col-md-3
+        #articles-nav.affixable
+          ul#articles-nav.no-bullet
+            - @articles.each do |article| 
+              li
+                = link_to article, remote: true do
+                  = article.title
       
+      .col-xs-12.col-md-9
+        #article
+          == render partial: "articles/article", locals: { article: @articles.first }
+        // may need to change @articles.first to be ajax swapped

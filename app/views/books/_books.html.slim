@@ -5,10 +5,9 @@
   /h1.media-heading.text-center 
   /  | My Favorite Reads
 
-
   - if currently_admin?
-    = link_to 'New Book', new_book_path
-
+    .admin
+      = link_to 'Manage Books', books_path
 
   #bookshelf_slider.bookshelf_slider
 
@@ -87,30 +86,3 @@
           #btn5.button_bar
             = link_to "#" do
               | To Read
-
-
-  #book_review
-    /currently selected book.description
-
-  - if currently_admin?
-    table
-      thead
-        tr
-          th Edit
-          th Destroy
-          th Published?
-          th Category
-          th Title
-          th Author            
-          th Description/Review/Notes
-
-      tbody
-        - @books.each do |book|
-          tr
-            td = link_to 'Edit', edit_book_path(book)
-            td = link_to 'Destroy', book, data: {:confirm => 'Are you sure?'}, :method => :delete
-            td = book.published
-            td = book.category
-            td = link_to book.title, book
-            td = book.author              
-            td = book.review

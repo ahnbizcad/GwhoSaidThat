@@ -1,10 +1,10 @@
-.row
-  h1 Editing app
+.container-fluid
+  .row
+    .col-xs-12
+      h1 Editing app
 
-  == render 'form'
+      == render 'form'
 
-  - if currently_admin?
-    = link_to 'Show', @app
-    '  |
-    = link_to 'Back', apps_path
-
+      = link_to 'Show', @app
+      '  |
+      = link_to 'Back', apps_path
