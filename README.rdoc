@@ -3,12 +3,12 @@
 Portfolio and programming blog of Jeehoo Ahn.
 http://gwhosaidthat.herokuapp.com
 
+/FEATURES
 / cover image is parallax background
-/ apps change on hover
-/ blog fixed breadcrumb titles. mobile - titles first
-/ bookshelves
 
-/ navbar resizeing. affix detection
-/ devise strong params
+
+/FIXES
 / prevent navbar wrapping
+/ modals styling
 / CRUD CMS
+/ devise strong params

@@ -28,6 +28,11 @@ Mixins - Positioning
 Mixins - Colors
 ----------*/
 
+$offwhite: rgb(245,245,245);
+$offblack: rgb(30,30,30);
+
+$blacktransparent: rgba(30,30,30,0.7);
+
 $blueucla: rgb(0,139,236);
 $yellowucla: rgb(239,214,53);
 
@@ -44,4 +49,12 @@ span.blue {
 }
 span.yellow {
   color: $yellowucla;
+}
+
+/*--------------
+Mixins - Styling
+--------------*/
+
+@mixin boxshadow($h: 0px, $v: 2px, $bl: 4px, $sp: 3px, $color: #666) {
+  box-shadow: $h, $v, $bl, $sp, $color;
 }

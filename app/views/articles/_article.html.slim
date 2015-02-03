@@ -4,7 +4,7 @@
 
 - if article.published? || currently_admin?
   
-  article.article.card[ class=("unpublished" if !article.published?) ]
+  article[ class=("unpublished" if !article.published?) ]
     - if article.image_url
 
       = link_to article do

@@ -1,43 +1,48 @@
-#works.section
+#works.section.container-fluid
   
   - if currently_admin?
-    .admin
-      = link_to 'Manage Apps', apps_path
+    .row.no-gutter
+      .col-xs-12
+        .admin
+          = link_to 'Manage Apps', apps_path
 
   - unless @apps.blank?
-    - @apps.each do |app|
-      - if app.published? || currently_admin?
-        a.app[ href="" class=("unpublished" if !app.published?) data-toggle="modal" data-target=("##{app.name.parameterize}") ]  
-          = image_tag "apps/#{app.image_path}", class: "app-image"
-          .app-name[ data-app-name=("##{app.name.titleize}") ]
+    .row.no-gutter#apps
+      - @apps.each do |app|
+        - if app.published? || currently_admin?
+          .col.xs-12.col-sm-6.col-md-4
+            a[ href="" class=("unpublished" if !app.published?) data-toggle="modal" data-target=("##{app.name.parameterize}") ]  
+              .app
+                = image_tag "apps/#{app.image_path}", class: "app-image"
+                .app-name[ data-app-name=("##{app.name.titleize}") ]
 
-        div[ id=("#{app.name.parameterize}") class="modal modal-fluid fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ]
-          .modal-dialog.modal-lg
-            .modal-content
-              .modal-header.text-center 
-                .container-fluid
-                  .row
-                    .col-md-2.text-left
-                      .glyphicon.glyphicon-chevron-left
-                      | Back
-                    .col-md-8
-                      = app.name.titleize
-                    .col-md-2.text-right
-                      = link_to app.url, :target => "_blank" do 
-                        | Check it out
-                        .glyphicon.glyphicon-new-window
-                
-              .modal-body
-                .container-fluid
-                  .row
-                    .col-xs-12.col-md-8.col-md-push-4
-                      = image_tag("apps/#{app.image_path}", class: "featured-shadow", style: "width:100%;")
-                    .col-xs-12.col-md-4.col-md-pull-8
-                      = app.description.html_safe 
-              .modal-footer
-                .container-fluid
-                  .row
-                    - if currently_admin?
-                      = link_to 'Edit', edit_app_path(app)
-                      '  |
-                      = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
+          div[ id=("#{app.name.parameterize}") class="modal modal-fluid  fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ]
+            .modal-dialog.modal-lg
+              .modal-content
+                .modal-header.text-center 
+                  .container-fluid
+                    .row
+                      .col-md-2.text-left
+                        .glyphicon.glyphicon-chevron-left
+                        | Back
+                      .col-md-8
+                        = app.name.titleize
+                      .col-md-2.text-right
+                        = link_to app.url, :target => "_blank" do 
+                          | Check it out
+                          .glyphicon.glyphicon-new-window
+                  
+                .modal-body
+                  .container-fluid
+                    .row
+                      .col-xs-12.col-md-8.col-md-push-4
+                        = image_tag("apps/#{app.image_path}", class: "featured-shadow", style: "width:100%;")
+                      .col-xs-12.col-md-4.col-md-pull-8
+                        = app.description.html_safe 
+                .modal-footer
+                  .container-fluid
+                    .row
+                      - if currently_admin?
+                        = link_to 'Edit', edit_app_path(app)
+                        '  |
+                        = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
