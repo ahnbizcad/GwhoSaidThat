@@ -22,7 +22,7 @@ $(document).ready ->
   # Affix articles-nav
   #
   fromTop    = $('#articles-nav.affixable').offset().top - 15 - $('.affixable-wrapper > .affixable').outerHeight()
-  fromBottom = $('#footer-navbar').outerHeight() + $('#about').outerHeight() + $('#bookshelf').outerHeight() + $('#articles-nav').outerHeight()
+  fromBottom = $('#footer-navbar').outerHeight() + $('#about').outerHeight() + $('#bookshelf').outerHeight()
   $('#articles-nav.affixable').affix  
     offset: { top: fromTop, bottom: fromBottom }
   .on 'affix.bs.affix', ->
