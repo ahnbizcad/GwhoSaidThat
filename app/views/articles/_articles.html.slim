@@ -8,10 +8,10 @@
       = link_to 'Manage Articles', articles_path
 
   - unless @articles.blank?
-    .row.no-gutter.full-height
+    .row
       .col-xs-12.col-md-3
         #articles-nav.affixable
-          ul.no-bullet
+          ul
             - @articles.each do |article| 
               li
                 = link_to article, remote: true do

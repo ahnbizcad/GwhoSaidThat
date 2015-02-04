@@ -55,6 +55,7 @@ span.yellow {
 Mixins - Styling
 --------------*/
 
-@mixin boxshadow($h: 0px, $v: 2px, $bl: 4px, $sp: 3px, $color: #666) {
-  box-shadow: $h, $v, $bl, $sp, $color;
+@mixin boxshadow($h:0px, $v:2px, $bl:4px, $sp:3px, $color:#666) {
+  box-shadow: $h $v $bl $sp $color;
 }
+

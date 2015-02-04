@@ -2,21 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+#blog {
+  background-color: rgba($mediumblue,0.8);
+}
+
 %article-element {
-  margin: 10px;
+  margin: 15px auto;
   padding: 6px;
+  @include boxshadow;
 }
 
 #articles-nav {
   @extend %article-element;
   background-color: $offwhite;
-  box-shadow: 0px 2px 4px 3px #666;
 }
 
 #article {
   @extend %article-element;
   background-color: $offwhite;
-  box-shadow: 0px 2px 4px 3px #666;
 }
 
 .article {
