@@ -21,12 +21,12 @@ $(document).ready ->
   
   # Affix articles-nav
   #
-  topPos    = $('#articles-nav.affixable').offset().top - 15 - $('.affixable-wrapper > .affixable').height()
-  bottomPos = $('footer').outerHeight() + $('#about').outerHeight() + $('#bookshelf').outerHeight() + $('#articles-nav').outerHeight(true) + 2 * $('#navbar').outerHeight()
+  fromTop    = $('#articles-nav.affixable').offset().top - 15 - $('.affixable-wrapper > .affixable').outerHeight()
+  fromBottom = $('#footer-navbar').outerHeight() + $('#about').outerHeight() + $('#bookshelf').outerHeight() + $('#articles-nav').outerHeight()
   $('#articles-nav.affixable').affix  
-    offset: { top: topPos, bottom: bottomPos }
-  .on 'affix-bottom.bs.affix', ->
-    #$(this).css('bottom', 'auto')
+    offset: { top: fromTop, bottom: fromBottom }
+  .on 'affix.bs.affix', ->
+    $(this).width()
 
 
   # Smooth Scrolling for anchor links.
