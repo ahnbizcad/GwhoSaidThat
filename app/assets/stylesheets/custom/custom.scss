@@ -76,9 +76,11 @@ main {
   padding: 0;
 }
 
-
+.affixable-wrapper {
+  margin: 0 0 2px;
+}
 #navbar {
-  background-color: rgba(255,255,255,1);
+  background-color: rgba($offwhite,1);
   margin: 0;
   whitespace: nowrap;
 
@@ -101,10 +103,10 @@ main {
       z-index: 1;
 
       /* li height should inherit text height.*/
-      /* image height shoudl fit to 100% of li height.*/
+      /* image height should fit to 100% of li height.*/
       img {
-        max-width: 32px;
-        max-height: 32px;
+        max-width: 30px;
+        max-height: 30px;
       }
     }
   }
@@ -157,8 +159,8 @@ main {
 
 
 .spacer {
-  //height: 4em;
-  //background-color: silver;
+  height: 4em;
+  background-color: rgba(0,0,0,0);
 }
 
 

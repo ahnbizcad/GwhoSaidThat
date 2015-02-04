@@ -1,4 +1,4 @@
-#blog.section.container-fluid.bg-blue
+#blog.section.container-fluid
   /.row
   /  .col-xs-12
   /    h1.media-heading.text-center Coding Blog      
@@ -13,9 +13,10 @@
         #articles-nav.affixable
           ul
             - @articles.each do |article| 
-              li
-                = link_to article, remote: true do
-                  = article.title
+              - if article.published? || currently_admin?
+                li[ class=("unpublished" if !article.published?) ]
+                  = link_to article, remote: true do
+                    = article.title
       
       .col-xs-12.col-md-9
         #article

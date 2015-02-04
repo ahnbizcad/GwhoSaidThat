@@ -11,7 +11,6 @@ class PagesController < ApplicationController
     @science_books     = Book.by_category("science")
     @philosophy_books  = Book.by_category("philosophy")
     @to_read_books     = Book.by_category("to read")
-
   end
   
 end

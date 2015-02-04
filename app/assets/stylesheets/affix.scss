@@ -6,15 +6,17 @@
   box-shadow: 0px 6px 3px -3px #888;
 }
 
-#articles-nav.affix {
-  position: absolute;
-  top: 70;
-  left: 10;
-  z-index: 99;
-}
+#articles-nav {
+  &.affix-top {
+    position: static;
+  }
 
-#articles-nav.affixed-bottom {
-  position: relative;
-  bottom: 0;
-  
+  &.affix {
+    position: fixed;
+    top: 50px;
+  }
+
+  &.affix-bottom {
+    position: absolute;
+  }
 }

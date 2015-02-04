@@ -7,12 +7,12 @@
           = link_to 'Manage Apps', apps_path
 
   - unless @apps.blank?
-    .row.no-gutter#apps
+    .row.no-gutter
       - @apps.each do |app|
         - if app.published? || currently_admin?
           .col.xs-12.col-sm-6.col-md-4
             a[ href="" class=("unpublished" if !app.published?) data-toggle="modal" data-target=("##{app.name.parameterize}") ]  
-              .app
+              .app.text-center
                 = image_tag "apps/#{app.image_path}", class: "app-image"
                 .app-name[ data-app-name=("##{app.name.titleize}") ]
 
@@ -22,12 +22,12 @@
                 .modal-header.text-center 
                   .container-fluid
                     .row
-                      .col-md-2.text-left
+                      .col-md-3.text-left
                         .glyphicon.glyphicon-chevron-left
                         | Back
-                      .col-md-8
+                      .col-md-6
                         = app.name.titleize
-                      .col-md-2.text-right
+                      .col-md-3.text-right
                         = link_to app.url, :target => "_blank" do 
                           | Check it out
                           .glyphicon.glyphicon-new-window
