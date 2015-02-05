@@ -16,23 +16,20 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //
-//
-//PLUGINS
-//
 //= require bootstrap
-//(manifest)
-//= require bookshelf
-//
 //
 //TREE SUBSTITUTE
-//= require custom/test
 //
+// require parallax
 //= require affix
 //= require pages
 //= require apps
 //= require articles
 //= require books
 //
+//PLUGINS
+//(manifest)
+//= require bookshelf
 //
 //TURBOLINKS
 //= require turbolinks

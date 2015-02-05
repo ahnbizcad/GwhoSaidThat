@@ -3,16 +3,17 @@
 #
 
 $(document).ready ->
+  
 
-  # Maintain cover image height of one screen.
-  #
   $(window).resize ->
     $('#cover').height( $(window).outerHeight() - $('.affixable-wrapper > .affixable').outerHeight() )
+
+  $('#cover').height( $(window).outerHeight() - $('.affixable-wrapper > .affixable').outerHeight() )
   
+
 
   # Affix navbar
   #
-  $('#cover').height( $(window).outerHeight() - $('.affixable-wrapper > .affixable').outerHeight() )
 
   $('.affixable-wrapper').outerHeight( $('.affixable-wrapper > .affixable').outerHeight() )
   $('.affixable-wrapper > .affixable').affix
@@ -22,11 +23,12 @@ $(document).ready ->
   # Affix articles-nav
   #
   fromTop    = $('#articles-nav.affixable').offset().top - 15 - $('.affixable-wrapper > .affixable').outerHeight()
-  fromBottom = $('#footer-navbar').outerHeight() + $('#about').outerHeight() + $('#bookshelf').outerHeight()
+  fromBottom = 0 + $('#footer-navbar').outerHeight(true) + $('#about').outerHeight(true) 
+  
   $('#articles-nav.affixable').affix  
     offset: { top: fromTop, bottom: fromBottom }
   .on 'affix.bs.affix', ->
-    $(this).width()
+    $(this).width( $(this).parent().width() )
 
 
   # Smooth Scrolling for anchor links.

@@ -32,17 +32,21 @@
 @import "custom/custom";
 @import "custom/responsive";
 
-/*                        */
-/* Plugin-Specific Styles */
-/*                        */
-@import "coderay_ruby_dark";
-@import "bookshelf";
 
 /*                   */
 /*  TREE SUBSTITUTE  */
 /*                   */
+
+/*@import "parallax";*/
 @import "affix";
 @import "apps";
 @import "articles";
 @import "books";
 @import "pages";
+
+
+/*                        */
+/* Plugin-Specific Styles */
+/*                        */
+@import "coderay_ruby_dark";
+@import "bookshelf";

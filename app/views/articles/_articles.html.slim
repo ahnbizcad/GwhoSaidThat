@@ -17,8 +17,8 @@
                 li[ class=("unpublished" if !article.published?) ]
                   = link_to article, remote: true do
                     = article.title
-      
+        
       .col-xs-12.col-md-9
         #article
           == render partial: "articles/article", locals: { article: @articles.first }
-        // may need to change @articles.first to be ajax swapped
+        

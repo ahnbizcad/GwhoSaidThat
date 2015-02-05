@@ -66,14 +66,14 @@ class ApplicationController < ActionController::Base
       redirect_to root_path, alert: 'Access Denied' unless current_user.admin?
     end
 
-    def verbs
-      @verbs = VERBS
-    end
-
-    def set_current_verb
-      @current_verb = VERBS.fetch(controller_name) { "IS" }
-    end
-
+#    def verbs
+#      @verbs = VERBS
+#    end
+#
+#    def set_current_verb
+#      @current_verb = VERBS.fetch(controller_name) { "IS" }
+#    end
+#
 #    class << self
 #      VERBS.each do |models, verb|
 #
@@ -87,29 +87,29 @@ class ApplicationController < ActionController::Base
 #
 #      end
 #    end
-
-    def published_apps_count
-      @published_apps_count = App.published.size
-    end
-
-    def unpublished_apps_count
-      @unpublished_apps_count = App.unpublished.size
-    end
-
-    def published_articles_count
-      @published_articles_count = Article.published.size
-    end
-
-    def unpublished_articles_count
-      @unpublished_articles_count = Article.unpublished.size
-    end
-
-    def published_books_count
-      @published_books_count = Book.published.size
-    end
-
-    def unpublished_books_count
-      @unpublished_books_count = Book.unpublished.size
-    end
+#
+#    def published_apps_count
+#      @published_apps_count = App.published.size
+#    end
+#
+#    def unpublished_apps_count
+#      @unpublished_apps_count = App.unpublished.size
+#    end
+#
+#    def published_articles_count
+#      @published_articles_count = Article.published.size
+#    end
+#
+#    def unpublished_articles_count
+#      @unpublished_articles_count = Article.unpublished.size
+#    end
+#
+#    def published_books_count
+#      @published_books_count = Book.published.size
+#    end
+#
+#    def unpublished_books_count
+#      @unpublished_books_count = Book.unpublished.size
+#    end
   
 end

@@ -1,29 +1,21 @@
 doctype html
 html
   head
-    title Jeehoo made that?
+    title Jeehoo Ahn
     | <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     /= filepicker_js_include_tag
-    meta name="viewport" content="initial-scale=1.0" 
+    meta name="viewport" content="initial-scale=1.0"
+  
   body[ data-spy="scroll" data-target="#navbar" data-offset="50"]
-
-    /== render 'layouts/header'
-
     main
-
       - if notice
         .notice.notice-dismissable
           = notice
       - if alert
         .alert.alert-dismissable[ role="alert" data-dismiss="alert"]
           = alert
-          
+
       == yield
-
-    /== render 'layouts/sidebar'
-
-    == render 'layouts/footer'
-    
