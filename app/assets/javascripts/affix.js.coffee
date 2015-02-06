@@ -4,17 +4,16 @@
 
 $(document).ready ->
   
-
+  # Set and Maintain #cover and #navbar to one page
+  #
   $(window).resize ->
     $('#cover').height( $(window).outerHeight() - $('.affixable-wrapper > .affixable').outerHeight() )
 
   $('#cover').height( $(window).outerHeight() - $('.affixable-wrapper > .affixable').outerHeight() )
   
 
-
   # Affix navbar
   #
-
   $('.affixable-wrapper').outerHeight( $('.affixable-wrapper > .affixable').outerHeight() )
   $('.affixable-wrapper > .affixable').affix
     offset: { top: $('.affixable-wrapper > .affixable').offset().top }
@@ -23,7 +22,7 @@ $(document).ready ->
   # Affix articles-nav
   #
   fromTop    = $('#articles-nav.affixable').offset().top - 15 - $('.affixable-wrapper > .affixable').outerHeight()
-  fromBottom = 0 + $('#footer-navbar').outerHeight(true) + $('#about').outerHeight(true) 
+  fromBottom = $('#footer-navbar').outerHeight(true) + $('#about').outerHeight(true) + $('#bookshelf').outerHeight(true) + $('#articles-nav').outerHeight(true) + 15
   
   $('#articles-nav.affixable').affix  
     offset: { top: fromTop, bottom: fromBottom }

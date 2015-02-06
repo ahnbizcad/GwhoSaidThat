@@ -20,12 +20,12 @@
 //
 //TREE SUBSTITUTE
 //
-// require parallax
-//= require affix
 //= require pages
 //= require apps
 //= require articles
 //= require books
+//= require affix
+// require parallax
 //
 //PLUGINS
 //(manifest)
