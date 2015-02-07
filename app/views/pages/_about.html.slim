@@ -1,30 +1,34 @@
 #about.section.container-fluid
-  div.text-center
-    h1 About Me
+  row
+    .col-xs-12.text-center
+      h1 About Me
+      
+      br 
+
+      =image_tag "jeehoo_ahn_profile_professional_cropped.jpg", class: "center-block img-circle"
+      
+      br
+
+      h2 <b><span class="blue">U</span></b>
+         <b><span class="yellow">C</span></b>
+         <b><span class="blue">L</span></b>
+         <b><span class="yellow">A</span></b>
+      h3 B.S. Mechanical Engineering
     
-    br 
+    .col-xs-12.text-center
+      
+      h4 I like to understand how things work from first principles, and come up with inventive ways to improve things.
 
-    =image_tag "jeehoo_ahn_profile_professional_cropped.jpg", class: "center-block img-circle"
-    
-    br
+    .col-xs-12.text-center
+      #about-list
+        ul.text-left
+          li Programming web apps
+          li Teaching
+          li User experience
+          li Efficiency-boosting
+          
+    .col-xs-12.text-center
+      = image_tag "email.png"
 
-    h2 <b><span class="blue">U</span></b>
-       <b><span class="yellow">C</span></b>
-       <b><span class="blue">L</span></b>
-       <b><span class="yellow">A</span></b>
-    h3 B.S. Mechanical Engineering
-  
-  div.text-center
-    
-    h4 I like to understand how things work from first principles, and come up with inventive ways to improve things.
-
-    ul.text-left
-      li Programming web apps
-      li Teaching
-      li User experience
-      li Efficiency-boosting
-
-    = image_tag "email.png"
-
-    br
-    br    
+      br
+      br    

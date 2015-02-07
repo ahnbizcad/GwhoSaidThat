@@ -16,6 +16,10 @@
 #articles-nav {
   @extend %article-element;
   background-color: $offwhite;
+
+  #articles-nav li.active {
+    pointer-events: none;
+  }
 }
 
 #article {

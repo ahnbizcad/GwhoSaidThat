@@ -10,11 +10,12 @@
   - unless @articles.blank?
     .row
       .col-xs-12.col-md-3
+        /#articles-nav-affixable-wrapper
         #articles-nav.affixable
-          ul
-            - @articles.each do |article| 
+          ul.triangle-bullet
+            - @articles.each_with_index do |article, i| 
               - if article.published? || currently_admin?
-                li[ class=("unpublished" if !article.published?) ]
+                li[ id=("article-#{article.id}") class=("unpublished" if !article.published?) class=("active" if i==0) ]
                   = link_to article, remote: true do
                     = article.title
         

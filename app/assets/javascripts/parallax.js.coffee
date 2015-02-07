@@ -1,5 +1,6 @@
 
-# Maintain .parallax height of one screen.
+# Maintain .parallax height of one screen.  
 #
-$(window).resize ->
-  $('.parallax').height( $(window).outerHeight() )
+$(document).ready ->
+  $(window).resize ->
+    $('.parallax').height( $(window).outerHeight() )

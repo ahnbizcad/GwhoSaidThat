@@ -9,7 +9,8 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+
+
 //JQUERY
 //
 //= require jquery
@@ -17,19 +18,20 @@
 //= require jquery_ujs
 //
 //= require bootstrap
-//
+
+
 //TREE SUBSTITUTE
 //
 //= require pages
 //= require apps
 //= require articles
 //= require books
-//= require affix
-// require parallax
-//
+// DONT require parallax
+
+
 //PLUGINS
-//(manifest)
-//= require bookshelf
 //
+
+
 //TURBOLINKS
 //= require turbolinks

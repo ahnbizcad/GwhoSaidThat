@@ -2,6 +2,14 @@
 Reusable OO
 --------------------------*/
 
+
+.no-gutter {
+  [class*="col-"] {
+    padding-left:  0;
+    padding-right: 0;
+  }
+}
+
 textarea {
   max-width: 100%;
   resize: vertical;
@@ -20,13 +28,21 @@ ul.no-bullet {
   padding-left: 0;
   vertical-align: text-top;
 }
+ul.triangle-bullet {
+  list-style: none;
 
-.no-gutter {
-  [class*="col-"] {
-    padding-left:  0;
-    padding-right: 0;
+  li:before {
+    display: inline-block;
+    position: relative;
+    content: "";
+    
+    border-width: 0.35em 0 0.35em 0.45em;
+    border-color: transparent #111;
+    border-style: solid;
+    left: -0.5em;
   }
 }
+
 
 .card {
   box-shadow: 0px 0px 0.5em 0px #26F inset;
@@ -45,7 +61,6 @@ ul.no-bullet {
 .centered {
   display: inline-block;
   vertical-align: middle;
-
 }
 
 
@@ -73,78 +88,6 @@ body {
 
 main {
   padding: 0;
-}
-
-.affixable-wrapper {
-  margin: 0 0 1px;
-}
-#navbar {
-  background-color: rgba($offwhite,1);
-  margin: 0;
-  whitespace: nowrap;
-
-  ul {
-    white-space: nowrap;
-    
-    li {
-      font-size: 1em;
-      float: none;
-      display: inline-block;
-      *display: inline;
-      *zoom: 1;
-    }
-  }
-
-  #social-icons {
-    text-align: center;
-
-    li {
-      z-index: 1;
-
-      /* li height should inherit text height.*/
-      /* image height should fit to 100% of li height.*/
-      img {
-        max-width: 30px;
-        max-height: 30px;
-      }
-    }
-  }
-
-  #clause {
-    text-align: center;
-
-    li.dropdown {
-      > a {
-        color: $verb-color;
-
-      }
-    }
-
-    ul#verb.dropdown-menu {
-      min-width: 190px;
-
-      li {
-        display: block;
-
-        a {
-          .verb {
-            float: left;
-          }
-          .label {
-            float: right;
-          }
-        }
-
-        a:hover {
-          color: $verb-color;
-
-          .label-default:hover {
-            background-color: #000000;
-          }
-        }
-      }
-    }
-  }
 }
 
 

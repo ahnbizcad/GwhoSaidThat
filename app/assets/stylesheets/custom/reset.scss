@@ -9,7 +9,7 @@ abbr, address, cite, code,
 del, dfn, em, img, ins, kbd, q, samp,
 small, strong, sub, sup, var,
 b, i,
-dl, dt, dd, ol, li,a
+dl, dt, dd, ol, li, a
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 main, article, aside, canvas, details, figcaption, figure,
@@ -35,6 +35,7 @@ display:block;
 }
 nav ul {
 list-style:none;
+margin: 0 auto;
 }
 blockquote, q {
 quotes:none;
