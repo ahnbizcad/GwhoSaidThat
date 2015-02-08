@@ -28,21 +28,6 @@ ul.no-bullet {
   padding-left: 0;
   vertical-align: text-top;
 }
-ul.triangle-bullet {
-  list-style: none;
-
-  li:before {
-    display: inline-block;
-    position: relative;
-    content: "";
-    
-    border-width: 0.35em 0 0.35em 0.45em;
-    border-color: transparent #111;
-    border-style: solid;
-    left: -0.5em;
-  }
-}
-
 
 .card {
   box-shadow: 0px 0px 0.5em 0px #26F inset;

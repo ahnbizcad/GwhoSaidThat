@@ -17,18 +17,65 @@
   @extend %article-element;
   background-color: $offwhite;
 
-  #articles-nav li.active {
-    pointer-events: none;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0px 10px;
+
+    li {
+
+      &:before {
+        display: inline-block;
+        position: relative;
+        content: "";
+        
+        border-width: 0.35em 0 0.35em 0.45em;
+        border-color: transparent $offblack;
+        border-style: solid;
+      }
+
+      &.active {
+        pointer-events: none;
+
+        &:before {
+          display: inline-block;
+          position: relative;
+          content: "";
+          
+          border-color: transparent $blueucla;
+        }
+
+        a {
+          color: #2A6496;
+
+          &:hover, &:focus {
+            color: #2A6496;
+          }
+        }
+      }
+      
+      > a {
+        color: grey;
+
+        &:hover, &:focus {
+          color: #2A6496;
+        }
+      }
+
+    }
   }
 }
+
 
 #article {
   @extend %article-element;
   background-color: $offwhite;
+  padding: 10px;
 }
 
+/*
 .article {
   padding: 1em;
   word-wrap: break-word;
   background-color: whitesmoke;
-}
+}*/
