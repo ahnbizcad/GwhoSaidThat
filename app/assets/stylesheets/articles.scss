@@ -46,19 +46,20 @@
         }
 
         a {
-          color: #2A6496;
+          color: $standard-link-color;
 
           &:hover, &:focus {
-            color: #2A6496;
+            color: $standard-link-color;
           }
         }
       }
       
-      > a {
+      a {
         color: grey;
+        text-decoration: none;
 
         &:hover, &:focus {
-          color: #2A6496;
+          color: $standard-link-color;
         }
       }
 
