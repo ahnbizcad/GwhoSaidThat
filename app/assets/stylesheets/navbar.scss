@@ -1,10 +1,11 @@
-.affixable-wrapper {
+#navbar-affixable-wrapper {
   
 }
 
 #navbar {
   margin: 0;
   white-space: nowrap;
+  height: $navbarHeight;
 
   @include navbar-gradient($navbar-color);
 
