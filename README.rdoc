@@ -1,14 +1,5 @@
 == README
 
 Portfolio and programming blog of Jeehoo Ahn.
+
 http://gwhosaidthat.herokuapp.com
-
-/FEATURES
-/ cover image is parallax background
-
-
-/FIXES
-/ prevent navbar wrapping
-/ modals styling
-/ CRUD CMS
-/ devise strong params

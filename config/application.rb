@@ -30,6 +30,7 @@ module Gwhosaidthat
 
 #
 
+    # Keep bookshelf in /vendor/, not /assets/
     #config.assets.paths << Rails.root.join("app","assets","bookshelf")
 
   end
