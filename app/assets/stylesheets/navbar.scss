@@ -3,12 +3,17 @@
 }
 
 #navbar {
-  background-color: rgba($offwhite, 1);
   margin: 0;
   white-space: nowrap;
 
+  @include navbar-gradient($navbar-color);
+
+  &.navbar {
+    border: 1px solid $navbar-border-color; 
+  }
+
   ul {
-    
+
     &.navbar-nav {
       margin: 0;
     }
@@ -16,17 +21,21 @@
     > li {
       display: inline-block;
       font-size: 1em;
-      float: none;      
-      
+      float: none;
+
 
       > a {
         display: inline-block;
         
-
         height: $navbarHeight;
         padding: 15px 10px;
       }
     }
+  }
+
+  .scrollspy > ul.navbar-nav > li {
+    margin-left: -4px;
+    border-right:  1px solid $navbar-border-color;
   }
 
   ul#social-icons {
@@ -40,9 +49,13 @@
       margin-right: 0;
       margin-bottom: 0;
       margin-left: 0;
+    }
+    
+    > li {
+      margin-left: -4px;
+      border-left:  1px solid $navbar-border-color;
 
-        > li > a {
-        
+      > a {
         padding-top:    10px;
         padding-bottom: 10px;
 
@@ -52,6 +65,7 @@
         }
       }
     }
+
   }
 
   /*

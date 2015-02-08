@@ -13,11 +13,9 @@ $(document).ready ->
   
 
   # Affix #navbar
-  #
-  $('#navbar-affixable-wrapper').height( $('#navbar-affixable-wrapper > #navbar.affixable').height() )
-  
+  #  
   $('#navbar-affixable-wrapper > #navbar.affixable').affix
-    offset: { top: $('#navbar-affixable-wrapper > #navbar.affixable').offset().top }
+    offset: { top: $('#navbar-affixable-wrapper').offset().top }
 
   
   ## Affix #articles-nav

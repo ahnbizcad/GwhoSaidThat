@@ -68,13 +68,21 @@ bootstrap additional
   margin: 75px auto 0;
 }
 
+/*
+navbar-override
+*/
+
+.navbar-default .navbar-nav > li > a {
+  color: #444;
+}
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: $standard-link-color;
-    background-color: #E1E1E1;
+  color: $blue-ucla;
+  @include navbar-gradient($navbar-color - #443322);
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: $standard-link-color;
+  color: $blue-ucla;
   background-color: transparent;
 }
+

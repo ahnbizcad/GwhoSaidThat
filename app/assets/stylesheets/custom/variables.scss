@@ -15,9 +15,9 @@ Responsive widths
 
 
 
-/*----------
+/*------------------
 Mixins - Positioning
-----------*/
+------------------*/
 
 $navbarHeight: 50px;
 
@@ -27,42 +27,57 @@ $navbarHeight: 50px;
 
 
 
-/*----------
+/*-------------
 Mixins - Colors
-----------*/
+-------------*/
 
 $standard-link-color: #428BCA;
 $standard-visited-link-color: #2A6496;
 
 
-$offwhite: rgb(245,245,245);
+$off-white: rgb(245,245,245);
 $offblack: rgb(30,30,30);
 
 $blacktransparent: rgba(30,30,30,0.7);
 
-$blueucla: rgb(0,139,236);
-$yellowucla: rgb(239,214,53);
-
-$verb-color: #008CFF;
+$blue-ucla: rgb(30,130,236);
+$yellow-ucla: rgb(239,214,53);
 
 $lightblue: #C0E0FA;
 $mediumblue: #2EAFFF;
-$navyblue: #236;
+$navyblue: #135;
 $purpleblue: #66F;
 
+$verb-color: #008CFF;
 
+/*
+dependent colors
+*/
+
+$navbar-color: $lightblue;
+$navbar-border-color: $navbar-color - #555555;
+  
 span.blue {
-  color: $blueucla;
+  color: $blue-ucla;
 }
 span.yellow {
-  color: $yellowucla;
+  color: $yellow-ucla;
 }
+
+
 
 /*--------------
 Mixins - Styling
 --------------*/
 
-@mixin boxshadow($h:0px, $v:2px, $bl:4px, $sp:3px, $color:#666) {
+@mixin boxshadow($h:-1px, $v:3px, $bl:3px, $sp:2px, $color:#777) {
   box-shadow: $h $v $bl $sp $color;
 }
 
+@mixin navbar-gradient($color:$navbar-color){
+  background: linear-gradient( 
+    $color + #333333 0%, 
+    rgba($color + #030303, 0.99) 55%, 
+    $color - #050505 45%, 
+    rgba($color + #040404, 0.95) 100%);
+}

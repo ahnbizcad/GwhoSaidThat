@@ -4,9 +4,14 @@
 
 
 #bookshelf {
-  background-color: rgba($offwhite, 0.6)
+  background-color: rgba($off-white, 0.6);
 }
 
-.book {
-  max-height: 120px;
+
+#bookshelf_slider {
+  @include boxshadow();
+  
+  .book {
+    max-height: 120px;
+  }
 }
