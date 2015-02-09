@@ -7,7 +7,7 @@
           = link_to 'Manage Apps', apps_path
 
   - unless @apps.blank?
-    .row
+    .row.no-gutter
       - @apps.each do |app|
         - if app.published? || currently_admin?
           .col.xs-12.col-sm-6.col-md-4
