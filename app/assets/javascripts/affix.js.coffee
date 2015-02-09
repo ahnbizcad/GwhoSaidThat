@@ -4,7 +4,7 @@
 
 $(document).ready ->
   
-  # Set and Maintain #cover and #navbar to one page
+  # Set and Maintain #cover and #navbar to one screen
   #
   $(window).resize ->
     $('#cover').height( $(window).outerHeight() - $('#navbar-affixable-wrapper > #navbar.affixable').outerHeight() )

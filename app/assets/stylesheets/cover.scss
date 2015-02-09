@@ -1,0 +1,14 @@
+#cover {
+  background-color: rgba(255,255,255,0);
+  text-align: center;
+  
+  background-image: image-url("blue_architecture_depth.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+#cover-headline {
+  text-shadow: 1px 1px 1px $off-white;
+}
+

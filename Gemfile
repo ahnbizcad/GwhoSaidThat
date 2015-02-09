@@ -14,7 +14,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'coffee-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
-#gem 'angular-rails'
+
 gem 'turbolinks'
 gem 'jquery-turbolinks', '~>2.0.2'
 
@@ -27,29 +27,26 @@ group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 
-#gem 'compass'
-gem 'nokogiri'  #html, xml, sax, reader and css parser
-
 gem 'figaro', '~> 1.1.0'
-
 gem 'devise'
 
 gem 'simple_form', '~> 3.1.0.rc1'
+#gem 'compass'
+gem 'font-awesome-rails'
 
-gem 'image_size', '~> 1.3.1'
-gem 'fastimage', '~> 1.6.4'
-#gem 'filepicker-rails'
-#gem 'carrierwave-rails'
-#gem 'mini_magick'
+gem 'nokogiri'  #html, xml, sax, reader and css parser
 
-gem 'font-awesome-sass', '~> 4.2.0'
-#gem 'ckeditor'
 gem 'asciidoctor'
 gem 'coderay', '~> 1.1.0'
 
+#gem 'image_size', '~> 1.3.1'
+#gem 'fastimage', '~> 1.6.4'
+
+#gem 'filepicker-rails'
+
 #gem 'kaminari'
 
-gem 'acts_as_taggable_on'
+#gem 'acts_as_taggable_on'
 
 group :development do 
   gem 'better_errors'

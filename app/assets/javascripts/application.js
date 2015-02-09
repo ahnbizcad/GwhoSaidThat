@@ -22,10 +22,11 @@
 
 //TREE SUBSTITUTE
 //
-//= require pages
+//= require cover
 //= require apps
 //= require articles
 //= require books
+//= require about
 // DONT require parallax
 
 
