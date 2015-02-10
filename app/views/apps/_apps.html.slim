@@ -19,6 +19,7 @@
             div[ id=("#{app.name.parameterize}") class="modal modal-fluid  fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ]
               .modal-dialog.modal-lg
                 .modal-content
+                  
                   .modal-header.text-center 
                     .container-fluid
                       .row
@@ -31,14 +32,13 @@
                           = link_to app.url, :target => "_blank" do 
                             | Check it out
                             .glyphicon.glyphicon-new-window
-                    
                   .modal-body
                     .container-fluid
                       .row
                         .col-xs-12.col-md-8.col-md-push-4
-                          = image_tag("apps/#{app.image_path}", class: "featured-shadow", style: "width:100%;")
+                          = image_tag("apps/#{app.image_path}", class: "modal-app-image")
                         .col-xs-12.col-md-4.col-md-pull-8
-                          = app.description.html_safe 
+                          = app.description.html_safe
                   .modal-footer
                     .container-fluid
                       .row

@@ -4,7 +4,7 @@ Reusable OO
 
 
 .no-gutter {
-  [class*="col-"] {
+  > [class*="col-"] {
     padding-left:  0;
     padding-right: 0;
   }
