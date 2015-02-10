@@ -11,13 +11,16 @@ html
   
   body[ data-spy="scroll" data-target="#navbar" data-offset="50"]
     main
-      - if notice
-        .notice.notice-dismissable
-          = notice
-      - if alert
-        .alert.alert-dismissable[ role="alert" data-dismiss="alert"]
-          = alert
+      #alerts
+        - if notice
+          .notice.notice-dismissable
+            = notice
+        - if alert
+          .alert.alert-dismissable[ role="alert" data-dismiss="alert"]
+            = alert
 
       == yield
+
+    == render partial: "layouts/session"
 
   = javascript_include_tag 'application_footer', 'data-turbolinks-track' => true

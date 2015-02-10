@@ -4,18 +4,19 @@
 
 $(document).ready ->
   
-  # Set and Maintain #cover and #navbar to one screen
+  
+  # Windows resize
   #
+  # Set and Maintain #cover and #navbar to one screen
+  # Recalculate affix-triggering vertical position.
   $(window).resize ->
     $('#cover').height( $(window).outerHeight() - $('#navbar-affixable-wrapper > #navbar.affixable').outerHeight() )
+    
+    # Affix #navbar 
+    $('#navbar-affixable-wrapper > #navbar.affixable').affix
+      offset: { top: $('#navbar-affixable-wrapper > #navbar.affixable').offset().top }    
 
-  $('#cover').height( $(window).outerHeight() - $('#navbar-affixable-wrapper > #navbar.affixable').outerHeight() )
-  
 
-  # Affix #navbar
-  #  
-  $('#navbar-affixable-wrapper > #navbar.affixable').affix
-    offset: { top: $('#navbar-affixable-wrapper > #navbar.affixable').offset().top }
 
   
   ## Affix #articles-nav

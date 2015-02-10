@@ -89,6 +89,11 @@ main {
   padding: 0;
 }
 
+#alerts {
+  position: absolute;
+  width: 100%;
+  background-color: rgba($off-white, 0.5);
+}
 
 .admin {
   width: 100%;
