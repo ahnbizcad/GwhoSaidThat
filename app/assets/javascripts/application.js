@@ -27,7 +27,7 @@
 //= require articles
 //= require books
 //= require about
-// DONT require parallax
+// require parallax
 
 
 //PLUGINS
