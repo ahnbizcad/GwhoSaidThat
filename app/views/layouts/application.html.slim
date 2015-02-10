@@ -21,6 +21,7 @@ html
 
       == yield
 
-    == render partial: "layouts/session"
+    - if currently_admin?
+      == render partial: "layouts/session"
 
   = javascript_include_tag 'application_footer', 'data-turbolinks-track' => true
