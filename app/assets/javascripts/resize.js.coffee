@@ -8,8 +8,11 @@ $(document).ready ->
 # reused values
 #
 
-  # Get unchanging heights
+  # Make variables available globally.
+  # Any declared values here will be overridden by resize initially also.
   navHeight = $('#navbar-affixable-wrapper > #navbar.affixable').outerHeight()
+  windowHeight = 0
+  windowMinusNavHeight = 0
 
 #
 # initial settings

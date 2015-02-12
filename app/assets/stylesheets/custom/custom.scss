@@ -42,6 +42,11 @@ ul.no-bullet {
   box-shadow: 2px 2px 16px 3px red;
 }
 
+@mixin center-vertically {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 .centered {
   display: inline-block;

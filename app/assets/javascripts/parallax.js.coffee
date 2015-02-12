@@ -4,19 +4,18 @@ $(document).ready ->
   coverPos = 0
   $('#cover-bg').css('top', coverPos)
 
-
   # 0 moves completely with flow (slower)
   # 1 stays completely static    (faster)
-  slowfactor = 0.5
+  speedfactor = 0.6
   # parallax speec control
   parallax = -> 
-    scrolled   = $(window).scrollTop()  
+    scrolled = $(window).scrollTop()  
 
-    $('.parallax-bg').css('top', coverPos + (scrolled * slowfactor) + 'px')
+    $('.parallax-bg').css('top', coverPos + (scrolled * speedfactor) + 'px')
 
 #    
 # Call functions
 #
 
-  $(window).scroll ->
+  $(window).on 'scroll', ->
     parallax()
