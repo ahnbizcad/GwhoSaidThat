@@ -22,12 +22,15 @@
 
 //TREE SUBSTITUTE
 //
+//= require resize
+//
 //= require cover
 //= require apps
 //= require articles
 //= require books
 //= require about
-// require parallax
+//= require affix
+//= require parallax
 
 
 //PLUGINS
