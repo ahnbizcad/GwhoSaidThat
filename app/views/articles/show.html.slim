@@ -1,14 +1,21 @@
-.container-fluid
+.container-fluid#article-show
   .row
     .col-xs-12
+      #article
+        == render partial: "articles/article", locals: { article: @article }
 
-      article.article.card[ class=("unpublished" if !@article.published?) ]
-        h1.media-heading = @article.title
-        h5.media-heading = @article.created_at.to_date
-        - if user_signed_in?
-          - if current_user.admin?
-            = link_to 'Edit', edit_article_path(@article)
-            '  |
-            = link_to 'Back', articles_path
+/
+  .container-fluid
+    .row
+      .col-xs-12
 
-        == Asciidoctor.convert(@article.content, safe: 'safe')
+        article.article.card[ class=("unpublished" if !@article.published?) ]
+          h1.media-heading = @article.title
+          h5.media-heading = @article.created_at.to_date
+          - if user_signed_in?
+            - if current_user.admin?
+              = link_to 'Edit', edit_article_path(@article)
+              '  |
+              = link_to 'Back', articles_path
+
+          == Asciidoctor.convert(@article.content, safe: 'safe')

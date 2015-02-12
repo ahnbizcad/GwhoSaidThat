@@ -68,11 +68,14 @@
   }
 }
 
-
 #article {
   @extend %article-element;
   background-color: $off-white;
   padding: 10px;
+}
+
+#article-show {
+  background-color: rgba($mediumblue, 1);
 }
 
 /*

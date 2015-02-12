@@ -19,8 +19,11 @@
       = link_to 'Edit', edit_article_path(article)
       '  |
       = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
-    
-    - truncated_content = truncate(article.content, length:1000, escape: false)
-    == Asciidoctor.convert(truncated_content, safe: 'safe')
-    = link_to article do
-      |  (read more)
+
+    - if ( params[:controller] == "articles" && params[:action] == "show" )
+      == Asciidoctor.convert(article.content, safe: 'safe')
+    - else
+      - truncated_content = truncate(article.content, length:1000, escape: false)
+      == Asciidoctor.convert(truncated_content, safe: 'safe')
+      = link_to article do
+        |  (read more)
