@@ -29,7 +29,7 @@
 //= require articles
 //= require books
 //= require about
-//= require affix
+//
 //= require parallax
 
 

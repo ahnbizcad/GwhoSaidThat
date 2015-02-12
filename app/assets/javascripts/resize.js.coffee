@@ -30,7 +30,7 @@ $(document).ready ->
 
 
     # Section background heights
-    $('#cover').height( windowMinusNavHeight - 1 )
+    $('#cover').height( windowMinusNavHeight )
     #$('.spacer').css('height': windowMinusNavHeight )
 
 

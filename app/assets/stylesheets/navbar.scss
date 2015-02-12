@@ -10,7 +10,10 @@
   @include navbar-gradient($navbar-color);
 
   &.navbar {
-    border: 1px solid $navbar-border-color; 
+    border-top: 1px solid $navbar-border-color; 
+    border-right: 1px solid $navbar-border-color; 
+    border-left: 1px solid $navbar-border-color;
+    border-bottom: none;
   }
 
   ul {
@@ -36,7 +39,7 @@
 
   .scrollspy > ul.navbar-nav > li {
     margin-left: 0px;
-    border-right:  1px solid $navbar-border-color;
+    border-right: 1px solid $navbar-border-color;
   }
 
   ul#social-icons {
@@ -68,6 +71,15 @@
     }
 
   }
+
+}
+
+#navbar-shim {
+  border-bottom: 1px solid $navbar-border-color;
+}
+
+
+/*clause navbar*/
 
   /*
   #clause {
@@ -106,5 +118,3 @@
     }
   }
   */
-
-}
