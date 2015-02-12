@@ -1,10 +1,14 @@
+$parallax-bg-z-index-base: -100;
+
+@mixin parallax-bg-child ($n){
+  z-index: $parallax-bg-z-index-base + $n;
+}
+
 .parallax-bg {
   position: absolute;
 
   width: 100%;
   //height via js
-
-  z-index: -1;
   
   background-image: image-url("blue_architecture_depth.jpg");
   background-size: cover;
@@ -14,5 +18,14 @@
 }
 
 #cover-bg {
-  
+  @include parallax-bg-child(1);
+}
+#works-bg {
+  @include parallax-bg-child(2);
+}
+#blog-bg {
+  @include parallax-bg-child(3);
+}
+#bookshelf-bg {
+  @include parallax-bg-child(4);
 }

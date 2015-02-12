@@ -8,7 +8,7 @@ $(document).ready ->
 # reused values
 #
 
-  # Get heights
+  # Get unchanging heights
   navHeight = $('#navbar-affixable-wrapper > #navbar.affixable').outerHeight()
 
 #
@@ -24,14 +24,19 @@ $(document).ready ->
   # Sets initial size on page load also.
   $(window).resize ->
 
-    # Heights of navbar and window
-    windowHeight = $(window).height()    
+    # Changing heights
+    windowHeight = $(window).height()
     windowMinusNavHeight = windowHeight - navHeight
 
 
     # Section background heights
     $('#cover').height( windowMinusNavHeight )
     #$('.spacer').css('height': windowMinusNavHeight )
+
+
+    # Affix navbar
+    $('#navbar-affixable-wrapper > #navbar.affixable').affix
+      offset: { top: windowMinusNavHeight }
 
 
     # Parallax heights
