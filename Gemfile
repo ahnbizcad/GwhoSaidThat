@@ -11,11 +11,11 @@ gem 'slim-rails', '~> 3.0.1'
 gem 'sass-rails', '~> 4.0.2'
 gem 'bootstrap-sass', '~> 3.2.0'
 
-gem 'coffee-rails'
+gem 'coffee-rails', '~> 4.1.0'
 gem 'jbuilder', '~> 2.0'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 3.1.2'
 
-gem 'turbolinks'
+gem 'turbolinks', '~> 2.5.3'
 gem 'jquery-turbolinks', '~>2.0.2'
 
 #gem 'autoprefixer-rails'
@@ -28,7 +28,7 @@ group :doc do
 end
 
 gem 'figaro', '~> 1.1.0'
-gem 'devise'
+gem 'devise', '~> 3.4.1'
 
 gem 'simple_form', '~> 3.1.0.rc1'
 #gem 'compass'
@@ -36,7 +36,7 @@ gem 'font-awesome-rails'
 
 gem 'nokogiri'  #html, xml, sax, reader and css parser
 
-gem 'asciidoctor'
+gem 'asciidoctor', '~> 1.5.2'
 gem 'coderay', '~> 1.1.0'
 
 #gem 'image_size', '~> 1.3.1'
@@ -49,27 +49,36 @@ gem 'coderay', '~> 1.1.0'
 #gem 'acts_as_taggable_on'
 
 group :development do 
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  gem 'rspec-rails', '~> 3.2.0'
+  gem 'spring-commands-rspec', '~> 1.0.4'
+  gem 'guard-rspec', require: false
+  gem 'factory_girl', '~> 4.5.0'
 
-  gem 'pry-rails'
-  gem 'pry-byebug'
+  gem 'better_errors', '~> 2.1.1'
+  gem 'binding_of_caller', '~> 0.7.2'
 
-  gem 'awesome_print'
-  gem 'quiet_assets'
+  gem 'pry-rails', '~> 0.3.3'
+  gem 'pry-byebug', '~> 3.0.1'
 
-  gem 'annotate'
+  gem 'awesome_print', '~> 1.6.1'
+  gem 'quiet_assets', '~> 1.1.0'
 
-  gem 'ruby_parser'
+  gem 'annotate', '~> 2.6.5' # Table info on model files
+
+  gem 'ruby_parser' # Used for converting existing files
+
 end
+
 
 group :test do 
   
 end
 
+
 group :production do 
   gem 'rails_12factor'
 end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -78,4 +87,4 @@ end
 # gem 'capistrano-rails', group: :development
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin]
