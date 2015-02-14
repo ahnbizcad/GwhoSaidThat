@@ -33,7 +33,7 @@ gem 'devise'
 gem 'simple_form', '~> 3.1.0.rc1'
 #gem 'compass'
 gem 'font-awesome-rails'
-
+gem 'i18n'
 gem 'nokogiri'  #html, xml, sax, reader and css parser
 
 gem 'asciidoctor'
@@ -78,4 +78,4 @@ end
 # gem 'capistrano-rails', group: :development
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin]
