@@ -2,8 +2,7 @@ class PagesController < ApplicationController
 
   def home
     @apps     = App.all
-    @articles = Article.all.by_newest
-    @first_available_article = currently_admin? ? Article.first : Article.published.first
+    @articles = currently_admin? ? Article.all.by_newest : Article.published.by_newest
     @books    = Book.all
 
     # Refactor to use ajax lazy load from the plugin javascript.
