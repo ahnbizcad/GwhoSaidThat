@@ -3,6 +3,8 @@ Reusable OO
 --------------------------*/
 
 
+
+
 .no-gutter {
   > [class*="col-"] {
     padding-left:  0;
@@ -42,20 +44,8 @@ ul.no-bullet {
   box-shadow: 2px 2px 16px 3px red;
 }
 
-@mixin center-vertically {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.centered {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-
 .bg-blue {
-  background-color: $mediumblue;
+  background-color: $medium-blue;
 }
 .bg-yellow {
   background-color: #F6FC86;
@@ -120,7 +110,7 @@ main {
 footer {
   background-color: whitesmoke;
   color: #000;
-  box-shadow: 0px 0px 6px 3px #666;
+  box-shadow: 0px 0px 6px 2px #666;
   min-height: 80px;
   
 }
@@ -129,8 +119,10 @@ footer {
 #footer-navbar {
   text-align: center;
 
+  @include navbar-gradient($navbar-color);
+
   font-size: 1.5em;
-  color: $navyblue;
+  color: $navy-blue;
 
   > ul {
     white-space: nowrap;

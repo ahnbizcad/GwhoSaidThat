@@ -53,21 +53,65 @@
 }
 */
 
+
 #works {
-  background-color: rgba(0,0,0,1);
+  background-color: black;
 }
+
 
 .app {
-  
-}  
-.app-image {
-  height: 100%;
-  width: 100%;
+  position: relative;
 
-  &:hover {
+  display: flex;
+  justify-content: center;
+
+  margin: 15px 0px;
+  
+  .app-name {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    height: 100%;
+    width: 100%;
+
+    font-size: 2em;
+    border: 1px solid $light-blue;
+    z-index: 2;
+
+    text-decoration: none;
+    color: $light-blue;
+
+    opacity: 1;
     
+    transition: all 0.3s;
+
+    &.active {
+      opacity: 0;
+    }
   }
-}
+
+  .app-image {
+    height: 100%;
+    width: 100%;
+
+    opacity: 0.4;
+    
+    transition: all 0.3s;
+    
+    &.active {
+      opacity: 1;  
+    }
+  }
+
+}  
+
+
+
 .modal-app-image {
   width: 100%;
 

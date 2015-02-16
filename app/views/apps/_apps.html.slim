@@ -7,14 +7,17 @@
           = link_to 'Manage Apps', apps_path
 
   - unless @apps.blank?
-    .row.no-gutter
+    .row
       - @apps.each do |app|
         - if app.published? || currently_admin?
           .col.xs-12.col-sm-6.col-md-4
-            a[ href="" class=("unpublished" if !app.published?) data-toggle="modal" data-target=("##{app.name.parameterize}") ]  
-              .app.text-center
+            a[ href="" class="app-link" class=("unpublished" if !app.published?) data-toggle="modal" data-target=("##{app.name.parameterize}") ]  
+              .app
+                .app-name
+                  span = app.name.upcase
+                  /[ data-app-name=("##{app.name.titleize}") ]
                 = image_tag "apps/#{app.image_path}", class: "app-image"
-                .app-name[ data-app-name=("##{app.name.titleize}") ]
+                
 
             div[ id=("#{app.name.parameterize}") class="modal modal-fluid  fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ]
               .modal-dialog.modal-lg

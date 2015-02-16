@@ -78,11 +78,10 @@ navbar-override
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   color: $blue-ucla;
-  @include navbar-gradient($navbar-color - #443322);
+  @include navbar-gradient($medium-blue);
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: $blue-ucla;
   background-color: transparent;
 }
-

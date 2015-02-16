@@ -6,8 +6,7 @@
   // background-color via js
 
   #cover-headline {
-    @include center-vertically;
-
+    @include center-vertical-relative;
     
     text-shadow: 1px 1px 1px $off-white;
   }

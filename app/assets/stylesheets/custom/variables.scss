@@ -25,7 +25,33 @@ $navbarHeight: 50px;
   clear: both;
 }
 
+@mixin center-vertical-absolute {
+  position: absolute;
+  text-align: center;
+  width:100%;
 
+  //padding-top:100%;
+
+  -webkit-transform: translateY(-50%); /* child now centers itself relative to the midline based on own contents */
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(Dx=0,Dy=0)'; /*IE8 */
+  filter: progid:DXImageTransform.Microsoft.Matrix(Dx=0,Dy=0); /*IE6, IE7*/
+  transform: translateY(-50%);    
+  
+}
+
+@mixin center-vertical-relative {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+}
 
 /*-------------
 Mixins - Colors
@@ -36,27 +62,28 @@ $standard-visited-link-color: #2A6496;
 
 
 $off-white: rgb(245,245,245);
-$offblack: rgb(30,30,30);
-
-$blacktransparent: rgba(30,30,30,0.7);
+$off-black: rgb(30,30,30);
+$transparent-black: rgba(25,25,25, 0.9);
 
 $blue-ucla: rgb(30,130,236);
 $yellow-ucla: rgb(239,214,53);
 
-$lightblue: #C0E0FA;
-$mediumblue: #2EAFFF;
-$navyblue: #135;
-$purpleblue: #66F;
+$hint-blue: #E9F8FF;
+$light-blue: #C0E0FA;
+$medium-blue: #6FAFFF;
+$navy-blue: #103050;
+$purple-blue: #66F;
 
-$verb-color: #008CFF;
 
 /*
 dependent colors
 */
 
-$navbar-color: $lightblue;
+$navbar-color: $light-blue;
 $navbar-border-color: $navbar-color - #555555;
-  
+
+$verb-color: $medium-blue;
+
 .color-blue-ucla {
   color: $blue-ucla;
 }

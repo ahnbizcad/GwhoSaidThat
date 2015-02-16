@@ -1,3 +1,7 @@
+#about {
+  background-color: rgba($hint-blue, 1);
+}
+
 #about-list {
   display: inline-block;
 }
@@ -8,7 +12,7 @@
 
 .ucla {
   display: inline-block;
-  text-shadow: 2px 2px 3px $offblack;
+  text-shadow: 2px 2px 3px $off-black;
   font-size: 2.5em;
 }
 
