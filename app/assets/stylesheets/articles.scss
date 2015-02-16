@@ -26,11 +26,11 @@
       margin-left: 0 10px;
 
       a {
-        color: grey;
+        color: $nav-link-color;
         text-decoration: none;
 
         &:hover, &:focus {
-          color: $standard-link-color;
+          color: $blue-ucla;
         }
       }
 

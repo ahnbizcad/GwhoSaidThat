@@ -63,6 +63,11 @@
         padding-top:    10px;
         padding-bottom: 10px;
 
+        &:focus, &:hover {
+          color: $blue-ucla;
+          @include navbar-gradient($medium-blue);
+        }
+
         img {
           max-width:  30px;
           max-height: 30px;

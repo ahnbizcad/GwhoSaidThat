@@ -128,11 +128,17 @@ footer {
     white-space: nowrap;
 
     > li {
-      font-size: 1.4em;
+      
       float: none;
       display: inline-block;
       *display: inline;
       *zoom: 1;
+
+      a {
+        &:focus, &:hover {
+          @include navbar-gradient($medium-blue);
+        }
+      }
     }
   }
 }

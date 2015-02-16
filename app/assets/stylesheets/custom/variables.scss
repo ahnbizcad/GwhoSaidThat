@@ -64,8 +64,9 @@ $standard-visited-link-color: #2A6496;
 $off-white: rgb(245,245,245);
 $off-black: rgb(30,30,30);
 $transparent-black: rgba(25,25,25, 0.9);
+$dark-grey: #444444;
 
-$blue-ucla: rgb(30,130,236);
+$blue-ucla: rgb(25,110,250);
 $yellow-ucla: rgb(239,214,53);
 
 $hint-blue: #E9F8FF;
@@ -78,7 +79,7 @@ $purple-blue: #66F;
 /*
 dependent colors
 */
-
+$nav-link-color: $dark-grey;
 $navbar-color: $light-blue;
 $navbar-border-color: $navbar-color - #555555;
 
