@@ -76,12 +76,17 @@ navbar-override
   color: $nav-link-color;
 }
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: $blue-ucla;
-  @include navbar-gradient($medium-blue);
+.navbar-default .navbar-nav > li > a {
+  &:hover, &:focus {
+    color: $blue-ucla;
+    background-color: transparent;
+  }
 }
 
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: $blue-ucla;
-  background-color: transparent;
+.navbar-default .navbar-nav > .active > a {
+  &:hover, &:focus {
+    color: $blue-ucla;
+    @include navbar-gradient($medium-blue);
+  }
 }
+

@@ -15,9 +15,15 @@
           ul
             - @articles.each_with_index do |article, i| 
               - if article.published? || currently_admin?
-                li[ id=("article-#{article.id}") class=("unpublished" if !article.published?) class=("active" if i==0) ]
-                  = link_to article, remote: true do
-                    = article.title
+                / avoid n checks if not admin.
+                - if currently_admin?
+                  li[ id=("article-#{article.id}") class=("unpublished" if !article.published?) class=("active" if i==0) ]
+                    = link_to article, remote: true do
+                      = article.title
+                - else
+                  li[ id=("article-#{article.id}") class=("unpublished" if !article.published?) class=("active" if i==0) ]
+                    = link_to article, remote: true do
+                      = article.title
         
       .col-xs-12.col-md-9
         #article

@@ -19,11 +19,11 @@
 
   ul {
     list-style: none;
-    padding-left: 0;
+    padding-left: 0px;
     margin: 0px;
 
     li {
-      margin-left: 0 10px;
+      margin-left: 0px;
 
       a {
         color: $nav-link-color;
@@ -42,6 +42,8 @@
         border-width: 0.35em 0 0.35em 0.45em;
         border-color: transparent $off-black;
         border-style: solid;
+
+        font-smoothing: antialiased;
       }
 
       &.active {
@@ -56,11 +58,12 @@
         }
 
         a {
-          color: $standard-link-color;
+          color: $blue-ucla;
 
-          &:hover, &:focus {
-            color: $standard-link-color;
+          &:active, &:hover, &:focus {
+            color: $blue-ucla;
           }
+
         }
       }
       
