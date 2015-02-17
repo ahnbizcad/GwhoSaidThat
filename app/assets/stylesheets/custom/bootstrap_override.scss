@@ -74,19 +74,15 @@ navbar-override
 
 .navbar-default .navbar-nav > li > a {
   color: $nav-link-color;
-}
 
-.navbar-default .navbar-nav > li > a {
   &:hover, &:focus {
     color: $blue-ucla;
-    background-color: transparent;
   }
 }
-
 .navbar-default .navbar-nav > .active > a {
+  @include navbar-gradient($medium-blue);
+  
   &:hover, &:focus {
     color: $blue-ucla;
-    @include navbar-gradient($medium-blue);
   }
 }
-

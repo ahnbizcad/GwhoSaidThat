@@ -1,6 +1,7 @@
 / _articles.html.slim
 /== render partial: "articles/article", locals: { article: @first_available_article }
 
+
 - if article.published? || currently_admin?
   
   article[ class=("unpublished" if !article.published?) ]
