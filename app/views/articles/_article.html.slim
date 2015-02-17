@@ -20,10 +20,17 @@
       '  |
       = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-    - if ( controller_name == "articles" && action_name == "show" )
-      == Asciidoctor.convert(article.content, safe: 'safe')
-    - else
-      - truncated_content = truncate(article.content, length:1000, escape: false)
-      == Asciidoctor.convert(truncated_content, safe: 'safe')
-      = link_to article do
-        |  (read more)
+    /- if ( controller_name == "articles" && action_name == "show" )
+    /  == Asciidoctor.convert(article.content, safe: 'safe')
+    /- else
+    /  - truncated_content = truncate(article.content, length:1000, escape: false)
+    /  == Asciidoctor.convert(truncated_content, safe: 'safe')
+    /  = link_to article do
+    /    |  (read more)
+
+    / test if rendering fail is due to if/else, or due to truncation.
+    /= Asciidoctor.convert(article.content)
+    /== Asciidoctor.convert(article.content)
+    /= Asciidoctor.convert(article.content, safe: 'safe')
+    == Asciidoctor.convert(article.content, safe: 'safe')
+    /= article.content
