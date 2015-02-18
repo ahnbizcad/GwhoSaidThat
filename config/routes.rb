@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
-  get  '*path' => redirect('/') unless Rails.env.development?
-  post '*path' => redirect('/') unless Rails.env.development?
+  get  '*path' => redirect('/') if Rails.env.production?
+  post '*path' => redirect('/') if Rails.env.production?
 
   resources :apps
   resources :articles 
