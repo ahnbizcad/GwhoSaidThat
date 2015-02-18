@@ -63,7 +63,8 @@ class ApplicationController < ActionController::Base
     helper_method :currently_admin?
 
     def authorize_admin
-      redirect_to root_path unless current_user.admin?
+      redirect_to root_path unless currently_admin? and return
+      return
     end
 
 #    def verbs
