@@ -1,26 +1,8 @@
-.container-fluid
+.container-fluid#works
   .row
     .col-xs-12
-      h1.media-heading Portfolio
 
       -if currently_admin?
         = link_to 'New App', new_app_path
 
-
-  - unless @apps.blank?
-      .row
-        - @apps.each do |app|
-          - if app.published? || currently_admin?
-            .col.xs-12.col-sm-6.col-md-4
-              a[ href="" class="app-link" data-toggle="modal" data-target=("##{app.name.parameterize}") ]  
-                .app[ class=("unpublished" if !app.published?) ]
-                  .app-name
-                    span = app.name.upcase
-                    /[ data-app-name=("##{app.name.titleize}") ]
-                  = image_tag "apps/#{app.image_path}", class: "app-image"
-
-
-                - if currently_admin?
-                  = link_to 'Edit', edit_app_path(app)
-                  '  |
-                  = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
+  == render partial: "apps/apps", locals: { apps: @apps }

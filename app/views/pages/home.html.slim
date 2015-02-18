@@ -1,20 +1,25 @@
 .parallax-bg#cover-bg
 
-== render partial: "pages/cover"
+#cover.section.container-fluid
+  == render partial: "pages/cover"
 
 == render partial: "layouts/navbar_scrollspy"
 
-== render partial: "apps/apps", locals: { apps: @apps }
+#works.section.container-fluid
+  == render partial: "apps/apps", locals: { apps: @apps }
 
-== render partial: "books/books", locals: { books: @books, 
-                                            programming_books: @programming_books,
-                                            business_books:    @business_books,
-                                            science_books:     @science_books,  
-                                            philosophy_books:  @philosophy_books,
-                                            to_read_books:     @to_read_books }
+#bookshelf.section.container-fluid
+  == render partial: "books/books", locals: { books: @books, 
+                                              programming_books: @programming_books,
+                                              business_books:    @business_books,
+                                              science_books:     @science_books,  
+                                              philosophy_books:  @philosophy_books,
+                                              to_read_books:     @to_read_books }
 
-== render partial: "articles/articles", locals: { articles: @articles }
+#blog.section.container-fluid
+  == render partial: "articles/articles", locals: { articles: @articles }
 
-== render partial: "pages/about"
+#about.section.container-fluid
+  == render partial: "pages/about"
 
 == render 'layouts/footer'

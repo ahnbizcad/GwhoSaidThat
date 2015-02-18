@@ -1,31 +1,30 @@
-#blog.section.container-fluid
-  /.row
-  /  .col-xs-12
-  /    h1.media-heading.text-center Coding Blog      
+/.row
+/  .col-xs-12
+/    h1.media-heading.text-center Coding Blog      
 
-  - if currently_admin?
-    .admin
-      = link_to 'Manage Articles', articles_path
+- if currently_admin?
+  .admin
+    = link_to 'Manage Articles', articles_path
 
-  - unless @articles.blank?
-    .row
-      .col-xs-12.col-md-3
-        /#articles-nav-affixable-wrapper
-        #articles-nav.affixable
-          ul
-            - @articles.each_with_index do |article, i| 
-              - if article.published? || currently_admin?
-                / avoid n checks if not admin.
-                - if currently_admin?
-                  li[ id=("article-#{article.id}") class=("unpublished" if !article.published?) class=("active" if i==0) ]
-                    = link_to article, remote: true do
-                      = article.title
-                - else
-                  li[ id=("article-#{article.id}") class=("unpublished" if !article.published?) class=("active" if i==0) ]
-                    = link_to article, remote: true do
-                      = article.title
-        
-      .col-xs-12.col-md-9
-        #article
-          == render partial: "articles/article", locals: { article: @articles[0] }
-        
+- unless @articles.blank?
+  .row
+    .col-xs-12.col-md-3
+      /#articles-nav-affixable-wrapper
+      #articles-nav.affixable
+        ul
+          - @articles.each_with_index do |article, i| 
+            - if article.published? || currently_admin?
+              / avoid n checks if not admin.
+              - if currently_admin?
+                li[ id=("article-#{article.id}") class=("unpublished" if !article.published?) class=("active" if i==0) ]
+                  = link_to article, remote: true do
+                    = article.title
+              - else
+                li[ id=("article-#{article.id}") class=("unpublished" if !article.published?) class=("active" if i==0) ]
+                  = link_to article, remote: true do
+                    = article.title
+      
+    .col-xs-12.col-md-9
+      #article
+        == render partial: "articles/article", locals: { article: @articles[0] }
+      

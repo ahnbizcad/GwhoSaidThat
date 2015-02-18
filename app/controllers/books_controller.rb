@@ -5,8 +5,7 @@ class BooksController < ApplicationController
   before_action :authorize_admin,     except: [:index]
   
 
-
-
+  
   # GET /books
   # GET /books.json
   def index
