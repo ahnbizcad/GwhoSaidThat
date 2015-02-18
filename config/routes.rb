@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
+  get  '*path' => redirect('/') unless Rails.env.development?
+  post '*path' => redirect('/') unless Rails.env.development?
+
   resources :apps
   resources :articles 
   resources :books
