@@ -2,9 +2,6 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
-  get  '*path' => redirect('/') if Rails.env.production?
-  post '*path' => redirect('/') if Rails.env.production?
-
   resources :apps
   resources :articles 
   resources :books
@@ -14,7 +11,9 @@ Rails.application.routes.draw do
                                         :sign_out => "logout", 
                                         :sign_up => "register", 
                                         :account_update => "account-settings" }
-        
+
+  get  '*path' => redirect('/') if Rails.env.production?
+  post '*path' => redirect('/') if Rails.env.production?
   
 
   # The priority is based upon order of creation: first created -> highest priority.
