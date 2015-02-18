@@ -1,3 +1,5 @@
+/ == render partial: "apps/apps", locals: { apps: @apps }
+
 #works.section.container-fluid
   
   - if currently_admin?
@@ -6,9 +8,9 @@
         .admin
           = link_to 'Manage Apps', apps_path
 
-  - unless @apps.blank?
+  - unless apps.blank?
     .row
-      - @apps.each do |app|
+      - apps.each do |app|
         - if app.published? || currently_admin?
           .col.xs-12.col-sm-6.col-md-4
             a[ href="" class="app-link" class=("unpublished" if !app.published?) data-toggle="modal" data-target=("##{app.name.parameterize}") ]  
