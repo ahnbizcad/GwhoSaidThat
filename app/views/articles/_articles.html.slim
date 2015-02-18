@@ -6,13 +6,13 @@
   .admin
     = link_to 'Manage Articles', articles_path
 
-- unless @articles.blank?
+- unless articles.blank?
   .row
     .col-xs-12.col-md-3
       /#articles-nav-affixable-wrapper
-      #articles-nav.affixable
+      #articles-nav[ class=("max-overflow" unless controller_name == 'articles') ]
         ul
-          - @articles.each_with_index do |article, i| 
+          - articles.each_with_index do |article, i| 
             - if article.published? || currently_admin?
               / avoid n checks if not admin.
               - if currently_admin?
@@ -25,6 +25,6 @@
                     = article.title
       
     .col-xs-12.col-md-9
-      #article
-        == render partial: "articles/article", locals: { article: @articles[0] }
+      #article[ class=("max-overflow" unless controller_name == 'articles') ]
+        == render partial: "articles/article", locals: { article: articles[0] }
       

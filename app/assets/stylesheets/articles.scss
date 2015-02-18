@@ -11,10 +11,11 @@
   margin: 15px auto;
   padding: 10px;
 
+  @include boxshadow();
+}
+.max-overflow {
   max-height: 600px;
   overflow: auto;
-
-  @include boxshadow();
 }
 
 #articles-nav {

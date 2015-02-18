@@ -15,8 +15,8 @@
             .app
               .app-name
                 span = app.name.upcase
-                /[ data-app-name=("##{app.name.titleize}") ]
-              = image_tag "apps/#{app.image_path}", class: "app-image"
+              .app-image
+                = image_tag "apps/#{app.image_path}"
 
           div[ id=("#{app.name.parameterize}") class="modal modal-fluid  fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ]
             .modal-dialog.modal-lg

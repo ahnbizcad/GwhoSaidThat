@@ -2,10 +2,9 @@ class ArticlesController < ApplicationController
   respond_to :html, :js, :json
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-  before_action :authenticate_user!,  except: [:show, :index]
   before_action :authorize_admin,     except: [:show, :index]
-
-  #inject_template_inheritance_path_prefixes "master_controller"
+  #before_action :authenticate_user!,  except: [:show, :index]
+  
 
   # GET /articles
   # GET /articles.json

@@ -1,11 +1,10 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   
-  before_action :authenticate_user!,  except: [:index]
   before_action :authorize_admin,     except: [:index]
-  
+  #before_action :authenticate_user!,  except: [:index]
 
-  
+
   # GET /books
   # GET /books.json
   def index
@@ -15,9 +14,6 @@ class BooksController < ApplicationController
     @science_books     = Book.by_category("science")
     @philosophy_books  = Book.by_category("philosophy")
     @to_read_books     = Book.by_category("to read")
-    
-    #@uri = Addressable::URI.parse("https://github.com/ahnbizcad/")
-
   end
 
   # GET /books/1
