@@ -5,3 +5,6 @@ $(document).ready ->
   .on 'mouseout', ->
     $(this).find('.app-name').removeClass('active')
     $(this).find('.app-image').removeClass('active')
+
+  $('.modal-exit').on 'click', ->
+    $('.modal').modal("hide")

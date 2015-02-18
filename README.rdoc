@@ -3,3 +3,12 @@
 Portfolio and programming blog of Jeehoo Ahn.
 
 http://gwhosaidthat.herokuapp.com
+
+Features:
+
+parallax scrolling
+CSS3 transition effects
+CSS3 animation
+font-awesome
+multipurpose bookshelf plugin adapted for rails
+Bootstrap affix, scrollspy
