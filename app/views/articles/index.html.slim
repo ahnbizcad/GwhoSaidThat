@@ -6,6 +6,3 @@
         = link_to 'New Article', new_article_path
 
   == render partial: "articles/articles", locals: { articles: @articles }
-
-  /- truncated_content = truncate(article.content, length:1000, escape: false)
-  /== Asciidoctor.convert(truncated_content, safe: 'safe')

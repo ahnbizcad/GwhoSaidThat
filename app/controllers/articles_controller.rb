@@ -13,8 +13,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    redirect_to articles_path if !@article.published? && !currently_admin?
-    
+    redirect_to articles_path if !@article.published? && !currently_admin?    
   end
 
   # GET /articles/new

@@ -36,8 +36,6 @@ gem 'font-awesome-rails'
 gem 'i18n'
 gem 'nokogiri'  #html, xml, sax, reader and css parser
 
-gem 'asciidoctor'
-gem 'coderay', '~> 1.1.0'
 
 #gem 'image_size', '~> 1.3.1'
 #gem 'fastimage', '~> 1.6.4'
