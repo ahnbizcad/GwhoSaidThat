@@ -35,6 +35,7 @@
 
 //PLUGINS
 //
+//= require bookshelf
 
 
 //TURBOLINKS

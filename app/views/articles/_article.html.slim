@@ -1,17 +1,18 @@
+
 / _articles.html.slim
 /== render partial: "articles/article", locals: { article: @first_available_article }
 
 - if article.published? || currently_admin?
   
   article[ class=("unpublished" if !article.published?) ]
-    - if article.image_url
 
-      = link_to article do
-        = image_tag article.image_url
-    
     = link_to article do
       h1.media-heading = article.title
     
+    - if article.image_url
+      = link_to article do
+        = image_tag article.image_url
+        
     h5.media-heading = article.created_at.to_date
     
     - if currently_admin?
@@ -19,4 +20,13 @@
       '  |
       = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-    == Asciidoctor.convert(article.content, safe: 'safe')
+    br
+    
+    == article.content
+    /== Asciidoctor.convert(article.content, safe: 'safe')
+
+|
+  <script> 
+    hljs.initHighlighting.called = false;
+    hljs.initHighlighting();
+  </script>

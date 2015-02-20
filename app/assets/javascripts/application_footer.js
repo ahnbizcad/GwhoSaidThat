@@ -1,7 +1,7 @@
 // PLUGINS
 //
 //(manifest)
-//= require bookshelf
+
 
 
 // TREE SUBSTITUTE

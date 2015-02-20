@@ -10,6 +10,5 @@ Rails.application.config.assets.precompile << /\.(?:png|jpg|jpeg|gif)\z/
 Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')  
 Rails.application.config.assets.precompile << /\.(?:eot|svg|ttf|woff|woff2)\z/
 
-
 # Iframe content for bookshelf
 Rails.application.config.assets.precompile << /\.(?:html)\z/
