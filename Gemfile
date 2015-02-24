@@ -45,6 +45,7 @@ gem 'nokogiri'  #html, xml, sax, reader and css parser
 #gem 'kaminari'
 
 #gem 'acts_as_taggable_on'
+gem 'acts_as_list'
 
 group :development do 
   gem 'better_errors'

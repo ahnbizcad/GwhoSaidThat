@@ -10,11 +10,14 @@
 #  published   :boolean          default(FALSE)
 #  image_path  :string(255)
 #  name        :string(255)      default(""), not null
+#  position    :integer
 #
 
 class App < ActiveRecord::Base
   require 'uri'
+  acts_as_list scope: [:position]
   
+  scope :by_position, -> { order("position ASC") }
   scope :by_newest,   -> { order("created_at DESC") }
   scope :unpublished, -> { where("published = False") }
   scope :published,   -> { where("published = True") } 

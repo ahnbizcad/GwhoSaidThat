@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @apps     = App.all
+    @apps     = App.all.by_position
     @articles = currently_admin? ? Article.all.by_newest : Article.published.by_newest
     @books    = Book.all
 

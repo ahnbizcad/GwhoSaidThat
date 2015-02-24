@@ -2,12 +2,12 @@ class AppsController < ApplicationController
   before_action :set_app, only: [:show, :edit, :update, :destroy]
 
   before_action :authorize_admin
-  
+
 
   # GET /apps
   # GET /apps.json
   def index
-    @apps = App.all.by_newest
+    @apps = App.all.by_position
   end
 
   # GET /apps/1
@@ -28,6 +28,7 @@ class AppsController < ApplicationController
   # POST /apps.json
   def create
     @app = App.new(app_params)
+    @app.insert_at(params[:position]) # insert_at method from acts_as_list gem.
 
     respond_to do |format|
       if @app.save
@@ -72,6 +73,6 @@ class AppsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def app_params
-      params.require(:app).permit(:url, :image_path, :description, :published, :name)
+      params.require(:app).permit(:name, :url, :image_path, :description, :position, :published, )
     end
 end
