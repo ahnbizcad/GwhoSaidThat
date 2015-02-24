@@ -14,13 +14,17 @@ html
   body[ data-spy="scroll" data-target="#navbar" data-offset="50"]
     main
       #alerts
-        - if notice
-          .notice.notice-dismissable
-            = notice
-        - if alert
-          .alert.alert-dismissable[ role="alert" data-dismiss="alert"]
-            = alert
-
+        - flash.each do |k,v|
+          div[class="alert alert-#{FlashMapper.for_bootstrap(k)} alert-dismissable" role="alert"]
+            button[type="button" class="close" data-dismiss="alert" aria-label="Close"]
+              span[ aria-hidden="true"]
+                | &times;
+            
+            strong 
+              = FlashMapper.for_display(k).capitalize
+            ' :
+            = v
+      
       == yield
 
     - if currently_admin?

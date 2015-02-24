@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  rescue_from ActiveRecord::RecordNotFound, with: :redirect_record_not_found
+
 #  VERBS = { pages: "IS",
 #            apps: "MADE",
 #            articles: "LEARNED",
@@ -65,6 +67,11 @@ class ApplicationController < ActionController::Base
     def authorize_admin
       redirect_to root_path unless currently_admin? and return
       return
+    end
+
+    def redirect_record_not_found
+      flash[:error] = "Record not found."
+      redirect_to root_path
     end
 
 #    def verbs

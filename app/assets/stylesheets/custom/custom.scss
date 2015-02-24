@@ -90,6 +90,11 @@ main {
   position: absolute;
   width: 100%;
   background-color: rgba($off-white, 0.5);
+
+  .alert {
+    text-align: center;
+    margin-bottom: 0px;
+  }
 }
 
 .admin {

@@ -6,3 +6,11 @@
         = link_to 'New App', new_app_path
 
   == render partial: "apps/apps", locals: { apps: @apps }
+
+  -if currently_admin?
+    .row
+      .col-xs-12
+      
+        - apps.each do |app|
+          = app.name
+          = app.position

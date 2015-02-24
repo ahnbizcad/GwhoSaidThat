@@ -12,9 +12,7 @@ Rails.application.routes.draw do
                                         :sign_up => "register", 
                                         :account_update => "account-settings" }
 
-  get  '*path' => redirect('/') if Rails.env.production?
-  post '*path' => redirect('/') if Rails.env.production?
-  
+  match '*path' => redirect('/'), via: :all if Rails.env.production?  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
