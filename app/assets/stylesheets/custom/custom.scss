@@ -37,6 +37,8 @@ ul.no-bullet {
       display: inline-block;
       position: relative;
       content: "";
+
+      padding-left: 6px;
       
       border-width: 0.35em 0 0.35em 0.45em;
       border-color: transparent $off-black;

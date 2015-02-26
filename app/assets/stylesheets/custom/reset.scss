@@ -9,12 +9,12 @@ abbr, address, cite, code,
 del, dfn, em, img, ins, kbd, q, samp,
 small, strong, sub, sup, var,
 b, i,
-dl, dt, dd, ol, li, a
+dl, dt, dd, li, a
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 main, article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, ol, ul{
   margin:0;
   padding:0;
   border:0;
@@ -22,6 +22,9 @@ time, mark, audio, video {
   font-size:100%;
   vertical-align:baseline;
   background:transparent;
+}
+ol, ul {
+  padding-left: 36px;
 }
 iframe{
   vertical-align: bottom;
