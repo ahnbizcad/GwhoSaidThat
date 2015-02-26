@@ -31,6 +31,22 @@ ul.no-bullet {
   vertical-align: text-top;
 }
 
+.triangle-bullet {
+  li {
+    &:before {
+      display: inline-block;
+      position: relative;
+      content: "";
+      
+      border-width: 0.35em 0 0.35em 0.45em;
+      border-color: transparent $off-black;
+      border-style: solid;
+
+      font-smoothing: antialiased;
+    }
+  }
+}
+
 .card {
   box-shadow: 0px 0px 0.5em 0px #26F inset;
   margin: 0.75em 0;

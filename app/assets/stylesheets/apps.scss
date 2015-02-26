@@ -32,16 +32,20 @@
       height: 100%;
       width: 100%;
 
-      font-size: 2em;
-
-      text-decoration: none;
-      color: $light-blue;
       opacity: 0.999;    
       transition: all 0.3s;
 
       &.active {
         opacity: 0;
       }
+
+      span {
+        font-size: 2em;
+        text-decoration: none;
+        color: $light-blue;
+        @include textshadow(1px, 1px, 3px, $navy-blue);
+      }
+
     }
 
     .app-image {

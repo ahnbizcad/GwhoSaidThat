@@ -3,12 +3,19 @@
 
   text-align: center;
 
-  // background-color via js
-
   #cover-headline {
     @include center-vertical-relative;
     
-    text-shadow: 1px 1px 1px $off-white;
+    color: $navy-blue;
+    @include textshadow(-1px, -1px, 1px, $medium-blue);
+
+    #padding: 1em;
+    #border-radius: 0.25em;
+    #background-color: rgba(black, 0.6);
+
+    h1, h2 {
+      margin: 0;
+    }
   }
 
 }

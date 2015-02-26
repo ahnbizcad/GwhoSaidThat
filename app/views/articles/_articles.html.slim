@@ -11,7 +11,7 @@
     .col-xs-12.col-md-3
       /#articles-nav-affixable-wrapper
       #articles-nav[ class=("max-overflow" unless controller_name == 'articles') ]
-        ul
+        ul[ class="triangle-bullet" ]
           - articles.each_with_index do |article, i| 
             - if article.published? || currently_admin?
               / avoid n checks if not admin.

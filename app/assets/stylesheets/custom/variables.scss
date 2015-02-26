@@ -69,10 +69,11 @@ $dark-grey: #444444;
 $blue-ucla: rgb(25,110,250);
 $yellow-ucla: rgb(239,214,53);
 
-$hint-blue: #EDF3FF;
+$hint-blue: #E6F3FF;
 $light-blue: #C0E0FF;
 $medium-blue: #6FAFFF;
 $navy-blue: #103050;
+$navy-blue: #071030;
 $purple-blue: #66F;
 
 
@@ -108,4 +109,8 @@ Mixins - Styling
     rgba($color + #030303, 0.99) 55%, 
     $color - #050505 45%, 
     rgba($color + #040404, 0.95) 100%);
+}
+
+@mixin textshadow($h:1px, $v:1px, $bl:1px, $color:black) {
+  text-shadow: $h $v $bl $color;
 }
