@@ -1,17 +1,17 @@
 .parallax-bg#cover-bg
 
-#cover.section.container-fluid
+.container-fluid.section#cover
   == render partial: "pages/cover"
 
 == render partial: "layouts/navbar_scrollspy"
 
-#works.section.container-fluid
+.container-fluid.section#works
   == render partial: "apps/apps", locals: { apps: @apps }
 
-#blog.section.container-fluid
+.container-fluid.section#blog
   == render partial: "articles/articles", locals: { articles: @articles }
 
-#bookshelf.section.container-fluid
+.container-fluid.section#bookshelf
   == render partial: "books/books", locals: { books: @books, 
                                               programming_books: @programming_books,
                                               business_books:    @business_books,
@@ -19,7 +19,7 @@
                                               philosophy_books:  @philosophy_books,
                                               to_read_books:     @to_read_books }
 
-#about.section.container-fluid
+.container-fluid.section#about
   == render partial: "pages/about"
 
 == render 'layouts/footer'

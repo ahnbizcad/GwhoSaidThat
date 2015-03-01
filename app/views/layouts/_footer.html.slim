@@ -3,7 +3,10 @@ footer
   nav#footer-navbar.navbar-default
 
     ul.nav
-      li= link_to "https://www.linkedin.com/in/jeehooahn" do
+      li= link_to "https://www.linkedin.com/in/jeehooahn", target: "_blank"  do
         = image_tag "linkedin.png"
-      li= link_to "https://github.com/ahnbizcad/" do
+      li= link_to "https://github.com/ahnbizcad/", target: "_blank" do
         = image_tag "github.png"
+      li#email[ data-toggle="tooltip" data-placement="top", title="ahnjeehoo@gmail.com" ]
+        = link_to "mailto:ahnjeehoo@gmail.com", target: "_blank" do
+          = image_tag "email.svg"

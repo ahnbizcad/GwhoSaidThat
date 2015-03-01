@@ -103,7 +103,7 @@ Mixins - Styling
 }
 
 @mixin navbar-gradient($color:$navbar-color){
-  background: linear-gradient( 
+  background: linear-gradient(
     $color + #333333 0%, 
     rgba($color + #030303, 0.99) 55%, 
     $color - #050505 45%, 

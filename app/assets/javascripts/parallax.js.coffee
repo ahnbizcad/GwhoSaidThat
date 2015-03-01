@@ -6,7 +6,7 @@ $(document).ready ->
 
   # 0 moves completely with flow (slower)
   # 1 stays completely static    (faster)
-  speedfactor = 0.6
+  speedfactor = 0.8
   # parallax speec control
   parallax = -> 
     scrolled = $(window).scrollTop()  

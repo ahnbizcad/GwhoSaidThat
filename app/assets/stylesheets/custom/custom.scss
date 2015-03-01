@@ -3,8 +3,6 @@ Reusable OO
 --------------------------*/
 
 
-
-
 .no-gutter {
   > [class*="col-"] {
     padding-left:  0;
@@ -49,15 +47,6 @@ ul.no-bullet {
   }
 }
 
-.card {
-  box-shadow: 0px 0px 0.5em 0px #26F inset;
-  margin: 0.75em 0;
-}
-
-.featured-shadow {
-  box-shadow: 2px 2px 8px 6px grey;
-}
-
 .unpublished {
   box-shadow: 2px 2px 16px 3px red;
 }
@@ -65,14 +54,6 @@ ul.no-bullet {
 .bg-blue {
   background-color: $medium-blue;
 }
-.bg-yellow {
-  background-color: #F6FC86;
-}
-.bg-cream {
-  background-color: cornsilk;
-}
-
-
 
 
 /*--------------------------
@@ -163,5 +144,129 @@ footer {
         }
       }
     }
+  }
+}
+
+
+
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  justify-content: center;
+
+  text-align: center;
+  
+  margin: 0.5em 0px;
+  padding: 1em;
+
+  border-radius: 0.25em;
+  color: $navy-blue;
+}
+
+.white-card {
+  @extend .card;
+  background-color: rgba($off-white, 0.5);
+}
+
+.black-card {
+  @extend .card;
+  background-color: rgba($off-black, 0.5);
+}
+
+
+
+.quote {
+  display: inline-block;
+
+  max-width: 400px;
+
+  color: black;
+}
+
+
+
+#ucla-letters {
+  white-space: nowrap;
+}
+
+.ucla {
+  display: inline-block;
+  text-shadow: 2px 2px 3px $off-black;
+  font-size: 2.5em;
+}
+
+#ucla-1 {
+  -webkit-animation: happyletters 1s ease-in-out 0.1s infinite alternate;
+  -moz-animation:    happyletters 1s ease-in-out 0.1s infinite alternate;
+  animation:         happyletters 1s ease-in-out 0.1s infinite alternate;
+
+}
+#ucla-2 {
+  -webkit-animation: happyletters 1s ease-in-out 0.2s infinite alternate;
+  -moz-animation:    happyletters 1s ease-in-out 0.2s infinite alternate;
+  animation:         happyletters 1s ease-in-out 0.2s infinite alternate;
+}
+#ucla-3 {
+  -webkit-animation: happyletters 1s ease-in-out 0.3s infinite alternate;
+  -moz-animation:    happyletters 1s ease-in-out 0.3s infinite alternate;
+  animation:         happyletters 1s ease-in-out 0.3s infinite alternate;
+}
+#ucla-4 {
+  -webkit-animation: happyletters 1s ease-in-out 0.4s infinite alternate;
+  -moz-animation:    happyletters 1s ease-in-out 0.4s infinite alternate;
+  animation:         happyletters 1s ease-in-out 0.4s infinite alternate;
+}
+
+
+
+$happy-letters-degrees: 10deg;
+
+@-webkit-keyframes happyletters {
+  0%   { -webkit-transform: rotate(-$happy-letters-degrees); }
+  100% { -webkit-transform: rotate($happy-letters-degrees); }
+}
+@-moz-keyframes happyletters  {
+  0%   { transform: rotate(-$happy-letters-degrees); }
+  100% { transform: rotate($happy-letters-degrees); }
+}
+@keyframes happyletters  {
+  0%   { transform: rotate(-$happy-letters-degrees); }
+  100% { transform: rotate($happy-letters-degrees); }
+}
+
+
+
+$pulse-letters-size-change: 0.2;
+$pulse-letters-opacity-change: 0.2;
+
+@-webkit-keyframes pulseletters {
+  0%   { 
+    -webkit-transform: scale(1,1); 
+    opacity: 1;
+  }
+  100% { 
+    -webkit-transform: scale(1 - $pulse-letters-size-change, 1 - $pulse-letters-size-change); 
+    opacity: (1 - $pulse-letters-opacity-change);
+  }
+}
+@-moz-keyframes pulseletters {
+  0%   { 
+    transform: scale(1,1); 
+    opacity: 1;
+  }
+  100% { 
+    transform: scale(1 - $pulse-letters-size-change, 1 - $pulse-letters-size-change); 
+    opacity: (1 - $pulse-letters-opacity-change);
+  }
+}
+@keyframes pulseletters {
+  0%   { 
+    transform: scale(1,1); 
+    opacity: 1;
+  }
+  100% { 
+    transform: scale(1 - $pulse-letters-size-change, 1 - $pulse-letters-size-change); 
+    opacity: (1 - $pulse-letters-opacity-change);
   }
 }

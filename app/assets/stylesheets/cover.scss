@@ -1,22 +1,27 @@
 #cover {
-  transform-style: preserve-3d;
-
-  text-align: center;
-
-  #cover-headline {
-    @include center-vertical-relative;
-    
-    color: $navy-blue;
-    @include textshadow(-1px, -1px, 1px, $medium-blue);
-
-    #padding: 1em;
-    #border-radius: 0.25em;
-    #background-color: rgba(black, 0.6);
-
-    h1, h2 {
-      margin: 0;
-    }
-  }
-
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  
 }
 
+#cover-wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+#cover-content {
+  display: relative;
+  z-index: -1;
+
+  margin: 1.5em 0px;
+
+  box-shadow: 0px 0px 0.5em 0px $light-blue inset;
+  @include textshadow(-1px, -1px, 1px, $medium-blue);
+
+  h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
