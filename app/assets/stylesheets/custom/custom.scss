@@ -51,8 +51,12 @@ ul.no-bullet {
   box-shadow: 2px 2px 16px 3px red;
 }
 
+.bg-black {
+  background-color: $off-black;
+}
+
 .bg-blue {
-  background-color: $medium-blue;
+  background-color: $light-blue;
 }
 
 
@@ -128,6 +132,10 @@ footer {
   font-size: 1.5em;
   color: $navy-blue;
 
+  img {
+    max-height: 64px;
+  }
+
   > ul {
     white-space: nowrap;
 
@@ -145,6 +153,7 @@ footer {
       }
     }
   }
+
 }
 
 
@@ -164,12 +173,12 @@ footer {
   color: $navy-blue;
 }
 
-.white-card {
+.card-white {
   @extend .card;
   background-color: rgba($off-white, 0.5);
 }
 
-.black-card {
+.card-black {
   @extend .card;
   background-color: rgba($off-black, 0.5);
 }
