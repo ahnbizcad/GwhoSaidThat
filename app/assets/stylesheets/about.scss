@@ -6,3 +6,10 @@
   display: inline-block;
 }
 
+.quote {
+  display: inline-block;
+
+  max-width: 600px;
+
+  color: $dark-grey;
+}
