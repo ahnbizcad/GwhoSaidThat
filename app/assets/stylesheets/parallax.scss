@@ -8,9 +8,8 @@ $parallax-bg-z-index-base: -100;
   position: absolute;
 
   width: 100%;
-  //height via js
+  //height set by js
   
-  background-image: image-url("blue_architecture_depth.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -19,6 +18,7 @@ $parallax-bg-z-index-base: -100;
 
 #cover-bg {
   @include parallax-bg-child(1);
+  background-image: image-url("blue_architecture_depth.jpg");
 }
 #works-bg {
   @include parallax-bg-child(2);
@@ -28,4 +28,8 @@ $parallax-bg-z-index-base: -100;
 }
 #bookshelf-bg {
   @include parallax-bg-child(4);
+}
+#about-bg {
+  /*@include parallax-bg-child(5);*/
+  background-image: image-url("architecture_entrance.jpg");
 }

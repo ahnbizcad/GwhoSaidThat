@@ -43,7 +43,7 @@ $(document).ready ->
 
 
     # Parallax heights
-    $('#cover-bg').height( windowMinusNavHeight )
+    $('.parallax-bg').height( windowMinusNavHeight )
 
     # Parallax positions
 

@@ -4,18 +4,26 @@ $(document).ready ->
   coverPos = 0
   $('#cover-bg').css('top', coverPos)
 
-  # 0 moves completely with flow (slower)
-  # 1 stays completely static    (faster)
-  speedfactor = 0.8
-  # parallax speec control
-  parallax = -> 
-    scrolled = $(window).scrollTop()  
+  aboutPos = 0
+  $('#about-bg').css('top', coverPos)
 
-    $('.parallax-bg').css('top', coverPos + (scrolled * speedfactor) + 'px')
 
-#    
-# Call functions
-#
+  $('[data-type="parallax"]').each ->
 
-  $(window).on 'scroll', ->
-    parallax()
+    obj = $(this)
+
+    # multiplied factor of "in-flow" speed
+    # 0 moves completely in-flow  (moves faster)
+    # 1 stays completely static   (moves slower)    
+    speedFactor = obj.data('speed')  
+
+    initialPos = obj.offset().top
+
+    do (obj, speedFactor, initialPos) ->
+      # apply parallax speed
+      $(window).on 'scroll', ->
+
+        scrolled = $(window).scrollTop()    # Does this execute for every object? Only need this once regadrless of object count.
+        
+        coords = initialPos + (scrolled * speedFactor)
+        obj.css('top', coords + 'px')

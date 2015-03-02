@@ -171,15 +171,18 @@ footer {
 
   border-radius: 0.25em;
   color: $navy-blue;
+
+  h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .card-white {
-  @extend .card;
-  background-color: rgba($off-white, 0.1);
+  background-color: rgba($off-white, 0.2);
 }
 
 .card-black {
-  @extend .card;
   background-color: rgba($off-black, 0.5);
 }
 

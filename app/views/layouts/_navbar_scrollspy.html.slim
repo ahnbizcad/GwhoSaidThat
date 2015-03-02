@@ -3,21 +3,23 @@
 
     .scrollspy
       ul.nav.navbar-nav
-        li= link_to "#works" do 
-          | Works
         li= link_to "#skills" do 
           | Skills
+        li= link_to "#works" do 
+          | Works
         li= link_to "#blog" do 
           | Blog
-        li= link_to "#about" do
-          | About
         li= link_to "#bookshelf" do 
           | Bookshelf
+        li= link_to "#about" do
+          | About
 
     ul#social-icons.nav.navbar-nav
       li= link_to "https://www.linkedin.com/in/jeehooahn" do
         = image_tag "linkedin.png"
       li= link_to "https://github.com/ahnbizcad/" do
         = image_tag "github.png"
+      li= link_to "mailto:ahnjeehoo@gmail.com" do
+        = image_tag "email.svg"
 
 #navbar-shim

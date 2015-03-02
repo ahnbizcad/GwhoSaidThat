@@ -1,21 +1,17 @@
-.parallax-bg#cover-bg
+.parallax-bg#cover-bg[ data-type="parallax" data-speed="0.8" ]
+
+/.parallax-bg#about-bg[ data-type="parallax" data-speed="0" ]
 
 .container-fluid.section#cover
   == render partial: "pages/cover"
 
 == render partial: "layouts/navbar_scrollspy"
 
-.container-fluid.section#works.bg-black
-  == render partial: "apps/apps", locals: { apps: @apps }
-
 .container-fluid.section#skills.bg-blue
   == render partial: "pages/skills"
 
-.container-fluid.section#blog.bg-black
-  == render partial: "articles/articles", locals: { articles: @articles }
-
-.container-fluid.section#about.bg-blue
-  == render partial: "pages/about"
+.container-fluid.section#works.bg-black
+  == render partial: "apps/apps", locals: { apps: @apps }
 
 .container-fluid.section#bookshelf.bg-blue
   == render partial: "books/books", locals: { books: @books, 
@@ -24,5 +20,11 @@
                                               science_books:     @science_books,  
                                               philosophy_books:  @philosophy_books,
                                               to_read_books:     @to_read_books }
+
+.container-fluid.section#blog.bg-black
+  == render partial: "articles/articles", locals: { articles: @articles }
+
+.container-fluid.section#about
+  == render partial: "pages/about"
 
 == render 'layouts/footer'

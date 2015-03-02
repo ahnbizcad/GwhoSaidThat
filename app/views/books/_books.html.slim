@@ -61,7 +61,7 @@
                   = content_tag(:div, class: "product", title: "#{book.title}", data: { popup: "false", type: "book", url: "#{book.url}" }) do
                     = image_tag "books/#{book.image_path}", class: ["book", ("unpublished" if !book.published?)], alt: "#{book.title}", height: 120, width: 80
 
-          .slide_animate
+          /.slide_animate
             #products_box_5.products_box
               - @to_read_books.each do |book|
                 - if book.published || currently_admin?
@@ -85,6 +85,6 @@
             #btn4.button_bar
               = link_to "#" do
                 | Philosophy
-            #btn5.button_bar
+            /#btn5.button_bar
               = link_to "#" do
                 | To Read
