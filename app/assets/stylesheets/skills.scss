@@ -1,0 +1,22 @@
+#skills {
+  
+}
+
+.skill-card {
+  @extend .no-margin-h;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+
+  margin: 15px 0px;
+  padding: 1em;
+  
+  background-color: rgba($off-black, 0.5);
+
+  > *:not(ul) {
+    width: 100%;
+  }
+
+}

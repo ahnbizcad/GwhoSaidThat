@@ -40,37 +40,6 @@ ul {
 }
 
 
-/*--------------------------
-bootstrap additional
---------------------------*/
-
-.jumbotron-centered {
-  display: flex;
-  align-items: stretch;
-  margin: 0;
-
-  > div {
-    flex: 1 1 auto;
-
-    > div {
-      display: table;
-      margin: 0 auto;
-
-    }
-  }
-}
-
-.jumbotron-height {
-  min-height: 500px;
-}
-
-.modal {
-  z-index: 9999;
-}
-
-.modal-dialog {  
-  margin: 75px auto 0;
-}
 
 /*
 navbar-override
@@ -88,5 +57,51 @@ navbar-override
 
   &:hover {
     color: $blue-ucla;
+  }
+}
+
+
+
+.modal {
+  z-index: 9999;
+}
+
+.modal-dialog {  
+  margin: 75px auto 0;
+}
+
+/*--------------------------
+bootstrap additional
+--------------------------*/
+
+.gl-x1-5 {
+  font-size: 1.5em; 
+}
+.gl-x2 {
+  font-size: 2em; 
+}
+.gl-x3 {
+  font-size: 3em; 
+}
+.gl-x4 {
+  font-size: 4em; 
+}
+.gl-x5 {
+  font-size: 5em; 
+}
+
+.row.equal {
+  overflow: hidden;
+
+  [class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+  }
+}
+
+.no-gutter {
+  > [class*="col-"] {
+    padding-left:  0;
+    padding-right: 0;
   }
 }

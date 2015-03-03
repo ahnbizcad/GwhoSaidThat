@@ -3,12 +3,6 @@ Reusable OO
 --------------------------*/
 
 
-.no-gutter {
-  > [class*="col-"] {
-    padding-left:  0;
-    padding-right: 0;
-  }
-}
 
 textarea {
   max-width: 100%;
@@ -23,13 +17,21 @@ textarea {
   word-wrap: break-word;
 }
 
+ul.center-list {
+  display: inline-block;
+
+  li {
+    text-align: left;
+  }
+}
+
 ul.no-bullet {
   list-style-type: none;
   padding-left: 0;
   vertical-align: text-top;
 }
 
-.triangle-bullet {
+ul.triangle-bullet {
   li {
     &:before {
       display: inline-block;
@@ -44,6 +46,12 @@ ul.no-bullet {
 
       font-smoothing: antialiased;
     }
+  }
+}
+
+.no-margin-h {
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
   }
 }
 
@@ -159,6 +167,8 @@ footer {
 
 
 .card {
+  @extend .no-margin-h;
+
   display: flex;
   flex-flow: column nowrap;
   align-content: center;
@@ -172,10 +182,6 @@ footer {
   border-radius: 0.25em;
   color: $navy-blue;
 
-  h1, h2, h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 }
 
 .card-white {

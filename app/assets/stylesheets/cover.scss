@@ -11,7 +11,8 @@
 }
 
 .cover-content {
-
+  @extend .card;
+  @extend .card-white;
 }
 
 #profile {
