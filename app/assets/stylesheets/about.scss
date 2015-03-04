@@ -1,11 +1,21 @@
 #about {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+
+  text-align: center;
+  
+  @extend .no-margin-h;
 
 }
 
 #about-list {
-  display: inline-block;
+  display: block;
 
-  text-align: left;
+  li {
+    text-align: left;
+  }
 }
 
 .quote {

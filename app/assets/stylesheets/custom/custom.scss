@@ -166,15 +166,28 @@ footer {
 
 
 
+.tech-icon {
+  height: 2em;
+  width: 2em;
+  display: inline-block;;
+  text-align: center;
+
+  img { 
+    height: 100%;
+  }
+}
+
+
+
 .card {
   @extend .no-margin-h;
 
   display: flex;
   flex-flow: column nowrap;
-  align-content: center;
+  align-items: center;
   justify-content: center;
 
-  text-align: center;
+  
   
   margin: 0.5em 0px;
   padding: 1em;
@@ -185,7 +198,7 @@ footer {
 }
 
 .card-white {
-  background-color: rgba($off-white, 0.2);
+  background-color: rgba($off-white, 0.4);
 }
 
 .card-black {

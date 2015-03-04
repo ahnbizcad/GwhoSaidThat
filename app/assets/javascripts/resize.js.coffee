@@ -4,62 +4,46 @@
 # Recalculate affix-triggering vertical position.
 $(document).ready ->
 
-#
-# reused values
-#
+  #
+  # reused values
+  #
 
   # Make variables available globally.
-  # Any declared values here will be overridden by resize initially also.
-  navHeight = $('#navbar-affixable-wrapper > #navbar.affixable').outerHeight()
+  # Any declared values here will also initially be overridden by resize when loading.
+  navHeight = $('#navbar-affixable-wrapper > #navbar.affixable').outerHeight(true)
+  footerHeight = $('footer').outerHeight(true)
   windowHeight = 0
-  windowMinusNavHeight = 0
 
-#
-# initial settings
-#
-
+  #
+  # initial settings
+  #
 
 
-#
-# resize settings
-#
+
+  #
+  # resize settings
+  #
 
   # Sets initial size on page load also.
   $(window).resize ->
 
     # Changing heights
-    windowHeight = $(window).height()
-    windowMinusNavHeight = windowHeight - navHeight
-
-
-    # Section background heights
-    $('#cover').height( windowMinusNavHeight )
-    #$('.spacer').css('height': windowMinusNavHeight )
+    windowHeight = $(window).outerHeight(true)    
 
 
     # Affix navbar
     $('#navbar-affixable-wrapper > #navbar.affixable').affix
-      offset: { top: windowMinusNavHeight }
+      offset: { top: windowHeight - navHeight }
+
+
+    # Section background heights
+    $('#cover').height( windowHeight - navHeight )
+    $('#about').css('min-height': windowHeight - navHeight - footerHeight )
 
 
     # Parallax heights
-    $('.parallax-bg').height( windowMinusNavHeight )
+    $('.parallax-bg').height( windowHeight )
+    $('#cover-bg').height( windowHeight - navHeight )
+
 
     # Parallax positions
-
-    #coverBgPos = 0
-    
-          ## Ensure parallax background shows up at the right place when window size changes.
-          #$('.parallax-b').height( windowHeight * 1.5 )
-          #
-          #bgPosCover = 0
-          #$('#cover-bg').css('top': bgPosCover)
-          #
-          #bgPosWorks     = windowHeight * scaleFactor
-          #$  slowfactor = 0.5('#works-bg').css('top': bgPosWorks)
-          #
-          #bgPosBlog      = bgPosWorks + $('#blog').height() * scaleFactor
-          #$('#blog-bg').css('top': bgPosBlog)
-          #
-          #bgPosBookshelf = bgPosBlog + $('#bookshelf').height() * scaleFactor
-          #$('#bookshelf-bg').css('top': bgPosBookshelf)

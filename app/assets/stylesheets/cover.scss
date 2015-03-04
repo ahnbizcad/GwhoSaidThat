@@ -14,7 +14,6 @@
   @extend .card;
   @extend .card-white;
 }
-
 #profile {
   display: relative;
   z-index: -1;
@@ -23,4 +22,8 @@
 
   box-shadow: 0px 0px 0.5em 0px $light-blue inset;
   @include textshadow(-1px, -1px, 1px, $medium-blue);
+}
+
+#cover-headline {
+  margin-bottom: 0.5em;
 }

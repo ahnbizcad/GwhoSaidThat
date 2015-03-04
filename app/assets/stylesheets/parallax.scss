@@ -18,7 +18,7 @@ $parallax-bg-z-index-base: -100;
 
 #cover-bg {
   @include parallax-bg-child(1);
-  background-image: image-url("blue_architecture_depth.jpg");
+  background-image: image-url("backgrounds/architecture_depth.jpg");
 }
 #works-bg {
   @include parallax-bg-child(2);
@@ -30,6 +30,6 @@ $parallax-bg-z-index-base: -100;
   @include parallax-bg-child(4);
 }
 #about-bg {
-  /*@include parallax-bg-child(5);*/
-  background-image: image-url("architecture_entrance.jpg");
+  @include parallax-bg-child(-5);
+  background-image: image-url("backgrounds/architecture_entrance.jpg");
 }

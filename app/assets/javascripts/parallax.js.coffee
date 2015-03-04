@@ -1,11 +1,16 @@
 $(document).ready ->
 
+  footerHeight = $('footer').outerHeight(true)
+  windowHeight = $(window).outerHeight(true)
+
   # Set initial positions for backgrounds
   coverPos = 0
   $('#cover-bg').css('top', coverPos)
 
+  aboutSpeedFactor = $('#about-bg').data('speed')
+  #aboutPos = (windowHeight) * (1 - aboutSpeedFactor) # generic formula
   aboutPos = 0
-  $('#about-bg').css('top', coverPos)
+  $('#about-bg').css('top', aboutPos)
 
 
   $('[data-type="parallax"]').each ->

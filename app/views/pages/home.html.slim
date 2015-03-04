@@ -1,13 +1,13 @@
 .parallax-bg#cover-bg[ data-type="parallax" data-speed="0.8" ]
 
-/.parallax-bg#about-bg[ data-type="parallax" data-speed="0" ]
+.parallax-bg#about-bg[ data-type="parallax" data-speed="1" ]
 
 .container-fluid.section#cover
   == render partial: "pages/cover"
 
 == render partial: "layouts/navbar_scrollspy"
 
-.container-fluid.section#skills.bg-blue
+.section#skills.bg-blue
   == render partial: "pages/skills"
 
 .container-fluid.section#works.bg-black
@@ -24,7 +24,7 @@
 .container-fluid.section#blog.bg-black
   == render partial: "articles/articles", locals: { articles: @articles }
 
-.container-fluid.section#about
+.section#about
   == render partial: "pages/about"
 
 == render 'layouts/footer'
