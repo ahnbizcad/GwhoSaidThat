@@ -1,7 +1,7 @@
 #cover {
   display: flex;
   justify-content: center;
-  align-content: center;  
+  align-items: center;  
 }
 
 #cover-innerwrap {
@@ -13,6 +13,7 @@
 .cover-content {
   @extend .card;
   @extend .card-white;
+  text-align:center;
 }
 #profile {
   display: relative;

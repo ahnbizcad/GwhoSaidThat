@@ -10,18 +10,15 @@
 
 }
 
+#about-content {
+  @extend .card;
+  @extend .card-white;
+}
+
 #about-list {
   display: block;
 
   li {
     text-align: left;
   }
-}
-
-.quote {
-  display: inline-block;
-
-  max-width: 600px;
-
-  color: $dark-grey;
 }

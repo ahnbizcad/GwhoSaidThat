@@ -16,7 +16,8 @@
     opacity: 0.9999; /* for inset box shadow */ /* creates stacking context */
 
     margin: 15px 0px;
-    border: 1px solid $light-blue;
+    border: 2px solid $light-blue;
+    /*box-shadow: 0 0 4px 4px $light-blue;*/
 
     .app-name {
       z-index: 1;

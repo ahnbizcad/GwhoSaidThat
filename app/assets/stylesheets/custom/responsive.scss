@@ -2,6 +2,16 @@
 RESPONSIVE CUTOFF WIDTHS
 **************************/
 
+#social-icons {
+  visibility: hidden;
+}
+
+@media only screen and (min-width: 550px) {
+  visibility: visible;
+}
+
+
+
 /*----------------------------------------
 ONLY xs devices (phones, 1px to 767px) (doesn't cascade)
 ----------------------------------------*/
@@ -24,19 +34,7 @@ xs is default. Smaller sizes cascade to larger sizes. Flow structure.
 sm devices (tablets, 748px and up)
 ----------------------------------------*/
 @media only screen and (min-width: $screen-sm){ 
-  /*
-  body {
-    padding-top: $body-padding-sm;
-  }
-  */
-  /*
-  #navbar {
-    #social-icons {
-      position: absolute;
-      right: 0;
-    }
-  }
-  */
+
 }
 
 

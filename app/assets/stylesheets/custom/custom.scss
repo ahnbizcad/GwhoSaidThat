@@ -165,7 +165,6 @@ footer {
 }
 
 
-
 .tech-icon {
   height: 2em;
   width: 2em;
@@ -177,6 +176,15 @@ footer {
   }
 }
 
+
+.quote {
+  display: inline-block;
+
+  max-width: 600px;
+  margin: 0.5em 0em;
+
+  color: $dark-grey;
+}
 
 
 .card {
@@ -198,7 +206,7 @@ footer {
 }
 
 .card-white {
-  background-color: rgba($off-white, 0.4);
+  background-color: rgba($off-white, 0.6);
 }
 
 .card-black {
