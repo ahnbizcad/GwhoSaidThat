@@ -32,6 +32,7 @@ gem 'devise'
 
 gem 'simple_form', '~> 3.1.0.rc1'
 #gem 'compass'
+#gem 'bourbon'
 gem 'font-awesome-rails'
 gem 'i18n'
 gem 'nokogiri'  #html, xml, sax, reader and css parser

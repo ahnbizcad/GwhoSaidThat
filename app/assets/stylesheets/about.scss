@@ -13,6 +13,7 @@
 #about-content {
   @extend .card;
   @extend .card-white;
+  margin: $gutter-size;
 }
 
 #about-list {
