@@ -49,9 +49,10 @@ gem 'nokogiri'  #html, xml, sax, reader and css parser
 gem 'acts_as_list'
 
 group :development do 
+  gem 'ruby_parser'
+
   gem 'better_errors'
   gem 'binding_of_caller'
-
   gem 'pry-rails'
   gem 'pry-byebug'
 
@@ -60,10 +61,20 @@ group :development do
 
   gem 'annotate'
 
-  gem 'ruby_parser'
+  
 end
 
-group :test do 
+group :development, :test do
+  gem 'rspec-rails'  
+  gem 'guard-rspec'
+  gem 'spring-commands-rspec'
+  # Spring gem is built into Rails 4.1+.
+  
+  #gem 'zeus'
+  #gem 'parallel-tests'
+end
+
+group :test do
   
 end
 
