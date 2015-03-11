@@ -65,17 +65,22 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails'  
-  gem 'guard-rspec'
   gem 'spring-commands-rspec'
+  gem 'guard-rspec'
+  
+  gem 'rspec-rails'  
+  gem 'factory_girl_rails'
+
   # Spring gem is built into Rails 4.1+.
   
-  #gem 'zeus'
+  #gem 'zeus'  #alternative to Spring (application preloader)
   #gem 'parallel-tests'
 end
 
 group :test do
-  
+  gem 'faker'
+  gem 'capybara'
+  gem 'launchy'  
 end
 
 group :production do 
