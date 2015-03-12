@@ -65,22 +65,23 @@ group :development do
 end
 
 group :development, :test do
-  gem 'spring-commands-rspec'
-  gem 'guard-rspec'
-  
-  gem 'rspec-rails'  
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails' # replaces fixtures
 
+  gem 'rspec-rails'
+  gem 'guard-rspec'           # automatically runs tests when changes are saved
+  gem 'spring-commands-rspec' # spring commands to work with rspec
   # Spring gem is built into Rails 4.1+.
   
   #gem 'zeus'  #alternative to Spring (application preloader)
   #gem 'parallel-tests'
+
+  #gem 'rb-fsevent'  #notifications for Mac OSX. Guard has notifications by default for other OSs.
 end
 
 group :test do
-  gem 'faker'
-  gem 'capybara'
-  gem 'launchy'  
+  gem 'faker'    # fake user info generator
+  gem 'capybara' # mimics user
+  gem 'launchy'  # launches browser when an example fails.
 end
 
 group :production do 

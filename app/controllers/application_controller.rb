@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  rescue_from ActiveRecord::RecordNotFound, with: :redirect_record_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
 #  VERBS = { pages: "IS",
 #            apps: "MADE",
@@ -69,7 +69,7 @@ class ApplicationController < ActionController::Base
       return
     end
 
-    def redirect_record_not_found
+    def record_not_found
       flash[:error] = "Record not found."
       redirect_to root_path
     end
