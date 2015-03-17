@@ -3,7 +3,6 @@ class AppsController < ApplicationController
 
   before_action :authorize_admin
 
-
   # GET /apps
   # GET /apps.json
   def index

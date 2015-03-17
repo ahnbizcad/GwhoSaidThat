@@ -17,12 +17,12 @@ class App < ActiveRecord::Base
   require 'uri'
   acts_as_list scope: [:position]
   
+  validates_presence_of :url
+
   scope :by_position, -> { order("position ASC") }
   scope :by_newest,   -> { order("created_at DESC") }
   scope :unpublished, -> { where("published = False") }
   scope :published,   -> { where("published = True") } 
-
-  validates :name, format: { with: // }
 
   def neat_url
     encoded_url = URI.encode(self.url)

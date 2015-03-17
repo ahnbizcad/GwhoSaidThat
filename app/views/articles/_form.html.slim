@@ -10,9 +10,23 @@
   
   = f.input :title
   
-  = f.input :content
+  = f.input :content, input_html: { class: "ckeditor" }
   
   = f.input :published, as: :boolean, label: false, inline_label: true
   
   .form-actions 
     = f.button :submit, class: "btn-primary"
+
+/ load CKeditor before calling customization script
+| <script src="//cdn.ckeditor.com/4.4.7/full-all/ckeditor.js"></script> 
+
+/ reference codeSnippet_theme values http://cdn.ckeditor.com/4.4.7/full-all/plugins/codesnippet/lib/highlight/styles/
+| <script>
+    CKEDITOR.replace( 'article_content', {
+      skin: 'kama',
+      uiColor: '#67AFFF',
+
+      extraPlugins: 'codesnippet',
+      codeSnippet_theme: 'monokai'
+    } );
+  </script>

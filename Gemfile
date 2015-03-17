@@ -37,16 +37,16 @@ gem 'font-awesome-rails'
 gem 'i18n'
 gem 'nokogiri'  #html, xml, sax, reader and css parser
 
+#gem 'acts_as_taggable_on'
+gem 'acts_as_list'
+
+#gem 'kaminari'
 
 #gem 'image_size', '~> 1.3.1'
 #gem 'fastimage', '~> 1.6.4'
 
 #gem 'filepicker-rails'
 
-#gem 'kaminari'
-
-#gem 'acts_as_taggable_on'
-gem 'acts_as_list'
 
 group :development do 
   gem 'ruby_parser'
@@ -61,27 +61,42 @@ group :development do
 
   gem 'annotate'
 
+  #gem 'meta_request' # rails panel - dev inspector in chrome. 
+                      # download chrome extension
+
+  #gem 'bullet'       # n+1 detection # Don't need because don't have associations for this app.
+  #gem 'peek'         # query times?
+  #gem 'newrelic_rpm' #vquery times?
   
+  gem 'spring-commands-rspec'   # spring commands to work with rspec
+  gem "spring-commands-cucumber"
+
 end
 
 group :development, :test do
-  gem 'factory_girl_rails' # replaces fixtures
+  gem 'rspec-rails', '~> 3.2.0' # for rspec-core, rspec-expectations, rspec-mocks
+  gem 'rspec-activemodel-mocks' # mock_model and stub_model methods to not hit db
 
-  gem 'rspec-rails'
-  gem 'guard-rspec'           # automatically runs tests when changes are saved
-  gem 'spring-commands-rspec' # spring commands to work with rspec
-  # Spring gem is built into Rails 4.1+.
+  gem 'guard-rspec'             # automatically runs tests when changes are saved
   
-  #gem 'zeus'  #alternative to Spring (application preloader)
+  # Spring gem (application preloader) is built into Rails 4.1+.
+  #gem 'zeus'  #alternative to Spring that's compatible with parallel-tests gem.
   #gem 'parallel-tests'
 
+  gem 'factory_girl_rails' # replaces fixtures
+  gem 'faker', '~> 1.4.3'    # generate values.
   #gem 'rb-fsevent'  #notifications for Mac OSX. Guard has notifications by default for other OSs.
 end
 
 group :test do
-  gem 'faker'    # fake user info generator
-  gem 'capybara' # mimics user
-  gem 'launchy'  # launches browser when an example fails.
+  gem 'cucumber-rails', require: false
+  gem 'capybara', '~> 2.4.4' # mimics users. acceptance test framework. OK with or without cucumber.
+  #selenium     #flexible, slower
+  #poltergeist  #fast, simpler
+
+  gem 'shoulda', '~> 3.5.0'  # more rspec matchers for rails
+  
+  #gem 'launchy'  # launches browser when an example fails.
 end
 
 group :production do 

@@ -3,6 +3,6 @@
     .col-xs-12
 
       - if currently_admin?
-        = link_to 'New Article', new_article_path
+        = link_to 'New Article', new_article_path, "data-no-turbolink"=> "true"
 
   == render partial: "articles/articles", locals: { articles: @articles }
