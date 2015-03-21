@@ -18,7 +18,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks', '~>2.0.2'
 
-gem 'autoprefixer-rails'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
