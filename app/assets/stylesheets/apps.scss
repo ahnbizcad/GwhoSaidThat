@@ -16,8 +16,24 @@
     opacity: 0.9999; /* for inset box shadow */ /* creates stacking context */
 
     margin: 15px 0px;
-    border: 2px solid $light-blue;
+    border: 2px solid rgba($light-blue, 0.5);
     /*box-shadow: 0 0 4px 4px $light-blue;*/
+
+    &.active {
+
+      border: 2px solid $light-blue;
+
+      .app-name {
+        opacity: 0;
+      }
+
+      .app-image {
+        img {
+          opacity: 1;
+        }
+      }
+
+    }
 
     .app-name {
       z-index: 1;
@@ -36,9 +52,6 @@
       opacity: 0.999;    
       transition: all 0.3s;
 
-      &.active {
-        opacity: 0;
-      }
 
       span {
         font-size: 2em;
@@ -65,10 +78,6 @@
 
         opacity: 0.4;
         transition: all 0.3s;
-          
-        &.active {
-          opacity: 1;
-        }
       }
 
     }
