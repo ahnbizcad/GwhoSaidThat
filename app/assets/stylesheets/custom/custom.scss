@@ -156,7 +156,7 @@ footer {
 
       a {
         &:focus, &:hover {
-          @include navbar-gradient($medium-blue);
+          @include navbar-gradient($light-blue);
         }
       }
     }

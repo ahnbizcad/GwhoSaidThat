@@ -31,5 +31,5 @@ $parallax-bg-z-index-base: -100;
 }
 #about-bg {
   @include parallax-bg-child(-5);
-  background-image: image-url("backgrounds/architecture_entrance.jpg");
+  background-image: image-url("backgrounds/architecture_blueprints.jpg");
 }
