@@ -20,8 +20,10 @@
   z-index: -1;
 
   margin: 1.5em 0px;
+  padding: 1.25em;
+  border-radius: 0.4em;
 
-  box-shadow: 0px 0px 0.5em 0px $light-blue inset;
+  box-shadow: 0px 0px 0.75em 0px $light-blue inset;
   @include textshadow(-1px, -1px, 1px, $medium-blue);
 }
 
